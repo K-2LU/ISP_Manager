@@ -67,14 +67,17 @@ public class adminPanel extends javax.swing.JFrame {
         CustomerPanel = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         addCustomerPanel = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
+        addCustomerLabel = new javax.swing.JLabel();
         addCustomerPanel1 = new javax.swing.JPanel();
-        addCustomerPanel2 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        addCustomerPanel3 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
+        packageListLabel = new javax.swing.JLabel();
+        searchCustomerPanel2 = new javax.swing.JPanel();
+        searchCustomerLabel = new javax.swing.JLabel();
+        listCustomerPanel3 = new javax.swing.JPanel();
+        listOfCustomerLabel = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
         StaffPanel = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         reportPanel = new javax.swing.JPanel();
@@ -576,7 +579,7 @@ public class adminPanel extends javax.swing.JFrame {
                 .addGroup(dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(userStatusPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 200, Short.MAX_VALUE)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(106, 106, 106))
         );
@@ -604,7 +607,7 @@ public class adminPanel extends javax.swing.JFrame {
             .addGroup(HomePanelLayout.createSequentialGroup()
                 .addGap(235, 235, 235)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(435, Short.MAX_VALUE))
+                .addContainerGap(474, Short.MAX_VALUE))
         );
 
         cardHolder.add(HomePanel, "card3");
@@ -618,10 +621,10 @@ public class adminPanel extends javax.swing.JFrame {
         addCustomerPanel.setBackground(new java.awt.Color(159, 164, 169));
         addCustomerPanel.setForeground(new java.awt.Color(53, 144, 243));
 
-        jLabel10.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/add-user.png"))); // NOI18N
-        jLabel10.setText("Add Customer");
+        addCustomerLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        addCustomerLabel.setForeground(new java.awt.Color(51, 51, 51));
+        addCustomerLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/add-user.png"))); // NOI18N
+        addCustomerLabel.setText("Add Customer");
 
         javax.swing.GroupLayout addCustomerPanelLayout = new javax.swing.GroupLayout(addCustomerPanel);
         addCustomerPanel.setLayout(addCustomerPanelLayout);
@@ -629,126 +632,152 @@ public class adminPanel extends javax.swing.JFrame {
             addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addCustomerPanelLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
+                .addComponent(addCustomerLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
                 .addGap(22, 22, 22))
         );
         addCustomerPanelLayout.setVerticalGroup(
             addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCustomerPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel10)
+                .addComponent(addCustomerLabel)
                 .addContainerGap())
         );
 
         addCustomerPanel1.setBackground(new java.awt.Color(159, 164, 169));
         addCustomerPanel1.setForeground(new java.awt.Color(53, 144, 243));
+        addCustomerPanel1.setPreferredSize(new java.awt.Dimension(329, 172));
+
+        packageListLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        packageListLabel.setForeground(new java.awt.Color(51, 51, 51));
+        packageListLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/package.png"))); // NOI18N
+        packageListLabel.setText("Package List");
 
         javax.swing.GroupLayout addCustomerPanel1Layout = new javax.swing.GroupLayout(addCustomerPanel1);
         addCustomerPanel1.setLayout(addCustomerPanel1Layout);
         addCustomerPanel1Layout.setHorizontalGroup(
             addCustomerPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(addCustomerPanel1Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(packageListLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         addCustomerPanel1Layout.setVerticalGroup(
             addCustomerPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 150, Short.MAX_VALUE)
+            .addGroup(addCustomerPanel1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(packageListLabel)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
-        addCustomerPanel2.setBackground(new java.awt.Color(159, 164, 169));
-        addCustomerPanel2.setForeground(new java.awt.Color(53, 144, 243));
-        addCustomerPanel2.setPreferredSize(new java.awt.Dimension(329, 172));
+        searchCustomerPanel2.setBackground(new java.awt.Color(159, 164, 169));
+        searchCustomerPanel2.setForeground(new java.awt.Color(53, 144, 243));
+        searchCustomerPanel2.setPreferredSize(new java.awt.Dimension(329, 172));
 
-        jLabel12.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/search.png"))); // NOI18N
-        jLabel12.setText("Search Customer");
+        searchCustomerLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        searchCustomerLabel.setForeground(new java.awt.Color(51, 51, 51));
+        searchCustomerLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/search.png"))); // NOI18N
+        searchCustomerLabel.setText("Search Customer");
 
-        javax.swing.GroupLayout addCustomerPanel2Layout = new javax.swing.GroupLayout(addCustomerPanel2);
-        addCustomerPanel2.setLayout(addCustomerPanel2Layout);
-        addCustomerPanel2Layout.setHorizontalGroup(
-            addCustomerPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addCustomerPanel2Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+        javax.swing.GroupLayout searchCustomerPanel2Layout = new javax.swing.GroupLayout(searchCustomerPanel2);
+        searchCustomerPanel2.setLayout(searchCustomerPanel2Layout);
+        searchCustomerPanel2Layout.setHorizontalGroup(
+            searchCustomerPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(searchCustomerPanel2Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(searchCustomerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
-        addCustomerPanel2Layout.setVerticalGroup(
-            addCustomerPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addCustomerPanel2Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel12)
-                .addContainerGap(24, Short.MAX_VALUE))
+        searchCustomerPanel2Layout.setVerticalGroup(
+            searchCustomerPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(searchCustomerPanel2Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(searchCustomerLabel)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        addCustomerPanel3.setBackground(new java.awt.Color(159, 164, 169));
-        addCustomerPanel3.setForeground(new java.awt.Color(53, 144, 243));
-        addCustomerPanel3.setPreferredSize(new java.awt.Dimension(329, 172));
+        listCustomerPanel3.setBackground(new java.awt.Color(159, 164, 169));
+        listCustomerPanel3.setForeground(new java.awt.Color(53, 144, 243));
+        listCustomerPanel3.setPreferredSize(new java.awt.Dimension(329, 172));
 
-        jLabel11.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel11.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/customer.png"))); // NOI18N
-        jLabel11.setText("List of Customers");
-        jLabel11.setToolTipText("");
-        jLabel11.setPreferredSize(new java.awt.Dimension(271, 128));
+        listOfCustomerLabel.setBackground(new java.awt.Color(51, 51, 51));
+        listOfCustomerLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        listOfCustomerLabel.setForeground(new java.awt.Color(51, 51, 51));
+        listOfCustomerLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/customer.png"))); // NOI18N
+        listOfCustomerLabel.setText("List of Customers");
+        listOfCustomerLabel.setToolTipText("");
+        listOfCustomerLabel.setPreferredSize(new java.awt.Dimension(271, 128));
 
-        javax.swing.GroupLayout addCustomerPanel3Layout = new javax.swing.GroupLayout(addCustomerPanel3);
-        addCustomerPanel3.setLayout(addCustomerPanel3Layout);
-        addCustomerPanel3Layout.setHorizontalGroup(
-            addCustomerPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addCustomerPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout listCustomerPanel3Layout = new javax.swing.GroupLayout(listCustomerPanel3);
+        listCustomerPanel3.setLayout(listCustomerPanel3Layout);
+        listCustomerPanel3Layout.setHorizontalGroup(
+            listCustomerPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(listCustomerPanel3Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addComponent(listOfCustomerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE))
         );
-        addCustomerPanel3Layout.setVerticalGroup(
-            addCustomerPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCustomerPanel3Layout.createSequentialGroup()
+        listCustomerPanel3Layout.setVerticalGroup(
+            listCustomerPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, listCustomerPanel3Layout.createSequentialGroup()
                 .addContainerGap(35, Short.MAX_VALUE)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(listOfCustomerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         jPanel2.setBackground(new java.awt.Color(159, 164, 169));
-        jPanel2.setPreferredSize(new java.awt.Dimension(300, 150));
+        jPanel2.setPreferredSize(new java.awt.Dimension(329, 172));
+
+        jLabel10.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/fees.png"))); // NOI18N
+        jLabel10.setText("Customer Payments");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addComponent(jLabel10)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 150, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel10)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(159, 164, 169));
-        jPanel3.setPreferredSize(new java.awt.Dimension(300, 150));
+        jPanel3.setPreferredSize(new java.awt.Dimension(329, 172));
+
+        jLabel11.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/report.png"))); // NOI18N
+        jLabel11.setText("Reports");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 150, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel11)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout CustomerPanelLayout = new javax.swing.GroupLayout(CustomerPanel);
         CustomerPanel.setLayout(CustomerPanelLayout);
         CustomerPanelLayout.setHorizontalGroup(
             CustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CustomerPanelLayout.createSequentialGroup()
-                .addGap(175, 175, 175)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(323, 323, 323)
-                .addGroup(CustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addCustomerPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 170, Short.MAX_VALUE))
             .addGroup(CustomerPanelLayout.createSequentialGroup()
                 .addGroup(CustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(CustomerPanelLayout.createSequentialGroup()
@@ -757,12 +786,15 @@ public class adminPanel extends javax.swing.JFrame {
                     .addGroup(CustomerPanelLayout.createSequentialGroup()
                         .addGap(216, 216, 216)
                         .addGroup(CustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(addCustomerPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(CustomerPanelLayout.createSequentialGroup()
-                                .addComponent(addCustomerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(195, 195, 195)
-                                .addComponent(addCustomerPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(addCustomerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(searchCustomerPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(195, 195, 195)
+                        .addGroup(CustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(addCustomerPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE)
+                            .addComponent(listCustomerPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE))))
+                .addContainerGap(175, Short.MAX_VALUE))
         );
         CustomerPanelLayout.setVerticalGroup(
             CustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -771,21 +803,17 @@ public class adminPanel extends javax.swing.JFrame {
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(72, 72, 72)
                 .addGroup(CustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(addCustomerPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addComponent(listCustomerPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
                     .addComponent(addCustomerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(CustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(addCustomerPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(searchCustomerPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addCustomerPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(CustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CustomerPanelLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CustomerPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(91, 91, 91))))
+                .addGap(18, 18, 18)
+                .addGroup(CustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE))
+                .addContainerGap(180, Short.MAX_VALUE))
         );
 
         cardHolder.add(CustomerPanel, "card4");
@@ -810,7 +838,7 @@ public class adminPanel extends javax.swing.JFrame {
             .addGroup(StaffPanelLayout.createSequentialGroup()
                 .addGap(231, 231, 231)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(458, Short.MAX_VALUE))
+                .addContainerGap(497, Short.MAX_VALUE))
         );
 
         cardHolder.add(StaffPanel, "card5");
@@ -836,7 +864,7 @@ public class adminPanel extends javax.swing.JFrame {
             .addGroup(reportPanelLayout.createSequentialGroup()
                 .addGap(291, 291, 291)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(461, Short.MAX_VALUE))
+                .addContainerGap(500, Short.MAX_VALUE))
         );
 
         cardHolder.add(reportPanel, "card6");
@@ -862,7 +890,7 @@ public class adminPanel extends javax.swing.JFrame {
             .addGroup(supportPanelLayout.createSequentialGroup()
                 .addGap(335, 335, 335)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(413, Short.MAX_VALUE))
+                .addContainerGap(452, Short.MAX_VALUE))
         );
 
         cardHolder.add(supportPanel, "card7");
@@ -1001,10 +1029,9 @@ public class adminPanel extends javax.swing.JFrame {
     private javax.swing.JLabel activeStaffTextLabel;
     private javax.swing.JLabel activeTextLabel;
     private javax.swing.JButton activeUsersTopButton;
+    private javax.swing.JLabel addCustomerLabel;
     private javax.swing.JPanel addCustomerPanel;
     private javax.swing.JPanel addCustomerPanel1;
-    private javax.swing.JPanel addCustomerPanel2;
-    private javax.swing.JPanel addCustomerPanel3;
     private javax.swing.JButton addUserTopButton;
     private javax.swing.JPanel cardHolder;
     private javax.swing.JButton customerButton;
@@ -1017,7 +1044,6 @@ public class adminPanel extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1031,7 +1057,9 @@ public class adminPanel extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JPanel leftPanel;
+    private javax.swing.JPanel listCustomerPanel3;
     private javax.swing.JButton listCustomerTopButton;
+    private javax.swing.JLabel listOfCustomerLabel;
     private javax.swing.JPanel logOutBG;
     private javax.swing.JButton logOutButton;
     private javax.swing.JLabel logo;
@@ -1039,10 +1067,13 @@ public class adminPanel extends javax.swing.JFrame {
     private javax.swing.JButton notificationButtonTop;
     private javax.swing.JLabel onLeaveTextLabel;
     private javax.swing.JLabel onlineCountLabel;
+    private javax.swing.JLabel packageListLabel;
     private javax.swing.JLabel photoHolder;
     private javax.swing.JPanel reportPanel;
     private javax.swing.JButton reportsButton;
     private javax.swing.JButton searchButton;
+    private javax.swing.JLabel searchCustomerLabel;
+    private javax.swing.JPanel searchCustomerPanel2;
     private javax.swing.JLabel staffActiveCount;
     private javax.swing.JButton staffButton;
     private javax.swing.JLabel staffLeaveCount;
