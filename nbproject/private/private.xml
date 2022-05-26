@@ -4,7 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/F:/Jva/ISP_Manager/ISP_Manager/src/isp_manager/loginSystem.java</file>
+            <file>file:/F:/Jva/ISP_Manager/ISP_Manager/src/isp_manager/customerPanel.java</file>
             <file>file:/F:/Jva/ISP_Manager/ISP_Manager/src/isp_manager/ISP_Manager.java</file>
+            <file>file:/F:/Jva/ISP_Manager/ISP_Manager/src/isp_manager/Staff.java</file>
+            <file>file:/F:/Jva/ISP_Manager/ISP_Manager/src/isp_manager/Customer.java</file>
+            <file>file:/F:/Jva/ISP_Manager/ISP_Manager/src/isp_manager/staffPanel.java</file>
+            <file>file:/F:/Jva/ISP_Manager/ISP_Manager/src/isp_manager/Admin.java</file>
             <file>file:/F:/Jva/ISP_Manager/ISP_Manager/src/isp_manager/adminPanel.java</file>
         </group>
     </open-files>

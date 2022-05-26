@@ -4,7 +4,13 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class adminPanel extends javax.swing.JFrame {
+    
     javax.swing.JPanel custPanel;
+    javax.swing.JPanel stffPanel;
+    javax.swing.JPanel rprtPanel;
+    javax.swing.JPanel suppPanel;
+    javax.swing.JPanel addCustOptPanel;
+    
     CardLayout cards;
 
     public adminPanel() {
@@ -64,14 +70,6 @@ public class adminPanel extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         HomePanel = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        StaffPanel = new javax.swing.JPanel();
-        StaffLabel = new javax.swing.JLabel();
-        reportPanel = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        supportPanel = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        addCustomerOptions = new javax.swing.JPanel();
-        addCustomerLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -558,7 +556,7 @@ public class adminPanel extends javax.swing.JFrame {
                     .addGroup(dashboardPanelLayout.createSequentialGroup()
                         .addGap(176, 176, 176)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(361, Short.MAX_VALUE))
+                .addContainerGap(334, Short.MAX_VALUE))
         );
         dashboardPanelLayout.setVerticalGroup(
             dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -600,114 +598,6 @@ public class adminPanel extends javax.swing.JFrame {
 
         cardHolder.add(HomePanel, "card3");
 
-        StaffPanel.setBackground(new java.awt.Color(255, 255, 255));
-
-        StaffLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        StaffLabel.setForeground(new java.awt.Color(0, 0, 0));
-        StaffLabel.setText("Staff Label");
-
-        javax.swing.GroupLayout StaffPanelLayout = new javax.swing.GroupLayout(StaffPanel);
-        StaffPanel.setLayout(StaffPanelLayout);
-        StaffPanelLayout.setHorizontalGroup(
-            StaffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(StaffPanelLayout.createSequentialGroup()
-                .addGap(528, 528, 528)
-                .addComponent(StaffLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(561, Short.MAX_VALUE))
-        );
-        StaffPanelLayout.setVerticalGroup(
-            StaffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(StaffPanelLayout.createSequentialGroup()
-                .addGap(128, 128, 128)
-                .addComponent(StaffLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(530, Short.MAX_VALUE))
-        );
-
-        cardHolder.add(StaffPanel, "card5");
-
-        reportPanel.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel7.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel7.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Report Panel");
-
-        javax.swing.GroupLayout reportPanelLayout = new javax.swing.GroupLayout(reportPanel);
-        reportPanel.setLayout(reportPanelLayout);
-        reportPanelLayout.setHorizontalGroup(
-            reportPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(reportPanelLayout.createSequentialGroup()
-                .addGap(352, 352, 352)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(569, Short.MAX_VALUE))
-        );
-        reportPanelLayout.setVerticalGroup(
-            reportPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(reportPanelLayout.createSequentialGroup()
-                .addGap(291, 291, 291)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(500, Short.MAX_VALUE))
-        );
-
-        cardHolder.add(reportPanel, "card6");
-
-        supportPanel.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel8.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel8.setText("Support Panel");
-
-        javax.swing.GroupLayout supportPanelLayout = new javax.swing.GroupLayout(supportPanel);
-        supportPanel.setLayout(supportPanelLayout);
-        supportPanelLayout.setHorizontalGroup(
-            supportPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(supportPanelLayout.createSequentialGroup()
-                .addGap(372, 372, 372)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(613, Short.MAX_VALUE))
-        );
-        supportPanelLayout.setVerticalGroup(
-            supportPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(supportPanelLayout.createSequentialGroup()
-                .addGap(335, 335, 335)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(452, Short.MAX_VALUE))
-        );
-
-        cardHolder.add(supportPanel, "card7");
-
-        addCustomerOptions.setBackground(new java.awt.Color(255, 255, 255));
-        addCustomerOptions.addHierarchyListener(new java.awt.event.HierarchyListener() {
-            public void hierarchyChanged(java.awt.event.HierarchyEvent evt) {
-                addCustomerOptionsHierarchyChanged(evt);
-            }
-        });
-
-        addCustomerLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        addCustomerLabel.setForeground(new java.awt.Color(51, 51, 51));
-        addCustomerLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        addCustomerLabel.setText("Add Customer");
-
-        javax.swing.GroupLayout addCustomerOptionsLayout = new javax.swing.GroupLayout(addCustomerOptions);
-        addCustomerOptions.setLayout(addCustomerOptionsLayout);
-        addCustomerOptionsLayout.setHorizontalGroup(
-            addCustomerOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCustomerOptionsLayout.createSequentialGroup()
-                .addContainerGap(509, Short.MAX_VALUE)
-                .addComponent(addCustomerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(483, 483, 483))
-        );
-        addCustomerOptionsLayout.setVerticalGroup(
-            addCustomerOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addCustomerOptionsLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(addCustomerLabel)
-                .addContainerGap(743, Short.MAX_VALUE))
-        );
-
-        cardHolder.add(addCustomerOptions, "card8");
-
         javax.swing.GroupLayout dashBoardPanelBGLayout = new javax.swing.GroupLayout(dashBoardPanelBG);
         dashBoardPanelBG.setLayout(dashBoardPanelBGLayout);
         dashBoardPanelBGLayout.setHorizontalGroup(
@@ -743,10 +633,6 @@ public class adminPanel extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void addCustomerOptionsHierarchyChanged(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_addCustomerOptionsHierarchyChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addCustomerOptionsHierarchyChanged
-
     private void customerButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_customerButtonMouseClicked
         // TODO add your handling code here:
         custPanel = new customerPanel();
@@ -773,24 +659,27 @@ public class adminPanel extends javax.swing.JFrame {
 
 
     private void staffButtonMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_staffButtonMouseClicked
+        stffPanel = new staffPanel();
         cardHolder.removeAll();
-        cardHolder.add(StaffPanel);
+        cardHolder.add(stffPanel);
         repaint();
         revalidate();
 
     }// GEN-LAST:event_staffButtonMouseClicked
 
     private void reportsButtonMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_reportsButtonMouseClicked
+        rprtPanel = new reportPanel();
         cardHolder.removeAll();
-        cardHolder.add(reportPanel);
+        cardHolder.add(rprtPanel);
         repaint();
         revalidate();
 
     }// GEN-LAST:event_reportsButtonMouseClicked
 
     private void supportButtonMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_supportButtonMouseClicked
+        suppPanel = new supportPanel();
         cardHolder.removeAll();
-        cardHolder.add(supportPanel);
+        cardHolder.add(suppPanel);
         repaint();
         revalidate();
 
@@ -841,15 +730,11 @@ public class adminPanel extends javax.swing.JFrame {
     private javax.swing.JLabel OnlineTextLabel;
     private javax.swing.JPanel ReportsBG;
     private javax.swing.JPanel StaffBG;
-    private javax.swing.JLabel StaffLabel;
-    private javax.swing.JPanel StaffPanel;
     private javax.swing.JPanel SupportBG;
     private javax.swing.JLabel activeCountLabel;
     private javax.swing.JLabel activeStaffTextLabel;
     private javax.swing.JLabel activeTextLabel;
     private javax.swing.JButton activeUsersTopButton;
-    private javax.swing.JLabel addCustomerLabel;
-    private javax.swing.JPanel addCustomerOptions;
     private javax.swing.JButton addUserTopButton;
     private javax.swing.JPanel cardHolder;
     private javax.swing.JButton customerButton;
@@ -864,8 +749,6 @@ public class adminPanel extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JPanel leftPanel;
@@ -878,14 +761,12 @@ public class adminPanel extends javax.swing.JFrame {
     private javax.swing.JLabel onLeaveTextLabel;
     private javax.swing.JLabel onlineCountLabel;
     private javax.swing.JLabel photoHolder;
-    private javax.swing.JPanel reportPanel;
     private javax.swing.JButton reportsButton;
     private javax.swing.JButton searchButton;
     private javax.swing.JLabel staffActiveCount;
     private javax.swing.JButton staffButton;
     private javax.swing.JLabel staffLeaveCount;
     private javax.swing.JButton supportButton;
-    private javax.swing.JPanel supportPanel;
     private javax.swing.JButton todoButton;
     private javax.swing.JPanel topbarPanel;
     private javax.swing.JLabel userNameLabel;
