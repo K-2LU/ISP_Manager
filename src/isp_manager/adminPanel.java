@@ -30,18 +30,25 @@ public class adminPanel extends javax.swing.JFrame {
         logo = new javax.swing.JLabel();
         dashBoardBG = new javax.swing.JPanel();
         dashBoardButton = new javax.swing.JButton();
+        dashIcon = new javax.swing.JLabel();
         homeBG = new javax.swing.JPanel();
         homeButton = new javax.swing.JButton();
+        homeIcon = new javax.swing.JLabel();
         CustomerBG = new javax.swing.JPanel();
         customerButton = new javax.swing.JButton();
+        custIcon = new javax.swing.JLabel();
         StaffBG = new javax.swing.JPanel();
         staffButton = new javax.swing.JButton();
+        staffIcon = new javax.swing.JLabel();
         ReportsBG = new javax.swing.JPanel();
         reportsButton = new javax.swing.JButton();
-        SupportBG = new javax.swing.JPanel();
-        supportButton = new javax.swing.JButton();
+        reportIcon = new javax.swing.JLabel();
+        SettingsBG = new javax.swing.JPanel();
+        settingsButton = new javax.swing.JButton();
+        settingsIcon = new javax.swing.JLabel();
         logOutBG = new javax.swing.JPanel();
         logOutButton = new javax.swing.JButton();
+        logIcon = new javax.swing.JLabel();
         dashBoardPanelBG = new javax.swing.JPanel();
         topbarPanel = new javax.swing.JPanel();
         photoHolder = new javax.swing.JLabel();
@@ -74,182 +81,263 @@ public class adminPanel extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
+        jSplitPane1.setBackground(new java.awt.Color(0, 0, 0));
+        jSplitPane1.setBorder(null);
         jSplitPane1.setDividerLocation(280);
         jSplitPane1.setDividerSize(0);
 
-        leftPanel.setBackground(new java.awt.Color(204, 204, 204));
+        leftPanel.setBackground(new java.awt.Color(44, 44, 44));
 
         logoPanel.setBackground(new java.awt.Color(204, 204, 204));
         logoPanel.setLayout(new java.awt.GridLayout(1, 0));
 
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/logo_1_80.png"))); // NOI18N
 
-        dashBoardBG.setBackground(new java.awt.Color(204, 204, 204));
+        dashBoardBG.setBackground(new java.awt.Color(44, 44, 44));
 
-        dashBoardButton.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
-        dashBoardButton.setForeground(new java.awt.Color(51, 51, 51));
+        dashBoardButton.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        dashBoardButton.setForeground(new java.awt.Color(204, 204, 204));
         dashBoardButton.setText("Dashboard");
         dashBoardButton.setBorder(null);
         dashBoardButton.setContentAreaFilled(false);
+        dashBoardButton.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         dashBoardButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 dashBoardButtonMouseClicked(evt);
             }
         });
 
+        dashIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/business-report.png"))); // NOI18N
+
         javax.swing.GroupLayout dashBoardBGLayout = new javax.swing.GroupLayout(dashBoardBG);
         dashBoardBG.setLayout(dashBoardBGLayout);
         dashBoardBGLayout.setHorizontalGroup(
             dashBoardBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(dashBoardButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dashBoardBGLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(dashIcon)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(dashBoardButton, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         dashBoardBGLayout.setVerticalGroup(
             dashBoardBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(dashBoardButton, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(dashIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        homeBG.setBackground(new java.awt.Color(204, 204, 204));
+        homeBG.setBackground(new java.awt.Color(44, 44, 44));
 
-        homeButton.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
-        homeButton.setForeground(new java.awt.Color(51, 51, 51));
+        homeButton.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        homeButton.setForeground(new java.awt.Color(204, 204, 204));
         homeButton.setText("Home");
         homeButton.setBorder(null);
         homeButton.setContentAreaFilled(false);
+        homeButton.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         homeButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 homeButtonMouseClicked(evt);
             }
         });
 
+        homeIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/home.png"))); // NOI18N
+
         javax.swing.GroupLayout homeBGLayout = new javax.swing.GroupLayout(homeBG);
         homeBG.setLayout(homeBGLayout);
         homeBGLayout.setHorizontalGroup(
             homeBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(homeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homeBGLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(homeIcon)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(homeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         homeBGLayout.setVerticalGroup(
             homeBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(homeButton, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(homeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(homeBGLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(homeIcon)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        CustomerBG.setBackground(new java.awt.Color(204, 204, 204));
+        CustomerBG.setBackground(new java.awt.Color(44, 44, 44));
 
-        customerButton.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
-        customerButton.setForeground(new java.awt.Color(51, 51, 51));
+        customerButton.setBackground(new java.awt.Color(204, 204, 204));
+        customerButton.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        customerButton.setForeground(new java.awt.Color(204, 204, 204));
         customerButton.setText("Customers");
         customerButton.setBorder(null);
         customerButton.setContentAreaFilled(false);
+        customerButton.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         customerButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 customerButtonMouseClicked(evt);
             }
         });
 
+        custIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/customer(1).png"))); // NOI18N
+
         javax.swing.GroupLayout CustomerBGLayout = new javax.swing.GroupLayout(CustomerBG);
         CustomerBG.setLayout(CustomerBGLayout);
         CustomerBGLayout.setHorizontalGroup(
             CustomerBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(customerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CustomerBGLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(custIcon)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(customerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         CustomerBGLayout.setVerticalGroup(
             CustomerBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(customerButton, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(customerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(CustomerBGLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(custIcon)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        StaffBG.setBackground(new java.awt.Color(204, 204, 204));
+        StaffBG.setBackground(new java.awt.Color(44, 44, 44));
 
-        staffButton.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
-        staffButton.setForeground(new java.awt.Color(51, 51, 51));
+        staffButton.setBackground(new java.awt.Color(204, 204, 204));
+        staffButton.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        staffButton.setForeground(new java.awt.Color(204, 204, 204));
         staffButton.setText("Staff");
         staffButton.setBorder(null);
         staffButton.setContentAreaFilled(false);
+        staffButton.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         staffButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 staffButtonMouseClicked(evt);
             }
         });
 
+        staffIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/teamwork.png"))); // NOI18N
+
         javax.swing.GroupLayout StaffBGLayout = new javax.swing.GroupLayout(StaffBG);
         StaffBG.setLayout(StaffBGLayout);
         StaffBGLayout.setHorizontalGroup(
             StaffBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(staffButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StaffBGLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(staffIcon)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(staffButton, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         StaffBGLayout.setVerticalGroup(
             StaffBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(staffButton, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(staffButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(StaffBGLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(staffIcon)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        ReportsBG.setBackground(new java.awt.Color(204, 204, 204));
+        ReportsBG.setBackground(new java.awt.Color(44, 44, 44));
 
-        reportsButton.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
-        reportsButton.setForeground(new java.awt.Color(51, 51, 51));
+        reportsButton.setBackground(new java.awt.Color(204, 204, 204));
+        reportsButton.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        reportsButton.setForeground(new java.awt.Color(204, 204, 204));
         reportsButton.setText("Reports");
         reportsButton.setBorder(null);
         reportsButton.setContentAreaFilled(false);
+        reportsButton.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         reportsButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 reportsButtonMouseClicked(evt);
             }
         });
 
+        reportIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/report(1).png"))); // NOI18N
+
         javax.swing.GroupLayout ReportsBGLayout = new javax.swing.GroupLayout(ReportsBG);
         ReportsBG.setLayout(ReportsBGLayout);
         ReportsBGLayout.setHorizontalGroup(
             ReportsBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(reportsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ReportsBGLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(reportIcon)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(reportsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         ReportsBGLayout.setVerticalGroup(
             ReportsBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(reportsButton, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(reportsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(ReportsBGLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(reportIcon)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        SupportBG.setBackground(new java.awt.Color(204, 204, 204));
+        SettingsBG.setBackground(new java.awt.Color(44, 44, 44));
 
-        supportButton.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
-        supportButton.setForeground(new java.awt.Color(51, 51, 51));
-        supportButton.setText("Support");
-        supportButton.setBorder(null);
-        supportButton.setContentAreaFilled(false);
-        supportButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        settingsButton.setBackground(new java.awt.Color(204, 204, 204));
+        settingsButton.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        settingsButton.setForeground(new java.awt.Color(204, 204, 204));
+        settingsButton.setText("Settings");
+        settingsButton.setBorder(null);
+        settingsButton.setContentAreaFilled(false);
+        settingsButton.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        settingsButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                supportButtonMouseClicked(evt);
+                settingsButtonMouseClicked(evt);
             }
         });
 
-        javax.swing.GroupLayout SupportBGLayout = new javax.swing.GroupLayout(SupportBG);
-        SupportBG.setLayout(SupportBGLayout);
-        SupportBGLayout.setHorizontalGroup(
-            SupportBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(supportButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        settingsIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/setting.png"))); // NOI18N
+
+        javax.swing.GroupLayout SettingsBGLayout = new javax.swing.GroupLayout(SettingsBG);
+        SettingsBG.setLayout(SettingsBGLayout);
+        SettingsBGLayout.setHorizontalGroup(
+            SettingsBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SettingsBGLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(settingsIcon)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(settingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        SupportBGLayout.setVerticalGroup(
-            SupportBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(supportButton, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        SettingsBGLayout.setVerticalGroup(
+            SettingsBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(settingsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(SettingsBGLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(settingsIcon)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        logOutBG.setBackground(new java.awt.Color(204, 204, 204));
+        logOutBG.setBackground(new java.awt.Color(44, 44, 44));
 
-        logOutButton.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
-        logOutButton.setForeground(new java.awt.Color(51, 51, 51));
+        logOutButton.setBackground(new java.awt.Color(204, 204, 204));
+        logOutButton.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        logOutButton.setForeground(new java.awt.Color(204, 204, 204));
         logOutButton.setText("Log out");
         logOutButton.setBorder(null);
         logOutButton.setContentAreaFilled(false);
+        logOutButton.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         logOutButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 logOutButtonMouseClicked(evt);
             }
         });
 
+        logIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/log-out.png"))); // NOI18N
+
         javax.swing.GroupLayout logOutBGLayout = new javax.swing.GroupLayout(logOutBG);
         logOutBG.setLayout(logOutBGLayout);
         logOutBGLayout.setHorizontalGroup(
             logOutBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(logOutButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, logOutBGLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(logIcon)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(logOutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         logOutBGLayout.setVerticalGroup(
             logOutBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(logOutButton, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(logOutButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(logOutBGLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(logIcon)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout leftPanelLayout = new javax.swing.GroupLayout(leftPanel);
@@ -266,11 +354,11 @@ public class adminPanel extends javax.swing.JFrame {
                     .addGroup(leftPanelLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addComponent(logo)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(114, Short.MAX_VALUE))
             .addComponent(homeBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(CustomerBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(ReportsBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(SupportBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(SettingsBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(logOutBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         leftPanelLayout.setVerticalGroup(
@@ -280,7 +368,7 @@ public class adminPanel extends javax.swing.JFrame {
                 .addComponent(logoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(89, 89, 89)
+                .addGap(55, 55, 55)
                 .addComponent(dashBoardBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(homeBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -291,17 +379,17 @@ public class adminPanel extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ReportsBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(SupportBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 249, Short.MAX_VALUE)
+                .addComponent(SettingsBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 275, Short.MAX_VALUE)
                 .addComponent(logOutBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         jSplitPane1.setLeftComponent(leftPanel);
 
-        dashBoardPanelBG.setBackground(new java.awt.Color(255, 255, 255));
+        dashBoardPanelBG.setBackground(new java.awt.Color(44, 44, 44));
 
-        topbarPanel.setBackground(new java.awt.Color(204, 204, 204));
+        topbarPanel.setBackground(new java.awt.Color(44, 44, 44));
 
         photoHolder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/userImage_B10_2_100x101.png"))); // NOI18N
 
@@ -397,7 +485,7 @@ public class adminPanel extends javax.swing.JFrame {
         cardHolder.setBackground(new java.awt.Color(255, 255, 255));
         cardHolder.setLayout(new java.awt.CardLayout());
 
-        dashboardPanel.setBackground(new java.awt.Color(255, 255, 255));
+        dashboardPanel.setBackground(new java.awt.Color(44, 44, 44));
 
         userStatusPanel.setBackground(new java.awt.Color(119, 159, 182));
         userStatusPanel.setPreferredSize(new java.awt.Dimension(260, 160));
@@ -556,7 +644,7 @@ public class adminPanel extends javax.swing.JFrame {
                     .addGroup(dashboardPanelLayout.createSequentialGroup()
                         .addGap(176, 176, 176)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(334, Short.MAX_VALUE))
+                .addContainerGap(261, Short.MAX_VALUE))
         );
         dashboardPanelLayout.setVerticalGroup(
             dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -584,7 +672,7 @@ public class adminPanel extends javax.swing.JFrame {
         HomePanelLayout.setHorizontalGroup(
             HomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HomePanelLayout.createSequentialGroup()
-                .addContainerGap(486, Short.MAX_VALUE)
+                .addContainerGap(386, Short.MAX_VALUE)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(340, 340, 340))
         );
@@ -729,21 +817,24 @@ public class adminPanel extends javax.swing.JFrame {
     private javax.swing.JPanel HomePanel;
     private javax.swing.JLabel OnlineTextLabel;
     private javax.swing.JPanel ReportsBG;
+    private javax.swing.JPanel SettingsBG;
     private javax.swing.JPanel StaffBG;
-    private javax.swing.JPanel SupportBG;
     private javax.swing.JLabel activeCountLabel;
     private javax.swing.JLabel activeStaffTextLabel;
     private javax.swing.JLabel activeTextLabel;
     private javax.swing.JButton activeUsersTopButton;
     private javax.swing.JButton addUserTopButton;
     private javax.swing.JPanel cardHolder;
+    private javax.swing.JLabel custIcon;
     private javax.swing.JButton customerButton;
     private javax.swing.JPanel dashBoardBG;
     private javax.swing.JButton dashBoardButton;
     private javax.swing.JPanel dashBoardPanelBG;
+    private javax.swing.JLabel dashIcon;
     private javax.swing.JPanel dashboardPanel;
     private javax.swing.JPanel homeBG;
     private javax.swing.JButton homeButton;
+    private javax.swing.JLabel homeIcon;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -753,6 +844,7 @@ public class adminPanel extends javax.swing.JFrame {
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JPanel leftPanel;
     private javax.swing.JButton listCustomerTopButton;
+    private javax.swing.JLabel logIcon;
     private javax.swing.JPanel logOutBG;
     private javax.swing.JButton logOutButton;
     private javax.swing.JLabel logo;
@@ -761,12 +853,15 @@ public class adminPanel extends javax.swing.JFrame {
     private javax.swing.JLabel onLeaveTextLabel;
     private javax.swing.JLabel onlineCountLabel;
     private javax.swing.JLabel photoHolder;
+    private javax.swing.JLabel reportIcon;
     private javax.swing.JButton reportsButton;
     private javax.swing.JButton searchButton;
+    private javax.swing.JButton settingsButton;
+    private javax.swing.JLabel settingsIcon;
     private javax.swing.JLabel staffActiveCount;
     private javax.swing.JButton staffButton;
+    private javax.swing.JLabel staffIcon;
     private javax.swing.JLabel staffLeaveCount;
-    private javax.swing.JButton supportButton;
     private javax.swing.JButton todoButton;
     private javax.swing.JPanel topbarPanel;
     private javax.swing.JLabel userNameLabel;
