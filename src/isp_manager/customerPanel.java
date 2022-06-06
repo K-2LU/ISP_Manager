@@ -53,8 +53,8 @@ public class customerPanel extends javax.swing.JPanel {
         packageLabel = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
-        jPanel3 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        addCustClick = new javax.swing.JPanel();
+        adderButton = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
         listPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -226,6 +226,7 @@ public class customerPanel extends javax.swing.JPanel {
         nameField.setBorder(null);
 
         nameLabel.setBackground(new java.awt.Color(204, 204, 204));
+        nameLabel.setForeground(new java.awt.Color(204, 204, 204));
         nameLabel.setText("Customer Name");
 
         addressField.setBackground(new java.awt.Color(48, 48, 48));
@@ -236,6 +237,7 @@ public class customerPanel extends javax.swing.JPanel {
         addressField.setBorder(null);
 
         addressLabel.setBackground(new java.awt.Color(204, 204, 204));
+        addressLabel.setForeground(new java.awt.Color(204, 204, 204));
         addressLabel.setText("Current Address:");
 
         phoneField.setBackground(new java.awt.Color(48, 48, 48));
@@ -246,6 +248,7 @@ public class customerPanel extends javax.swing.JPanel {
         phoneField.setBorder(null);
 
         phoneLabel.setBackground(new java.awt.Color(204, 204, 204));
+        phoneLabel.setForeground(new java.awt.Color(204, 204, 204));
         phoneLabel.setText("Contact No. (Phone):");
 
         emailField.setBackground(new java.awt.Color(48, 48, 48));
@@ -256,12 +259,15 @@ public class customerPanel extends javax.swing.JPanel {
         emailField.setBorder(null);
 
         emailLabel.setBackground(new java.awt.Color(204, 204, 204));
+        emailLabel.setForeground(new java.awt.Color(204, 204, 204));
         emailLabel.setText("Email Address:");
 
         packageLabel.setBackground(new java.awt.Color(204, 204, 204));
+        packageLabel.setForeground(new java.awt.Color(204, 204, 204));
         packageLabel.setText("Package");
 
         jLabel7.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setText("NID/Birth Certificate No.");
 
         jTextField6.setBackground(new java.awt.Color(48, 48, 48));
@@ -271,31 +277,38 @@ public class customerPanel extends javax.swing.JPanel {
         jTextField6.setText("Legal document no.");
         jTextField6.setBorder(null);
 
-        jPanel3.setBackground(new java.awt.Color(10, 137, 70));
+        addCustClick.setBackground(new java.awt.Color(10, 137, 70));
 
-        jButton2.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(204, 204, 204));
-        jButton2.setText("Add Customer");
-        jButton2.setBorder(null);
-        jButton2.setContentAreaFilled(false);
+        adderButton.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
+        adderButton.setForeground(new java.awt.Color(204, 204, 204));
+        adderButton.setText("Add Customer");
+        adderButton.setBorder(null);
+        adderButton.setContentAreaFilled(false);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout addCustClickLayout = new javax.swing.GroupLayout(addCustClick);
+        addCustClick.setLayout(addCustClickLayout);
+        addCustClickLayout.setHorizontalGroup(
+            addCustClickLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addCustClickLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+                .addComponent(adderButton, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+        addCustClickLayout.setVerticalGroup(
+            addCustClickLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(adderButton, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
         jComboBox1.setBackground(new java.awt.Color(48, 48, 48));
         jComboBox1.setForeground(new java.awt.Color(204, 204, 204));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10 mbps", "15 mbps", "20 mbps", "30 mbps" }));
+        jComboBox1.setBorder(null);
+        jComboBox1.setOpaque(true);
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout addCustomerPanelLayout = new javax.swing.GroupLayout(addCustomerPanel);
         addCustomerPanel.setLayout(addCustomerPanelLayout);
@@ -333,7 +346,7 @@ public class customerPanel extends javax.swing.JPanel {
                                 .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(addCustomerPanelLayout.createSequentialGroup()
                         .addGap(375, 375, 375)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(addCustClick, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(54, Short.MAX_VALUE))
         );
         addCustomerPanelLayout.setVerticalGroup(
@@ -364,7 +377,7 @@ public class customerPanel extends javax.swing.JPanel {
                     .addComponent(packageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 267, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(addCustClick, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -434,9 +447,10 @@ public class customerPanel extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(briefSearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(briefSearchPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTextField1))
+                .addGap(2, 2, 2)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(75, 75, 75)
@@ -448,7 +462,7 @@ public class customerPanel extends javax.swing.JPanel {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(13, 13, 13)
-                        .addComponent(briedDetailPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(briedDetailPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 696, Short.MAX_VALUE)
                         .addContainerGap())))
         );
 
@@ -497,13 +511,19 @@ public class customerPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_listCutomerButton1MouseExited
 
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BG;
+    private javax.swing.JPanel addCustClick;
     private javax.swing.JButton addCustomerButton1;
     private javax.swing.JPanel addCustomerOptPanel;
     private javax.swing.JPanel addCustomerPanel;
     private javax.swing.JLabel addIcon;
+    private javax.swing.JButton adderButton;
     private javax.swing.JTextField addressField;
     private javax.swing.JLabel addressLabel;
     private javax.swing.JPanel briedDetailPanel;
@@ -511,11 +531,9 @@ public class customerPanel extends javax.swing.JPanel {
     private javax.swing.JTextField emailField;
     private javax.swing.JLabel emailLabel;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
