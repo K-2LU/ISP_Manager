@@ -53,20 +53,21 @@ public class loginSystem extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        bg.setBackground(new java.awt.Color(204, 204, 204));
+        bg.setBackground(new java.awt.Color(44, 44, 44));
 
         jSplitPane1.setBackground(new java.awt.Color(204, 204, 204));
         jSplitPane1.setDividerLocation(270);
         jSplitPane1.setDividerSize(0);
 
+        jLabel1.setBackground(new java.awt.Color(55, 55, 55));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/logobasic.png"))); // NOI18N
         jSplitPane1.setLeftComponent(jLabel1);
 
         cardHolder.setLayout(new java.awt.CardLayout());
 
-        loginPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        loginPanel4.setBackground(new java.awt.Color(44, 44, 44));
 
-        unameField.setBackground(new java.awt.Color(229, 229, 229));
+        unameField.setBackground(new java.awt.Color(48, 48, 48));
         unameField.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         unameField.setForeground(new java.awt.Color(102, 102, 102));
         unameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -78,7 +79,7 @@ public class loginSystem extends javax.swing.JFrame {
             }
         });
 
-        PasswordField.setBackground(new java.awt.Color(229, 229, 229));
+        PasswordField.setBackground(new java.awt.Color(48, 48, 48));
         PasswordField.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         PasswordField.setForeground(new java.awt.Color(102, 102, 102));
         PasswordField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -199,9 +200,9 @@ public class loginSystem extends javax.swing.JFrame {
 
         cardHolder.add(loginPanel4, "card2");
 
-        registerPanel.setBackground(new java.awt.Color(255, 255, 255));
+        registerPanel.setBackground(new java.awt.Color(44, 44, 44));
 
-        nameText.setBackground(new java.awt.Color(221, 221, 221));
+        nameText.setBackground(new java.awt.Color(48, 48, 48));
         nameText.setForeground(new java.awt.Color(102, 102, 102));
         nameText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         nameText.setText("Enter your name");
@@ -210,7 +211,7 @@ public class loginSystem extends javax.swing.JFrame {
         nameLabel.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         nameLabel.setText("Name :");
 
-        jTextField6.setBackground(new java.awt.Color(221, 221, 221));
+        jTextField6.setBackground(new java.awt.Color(48, 48, 48));
         jTextField6.setForeground(new java.awt.Color(102, 102, 102));
         jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField6.setText("Enter your contact no.");
@@ -222,7 +223,7 @@ public class loginSystem extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jLabel4.setText("Contact no. :");
 
-        jTextField7.setBackground(new java.awt.Color(221, 221, 221));
+        jTextField7.setBackground(new java.awt.Color(48, 48, 48));
         jTextField7.setForeground(new java.awt.Color(102, 102, 102));
         jTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField7.setText("Enter your contact no.");
