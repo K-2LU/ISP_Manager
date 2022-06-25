@@ -53,9 +53,10 @@ public class loginSystem extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        bg.setBackground(new java.awt.Color(44, 44, 44));
+        bg.setBackground(new java.awt.Color(48, 48, 48));
 
         jSplitPane1.setBackground(new java.awt.Color(204, 204, 204));
+        jSplitPane1.setBorder(null);
         jSplitPane1.setDividerLocation(270);
         jSplitPane1.setDividerSize(0);
 
@@ -69,7 +70,7 @@ public class loginSystem extends javax.swing.JFrame {
 
         unameField.setBackground(new java.awt.Color(48, 48, 48));
         unameField.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        unameField.setForeground(new java.awt.Color(102, 102, 102));
+        unameField.setForeground(new java.awt.Color(153, 153, 153));
         unameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         unameField.setText("username or ID");
         unameField.setBorder(null);
@@ -81,7 +82,7 @@ public class loginSystem extends javax.swing.JFrame {
 
         PasswordField.setBackground(new java.awt.Color(48, 48, 48));
         PasswordField.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        PasswordField.setForeground(new java.awt.Color(102, 102, 102));
+        PasswordField.setForeground(new java.awt.Color(153, 153, 153));
         PasswordField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         PasswordField.setText("Password");
         PasswordField.setBorder(null);
@@ -96,6 +97,11 @@ public class loginSystem extends javax.swing.JFrame {
         loginButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 loginButtonMouseClicked(evt);
+            }
+        });
+        loginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginButtonActionPerformed(evt);
             }
         });
 
@@ -150,7 +156,7 @@ public class loginSystem extends javax.swing.JFrame {
                 .addComponent(requestButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        loginFailedAlert.setForeground(new java.awt.Color(255, 255, 255));
+        loginFailedAlert.setForeground(new java.awt.Color(44, 44, 44));
         loginFailedAlert.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         loginFailedAlert.setText("Login Failed");
         loginFailedAlert.setToolTipText("");
@@ -193,7 +199,7 @@ public class loginSystem extends javax.swing.JFrame {
                 .addComponent(loginButtonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(forgotPassButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 193, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 200, Short.MAX_VALUE)
                 .addComponent(newConnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(115, 115, 115))
         );
@@ -299,7 +305,7 @@ public class loginSystem extends javax.swing.JFrame {
                 .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 384, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 386, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(91, 91, 91))
         );
@@ -374,9 +380,13 @@ public class loginSystem extends javax.swing.JFrame {
             this.dispose();
             new adminPanel().setVisible(true);
         }   else    {
-            loginFailedAlert.setForeground(new java.awt.Color(51, 51, 51));
+            loginFailedAlert.setForeground(new java.awt.Color(204, 204, 204));
         }
     }//GEN-LAST:event_loginButtonMouseClicked
+
+    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginButtonActionPerformed
 
     /**
      * @param args the command line arguments

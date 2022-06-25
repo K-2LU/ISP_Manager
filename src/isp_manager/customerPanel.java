@@ -4,17 +4,16 @@
  */
 package isp_manager;
 
-/**
- *
- * @author King Nothing
- */
-public class customerPanel extends javax.swing.JPanel {
+import java.awt.*;
 
-    /**
-     * Creates new form customerPanel
-     */
+public class customerPanel extends javax.swing.JPanel {
+    javax.swing.JPanel tempPanel;
+    CardLayout cards;
+    
     public customerPanel() {
         initComponents();
+        
+        cards = (CardLayout) (holderPanel.getLayout());
     }
 
     /**
@@ -40,7 +39,7 @@ public class customerPanel extends javax.swing.JPanel {
         jTextField1 = new javax.swing.JTextField();
         briefSearchPanel = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        briedDetailPanel = new javax.swing.JPanel();
+        holderPanel = new javax.swing.JPanel();
         addCustomerPanel = new javax.swing.JPanel();
         nameField = new javax.swing.JTextField();
         nameLabel = new javax.swing.JLabel();
@@ -56,9 +55,6 @@ public class customerPanel extends javax.swing.JPanel {
         addCustClick = new javax.swing.JPanel();
         adderButton = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
-        listPanel = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(44, 44, 44));
         setPreferredSize(new java.awt.Dimension(1268, 857));
@@ -81,6 +77,9 @@ public class customerPanel extends javax.swing.JPanel {
         addCustomerButton1.setContentAreaFilled(false);
         addCustomerButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         addCustomerButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addCustomerButton1MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 addCustomerButton1MouseEntered(evt);
             }
@@ -117,6 +116,9 @@ public class customerPanel extends javax.swing.JPanel {
         listCutomerButton.setContentAreaFilled(false);
         listCutomerButton.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         listCutomerButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listCutomerButtonMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 listCutomerButtonMouseEntered(evt);
             }
@@ -213,8 +215,8 @@ public class customerPanel extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        briedDetailPanel.setBackground(new java.awt.Color(44, 44, 44));
-        briedDetailPanel.setLayout(new java.awt.CardLayout());
+        holderPanel.setBackground(new java.awt.Color(44, 44, 44));
+        holderPanel.setLayout(new java.awt.CardLayout());
 
         addCustomerPanel.setBackground(new java.awt.Color(44, 44, 44));
 
@@ -302,8 +304,6 @@ public class customerPanel extends javax.swing.JPanel {
         jComboBox1.setBackground(new java.awt.Color(48, 48, 48));
         jComboBox1.setForeground(new java.awt.Color(204, 204, 204));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10 mbps", "15 mbps", "20 mbps", "30 mbps" }));
-        jComboBox1.setBorder(null);
-        jComboBox1.setOpaque(true);
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -381,47 +381,7 @@ public class customerPanel extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        briedDetailPanel.add(addCustomerPanel, "card2");
-
-        listPanel.setBackground(new java.awt.Color(44, 44, 44));
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jTable1);
-
-        javax.swing.GroupLayout listPanelLayout = new javax.swing.GroupLayout(listPanel);
-        listPanel.setLayout(listPanelLayout);
-        listPanelLayout.setHorizontalGroup(
-            listPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(listPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 763, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        listPanelLayout.setVerticalGroup(
-            listPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(listPanelLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 666, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        briedDetailPanel.add(listPanel, "card3");
+        holderPanel.add(addCustomerPanel, "card2");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -440,7 +400,7 @@ public class customerPanel extends javax.swing.JPanel {
                     .addComponent(packagesBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(listCustomerOptPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(briedDetailPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 787, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(holderPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 787, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -462,7 +422,7 @@ public class customerPanel extends javax.swing.JPanel {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(13, 13, 13)
-                        .addComponent(briedDetailPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 696, Short.MAX_VALUE)
+                        .addComponent(holderPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
         );
 
@@ -515,6 +475,22 @@ public class customerPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
+    private void listCutomerButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listCutomerButtonMouseClicked
+       tempPanel = new listCustomerPanel();
+       holderPanel.removeAll();
+       holderPanel.add(tempPanel);
+        repaint();
+        revalidate();        
+    }//GEN-LAST:event_listCutomerButtonMouseClicked
+
+    private void addCustomerButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCustomerButton1MouseClicked
+        // TODO add your handling code here:
+        holderPanel.removeAll();
+        holderPanel.add(addCustomerPanel);
+        repaint();
+        revalidate();
+    }//GEN-LAST:event_addCustomerButton1MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BG;
@@ -526,16 +502,14 @@ public class customerPanel extends javax.swing.JPanel {
     private javax.swing.JButton adderButton;
     private javax.swing.JTextField addressField;
     private javax.swing.JLabel addressLabel;
-    private javax.swing.JPanel briedDetailPanel;
     private javax.swing.JPanel briefSearchPanel;
     private javax.swing.JTextField emailField;
     private javax.swing.JLabel emailLabel;
+    private javax.swing.JPanel holderPanel;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JPanel listCustomerOptPanel1;
@@ -543,7 +517,6 @@ public class customerPanel extends javax.swing.JPanel {
     private javax.swing.JButton listCutomerButton1;
     private javax.swing.JLabel listIcon;
     private javax.swing.JLabel listIcon1;
-    private javax.swing.JPanel listPanel;
     private javax.swing.JTextField nameField;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JLabel packageLabel;
