@@ -35,7 +35,7 @@ public class customerPanel extends javax.swing.JPanel {
         listCutomerButton = new javax.swing.JButton();
         packagesBG = new javax.swing.JPanel();
         listIcon1 = new javax.swing.JLabel();
-        listCutomerButton1 = new javax.swing.JButton();
+        packageButton = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         briefSearchPanel = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -152,18 +152,21 @@ public class customerPanel extends javax.swing.JPanel {
         listIcon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/speed.png"))); // NOI18N
         listIcon1.setToolTipText("");
 
-        listCutomerButton1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        listCutomerButton1.setForeground(new java.awt.Color(204, 204, 204));
-        listCutomerButton1.setText("Packages");
-        listCutomerButton1.setBorder(null);
-        listCutomerButton1.setContentAreaFilled(false);
-        listCutomerButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
-        listCutomerButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        packageButton.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        packageButton.setForeground(new java.awt.Color(204, 204, 204));
+        packageButton.setText("Packages");
+        packageButton.setBorder(null);
+        packageButton.setContentAreaFilled(false);
+        packageButton.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        packageButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                packageButtonMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                listCutomerButton1MouseEntered(evt);
+                packageButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                listCutomerButton1MouseExited(evt);
+                packageButtonMouseExited(evt);
             }
         });
 
@@ -175,14 +178,14 @@ public class customerPanel extends javax.swing.JPanel {
                 .addGap(24, 24, 24)
                 .addComponent(listIcon1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(listCutomerButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(packageButton, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         packagesBGLayout.setVerticalGroup(
             packagesBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(packagesBGLayout.createSequentialGroup()
                 .addGroup(packagesBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(listCutomerButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(packageButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(listIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(1, 1, 1))
         );
@@ -413,11 +416,11 @@ public class customerPanel extends javax.swing.JPanel {
                 .addGap(2, 2, 2)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
+                        .addGap(81, 81, 81)
                         .addComponent(addCustomerOptPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(listCustomerOptPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(packagesBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -463,13 +466,13 @@ public class customerPanel extends javax.swing.JPanel {
         listCustomerOptPanel1.setBackground(new java.awt.Color(44,44,44));
     }//GEN-LAST:event_listCutomerButtonMouseExited
 
-    private void listCutomerButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listCutomerButton1MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_listCutomerButton1MouseEntered
+    private void packageButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_packageButtonMouseEntered
+        packagesBG.setBackground(new java.awt.Color(44,44,44));
+    }//GEN-LAST:event_packageButtonMouseEntered
 
-    private void listCutomerButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listCutomerButton1MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_listCutomerButton1MouseExited
+    private void packageButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_packageButtonMouseExited
+        packagesBG.setBackground(new java.awt.Color(33,33,33));
+    }//GEN-LAST:event_packageButtonMouseExited
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
@@ -490,6 +493,14 @@ public class customerPanel extends javax.swing.JPanel {
         repaint();
         revalidate();
     }//GEN-LAST:event_addCustomerButton1MouseClicked
+
+    private void packageButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_packageButtonMouseClicked
+        tempPanel = new  packagePanel();
+        holderPanel.removeAll();
+        holderPanel.add(tempPanel);
+        repaint();
+        revalidate();
+    }//GEN-LAST:event_packageButtonMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -514,11 +525,11 @@ public class customerPanel extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JPanel listCustomerOptPanel1;
     private javax.swing.JButton listCutomerButton;
-    private javax.swing.JButton listCutomerButton1;
     private javax.swing.JLabel listIcon;
     private javax.swing.JLabel listIcon1;
     private javax.swing.JTextField nameField;
     private javax.swing.JLabel nameLabel;
+    private javax.swing.JButton packageButton;
     private javax.swing.JLabel packageLabel;
     private javax.swing.JPanel packagesBG;
     private javax.swing.JTextField phoneField;

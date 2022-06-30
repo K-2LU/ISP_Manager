@@ -60,7 +60,7 @@ public class loginSystem extends javax.swing.JFrame {
         jSplitPane1.setDividerLocation(270);
         jSplitPane1.setDividerSize(0);
 
-        jLabel1.setBackground(new java.awt.Color(55, 55, 55));
+        jLabel1.setBackground(new java.awt.Color(48, 48, 48));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/logobasic.png"))); // NOI18N
         jSplitPane1.setLeftComponent(jLabel1);
 
