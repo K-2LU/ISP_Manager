@@ -443,6 +443,7 @@ public class adminPanel extends javax.swing.JFrame {
         jSplitPane1.setLeftComponent(leftPanel);
 
         dashBoardPanelBG.setBackground(new java.awt.Color(44, 44, 44));
+        dashBoardPanelBG.setForeground(new java.awt.Color(44, 44, 44));
 
         topbarPanel.setBackground(new java.awt.Color(44, 44, 44));
 
@@ -715,7 +716,7 @@ public class adminPanel extends javax.swing.JFrame {
 
         cardHolder.add(dashboardPanel, "card2");
 
-        HomePanel.setBackground(new java.awt.Color(255, 255, 255));
+        HomePanel.setBackground(new java.awt.Color(44, 44, 44));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));

@@ -13,15 +13,12 @@ public class staffPanel extends javax.swing.JPanel {
 
         BG = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        addCustomerOptPanel = new javax.swing.JPanel();
+        addStaffBG = new javax.swing.JPanel();
         addIcon = new javax.swing.JLabel();
-        addCustomerButton1 = new javax.swing.JButton();
-        listCustomerOptPanel1 = new javax.swing.JPanel();
+        addStaffButton = new javax.swing.JButton();
+        listStaffBG = new javax.swing.JPanel();
         listIcon = new javax.swing.JLabel();
-        listCutomerButton = new javax.swing.JButton();
-        packagesBG = new javax.swing.JPanel();
-        listIcon1 = new javax.swing.JLabel();
-        packageButton = new javax.swing.JButton();
+        listStaffButton = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         briefSearchPanel = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -44,150 +41,105 @@ public class staffPanel extends javax.swing.JPanel {
         packageLabel1 = new javax.swing.JLabel();
         salaryTextField = new javax.swing.JTextField();
         packageLabel2 = new javax.swing.JLabel();
+        removeStaffBG = new javax.swing.JPanel();
+        remStaffIcon = new javax.swing.JLabel();
+        removeStaffButton = new javax.swing.JButton();
 
         BG.setBackground(new java.awt.Color(44, 44, 44));
 
         jPanel1.setBackground(new java.awt.Color(44, 44, 44));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(55, 55, 55), 2));
 
-        addCustomerOptPanel.setBackground(new java.awt.Color(44, 44, 44));
+        addStaffBG.setBackground(new java.awt.Color(44, 44, 44));
 
         addIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/plus.png"))); // NOI18N
 
-        addCustomerButton1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        addCustomerButton1.setForeground(new java.awt.Color(204, 204, 204));
-        addCustomerButton1.setText("Add Staff");
-        addCustomerButton1.setBorder(null);
-        addCustomerButton1.setContentAreaFilled(false);
-        addCustomerButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
-        addCustomerButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        addStaffButton.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        addStaffButton.setForeground(new java.awt.Color(204, 204, 204));
+        addStaffButton.setText("Add Staff");
+        addStaffButton.setBorder(null);
+        addStaffButton.setContentAreaFilled(false);
+        addStaffButton.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        addStaffButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addCustomerButton1MouseClicked(evt);
+                addStaffButtonMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                addCustomerButton1MouseEntered(evt);
+                addStaffButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                addCustomerButton1MouseExited(evt);
+                addStaffButtonMouseExited(evt);
             }
         });
-        addCustomerButton1.addActionListener(new java.awt.event.ActionListener() {
+        addStaffButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addCustomerButton1ActionPerformed(evt);
+                addStaffButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout addCustomerOptPanelLayout = new javax.swing.GroupLayout(addCustomerOptPanel);
-        addCustomerOptPanel.setLayout(addCustomerOptPanelLayout);
-        addCustomerOptPanelLayout.setHorizontalGroup(
-            addCustomerOptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addCustomerOptPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout addStaffBGLayout = new javax.swing.GroupLayout(addStaffBG);
+        addStaffBG.setLayout(addStaffBGLayout);
+        addStaffBGLayout.setHorizontalGroup(
+            addStaffBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addStaffBGLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(addIcon)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(addCustomerButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(addStaffButton, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(24, Short.MAX_VALUE))
         );
-        addCustomerOptPanelLayout.setVerticalGroup(
-            addCustomerOptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(addCustomerButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+        addStaffBGLayout.setVerticalGroup(
+            addStaffBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(addStaffButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(addIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        listCustomerOptPanel1.setBackground(new java.awt.Color(44, 44, 44));
+        listStaffBG.setBackground(new java.awt.Color(44, 44, 44));
 
         listIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/contact-list.png"))); // NOI18N
 
-        listCutomerButton.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        listCutomerButton.setForeground(new java.awt.Color(204, 204, 204));
-        listCutomerButton.setText("List Staff");
-        listCutomerButton.setBorder(null);
-        listCutomerButton.setContentAreaFilled(false);
-        listCutomerButton.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
-        listCutomerButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        listStaffButton.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        listStaffButton.setForeground(new java.awt.Color(204, 204, 204));
+        listStaffButton.setText("List Staff");
+        listStaffButton.setBorder(null);
+        listStaffButton.setContentAreaFilled(false);
+        listStaffButton.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        listStaffButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                listCutomerButtonMouseClicked(evt);
+                listStaffButtonMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                listCutomerButtonMouseEntered(evt);
+                listStaffButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                listCutomerButtonMouseExited(evt);
+                listStaffButtonMouseExited(evt);
             }
         });
 
-        javax.swing.GroupLayout listCustomerOptPanel1Layout = new javax.swing.GroupLayout(listCustomerOptPanel1);
-        listCustomerOptPanel1.setLayout(listCustomerOptPanel1Layout);
-        listCustomerOptPanel1Layout.setHorizontalGroup(
-            listCustomerOptPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(listCustomerOptPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout listStaffBGLayout = new javax.swing.GroupLayout(listStaffBG);
+        listStaffBG.setLayout(listStaffBGLayout);
+        listStaffBGLayout.setHorizontalGroup(
+            listStaffBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(listStaffBGLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(listIcon)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(listCutomerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(listStaffButton, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        listCustomerOptPanel1Layout.setVerticalGroup(
-            listCustomerOptPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(listCustomerOptPanel1Layout.createSequentialGroup()
-                .addGroup(listCustomerOptPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(listCutomerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+        listStaffBGLayout.setVerticalGroup(
+            listStaffBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(listStaffBGLayout.createSequentialGroup()
+                .addGroup(listStaffBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(listStaffButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(listIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(1, 1, 1))
-        );
-
-        packagesBG.setBackground(new java.awt.Color(44, 44, 44));
-
-        listIcon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/speed.png"))); // NOI18N
-        listIcon1.setToolTipText("");
-
-        packageButton.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        packageButton.setForeground(new java.awt.Color(204, 204, 204));
-        packageButton.setText("Staff Roles");
-        packageButton.setBorder(null);
-        packageButton.setContentAreaFilled(false);
-        packageButton.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
-        packageButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                packageButtonMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                packageButtonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                packageButtonMouseExited(evt);
-            }
-        });
-        packageButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                packageButtonActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout packagesBGLayout = new javax.swing.GroupLayout(packagesBG);
-        packagesBG.setLayout(packagesBGLayout);
-        packagesBGLayout.setHorizontalGroup(
-            packagesBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(packagesBGLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(listIcon1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(packageButton, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        packagesBGLayout.setVerticalGroup(
-            packagesBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(packagesBGLayout.createSequentialGroup()
-                .addGroup(packagesBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(packageButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(listIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(1, 1, 1))
         );
 
         jTextField1.setBackground(new java.awt.Color(33, 33, 33));
         jTextField1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(77, 77, 77));
-        jTextField1.setText("search customer");
+        jTextField1.setText("search staff");
         jTextField1.setBorder(null);
 
         briefSearchPanel.setBackground(new java.awt.Color(33, 33, 33));
@@ -280,9 +232,14 @@ public class staffPanel extends javax.swing.JPanel {
 
         adderButton.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
         adderButton.setForeground(new java.awt.Color(204, 204, 204));
-        adderButton.setText("Add Customer");
+        adderButton.setText("Add Staff");
         adderButton.setBorder(null);
         adderButton.setContentAreaFilled(false);
+        adderButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adderButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout addCustClickLayout = new javax.swing.GroupLayout(addCustClick);
         addCustClick.setLayout(addCustClickLayout);
@@ -328,49 +285,48 @@ public class staffPanel extends javax.swing.JPanel {
         addCustomerPanelLayout.setHorizontalGroup(
             addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addCustomerPanelLayout.createSequentialGroup()
+                .addGap(123, 123, 123)
                 .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                        .addGap(123, 123, 123)
-                        .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                                .addComponent(emailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                                .addComponent(phoneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(phoneField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                                    .addComponent(addressLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(addressField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                                    .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCustomerPanelLayout.createSequentialGroup()
-                                .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                                        .addComponent(packageLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(salaryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(packageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(6, 6, 6))
-                                    .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                                        .addComponent(packageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(114, 114, 114)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(14, 14, 14))))
+                        .addComponent(emailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                        .addGap(375, 375, 375)
-                        .addComponent(addCustClick, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(phoneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(phoneField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(addCustomerPanelLayout.createSequentialGroup()
+                            .addComponent(addressLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(addressField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(addCustomerPanelLayout.createSequentialGroup()
+                            .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(addCustomerPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCustomerPanelLayout.createSequentialGroup()
+                        .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(addCustomerPanelLayout.createSequentialGroup()
+                                .addComponent(packageLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(salaryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(packageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6))
+                            .addGroup(addCustomerPanelLayout.createSequentialGroup()
+                                .addComponent(packageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(114, 114, 114)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(14, 14, 14)))
                 .addContainerGap(40, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCustomerPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(addCustClick, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(209, 209, 209))
         );
         addCustomerPanelLayout.setVerticalGroup(
             addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -404,30 +360,81 @@ public class staffPanel extends javax.swing.JPanel {
                     .addComponent(packageLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                     .addComponent(salaryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(packageLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
-                .addGap(205, 205, 205)
+                .addGap(92, 92, 92)
                 .addComponent(addCustClick, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(125, 125, 125))
         );
 
         holderPanel.add(addCustomerPanel, "card2");
+
+        removeStaffBG.setBackground(new java.awt.Color(44, 44, 44));
+
+        remStaffIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/remove.png"))); // NOI18N
+        remStaffIcon.setToolTipText("");
+
+        removeStaffButton.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        removeStaffButton.setForeground(new java.awt.Color(204, 204, 204));
+        removeStaffButton.setText("Remove Staff");
+        removeStaffButton.setBorder(null);
+        removeStaffButton.setContentAreaFilled(false);
+        removeStaffButton.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        removeStaffButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                removeStaffButtonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                removeStaffButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                removeStaffButtonMouseExited(evt);
+            }
+        });
+        removeStaffButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeStaffButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout removeStaffBGLayout = new javax.swing.GroupLayout(removeStaffBG);
+        removeStaffBG.setLayout(removeStaffBGLayout);
+        removeStaffBGLayout.setHorizontalGroup(
+            removeStaffBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(removeStaffBGLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(remStaffIcon)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(removeStaffButton, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        removeStaffBGLayout.setVerticalGroup(
+            removeStaffBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(removeStaffBGLayout.createSequentialGroup()
+                .addGroup(removeStaffBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(removeStaffButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(remStaffIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(1, 1, 1))
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(806, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(briefSearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(59, 59, 59))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(101, 101, 101)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(addCustomerOptPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(packagesBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(listCustomerOptPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(addStaffBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(listStaffBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 37, Short.MAX_VALUE))
+                    .addComponent(removeStaffBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(holderPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 787, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -442,15 +449,15 @@ public class staffPanel extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(81, 81, 81)
-                        .addComponent(addCustomerOptPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(addStaffBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(listCustomerOptPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(packagesBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(listStaffBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(removeStaffBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(13, 13, 13)
-                        .addComponent(holderPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(holderPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 680, Short.MAX_VALUE)
                         .addContainerGap())))
         );
 
@@ -460,14 +467,14 @@ public class staffPanel extends javax.swing.JPanel {
             BGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BGLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         BGLayout.setVerticalGroup(
             BGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BGLayout.createSequentialGroup()
-                .addGap(85, 85, 85)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BGLayout.createSequentialGroup()
+                .addContainerGap(84, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -475,97 +482,90 @@ public class staffPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1268, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(BG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addComponent(BG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 858, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(BG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addComponent(BG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void addCustomerButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCustomerButton1MouseClicked
+    private void addStaffButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addStaffButtonMouseClicked
         // TODO add your handling code here:
         holderPanel.removeAll();
         holderPanel.add(addCustomerPanel);
         repaint();
         revalidate();
-    }//GEN-LAST:event_addCustomerButton1MouseClicked
+    }//GEN-LAST:event_addStaffButtonMouseClicked
 
-    private void addCustomerButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCustomerButton1MouseEntered
-        addCustomerOptPanel.setBackground(new java.awt.Color(33,33,33));
-    }//GEN-LAST:event_addCustomerButton1MouseEntered
+    private void addStaffButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addStaffButtonMouseEntered
+        addStaffBG.setBackground(new java.awt.Color(33,33,33));
+    }//GEN-LAST:event_addStaffButtonMouseEntered
 
-    private void addCustomerButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCustomerButton1MouseExited
-        addCustomerOptPanel.setBackground(new java.awt.Color(44,44,44));
-    }//GEN-LAST:event_addCustomerButton1MouseExited
+    private void addStaffButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addStaffButtonMouseExited
+        addStaffBG.setBackground(new java.awt.Color(44,44,44));
+    }//GEN-LAST:event_addStaffButtonMouseExited
 
-    private void listCutomerButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listCutomerButtonMouseClicked
-        tempPanel = new listCustomerPanel();
+    private void listStaffButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listStaffButtonMouseClicked
+        tempPanel = new listStaffPanel();
         holderPanel.removeAll();
         holderPanel.add(tempPanel);
         repaint();
         revalidate();
-    }//GEN-LAST:event_listCutomerButtonMouseClicked
+    }//GEN-LAST:event_listStaffButtonMouseClicked
 
-    private void listCutomerButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listCutomerButtonMouseEntered
-        // TODO add your handling code here:
-        listCustomerOptPanel1.setBackground(new java.awt.Color(33,33,33));
-    }//GEN-LAST:event_listCutomerButtonMouseEntered
+    private void listStaffButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listStaffButtonMouseEntered
+        listStaffBG.setBackground(new java.awt.Color(33,33,33));
+    }//GEN-LAST:event_listStaffButtonMouseEntered
 
-    private void listCutomerButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listCutomerButtonMouseExited
-        listCustomerOptPanel1.setBackground(new java.awt.Color(44,44,44));
-    }//GEN-LAST:event_listCutomerButtonMouseExited
-
-    private void packageButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_packageButtonMouseClicked
-        tempPanel = new  packagePanel();
-        holderPanel.removeAll();
-        holderPanel.add(tempPanel);
-        repaint();
-        revalidate();
-    }//GEN-LAST:event_packageButtonMouseClicked
-
-    private void packageButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_packageButtonMouseEntered
-        packagesBG.setBackground(new java.awt.Color(44,44,44));
-    }//GEN-LAST:event_packageButtonMouseEntered
-
-    private void packageButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_packageButtonMouseExited
-        packagesBG.setBackground(new java.awt.Color(33,33,33));
-    }//GEN-LAST:event_packageButtonMouseExited
+    private void listStaffButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listStaffButtonMouseExited
+        listStaffBG.setBackground(new java.awt.Color(44,44,44));
+    }//GEN-LAST:event_listStaffButtonMouseExited
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void addCustomerButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCustomerButton1ActionPerformed
+    private void addStaffButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addStaffButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_addCustomerButton1ActionPerformed
-
-    private void packageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_packageButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_packageButtonActionPerformed
+    }//GEN-LAST:event_addStaffButtonActionPerformed
 
     private void salaryTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salaryTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_salaryTextFieldActionPerformed
 
+    private void adderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adderButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_adderButtonActionPerformed
+
+    private void removeStaffButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeStaffButtonMouseClicked
+        tempPanel = new removeStaff();
+        holderPanel.removeAll();
+        holderPanel.add(tempPanel);
+        repaint();
+        revalidate();
+    }//GEN-LAST:event_removeStaffButtonMouseClicked
+
+    private void removeStaffButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeStaffButtonMouseEntered
+        removeStaffBG.setBackground(new java.awt.Color(33,33,33));
+    }//GEN-LAST:event_removeStaffButtonMouseEntered
+
+    private void removeStaffButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeStaffButtonMouseExited
+        removeStaffBG.setBackground(new java.awt.Color(44,44,44));
+    }//GEN-LAST:event_removeStaffButtonMouseExited
+
+    private void removeStaffButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeStaffButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_removeStaffButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BG;
     private javax.swing.JPanel addCustClick;
-    private javax.swing.JButton addCustomerButton1;
-    private javax.swing.JPanel addCustomerOptPanel;
     private javax.swing.JPanel addCustomerPanel;
     private javax.swing.JLabel addIcon;
+    private javax.swing.JPanel addStaffBG;
+    private javax.swing.JButton addStaffButton;
     private javax.swing.JButton adderButton;
     private javax.swing.JTextField addressField;
     private javax.swing.JLabel addressLabel;
@@ -579,19 +579,19 @@ public class staffPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JPanel listCustomerOptPanel1;
-    private javax.swing.JButton listCutomerButton;
     private javax.swing.JLabel listIcon;
-    private javax.swing.JLabel listIcon1;
+    private javax.swing.JPanel listStaffBG;
+    private javax.swing.JButton listStaffButton;
     private javax.swing.JTextField nameField;
     private javax.swing.JLabel nameLabel;
-    private javax.swing.JButton packageButton;
     private javax.swing.JLabel packageLabel;
     private javax.swing.JLabel packageLabel1;
     private javax.swing.JLabel packageLabel2;
-    private javax.swing.JPanel packagesBG;
     private javax.swing.JTextField phoneField;
     private javax.swing.JLabel phoneLabel;
+    private javax.swing.JLabel remStaffIcon;
+    private javax.swing.JPanel removeStaffBG;
+    private javax.swing.JButton removeStaffButton;
     private javax.swing.JTextField salaryTextField;
     // End of variables declaration//GEN-END:variables
 }

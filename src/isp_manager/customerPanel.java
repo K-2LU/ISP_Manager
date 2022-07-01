@@ -55,6 +55,9 @@ public class customerPanel extends javax.swing.JPanel {
         addCustClick = new javax.swing.JPanel();
         adderButton = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
+        removeCustomerBG = new javax.swing.JPanel();
+        removeIcon = new javax.swing.JLabel();
+        removeCustomerButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(44, 44, 44));
         setPreferredSize(new java.awt.Dimension(1268, 857));
@@ -386,23 +389,75 @@ public class customerPanel extends javax.swing.JPanel {
 
         holderPanel.add(addCustomerPanel, "card2");
 
+        removeCustomerBG.setBackground(new java.awt.Color(44, 44, 44));
+
+        removeIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/remove.png"))); // NOI18N
+        removeIcon.setToolTipText("");
+
+        removeCustomerButton.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        removeCustomerButton.setForeground(new java.awt.Color(204, 204, 204));
+        removeCustomerButton.setText("Remove/Block Customer");
+        removeCustomerButton.setBorder(null);
+        removeCustomerButton.setContentAreaFilled(false);
+        removeCustomerButton.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        removeCustomerButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                removeCustomerButtonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                removeCustomerButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                removeCustomerButtonMouseExited(evt);
+            }
+        });
+        removeCustomerButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeCustomerButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout removeCustomerBGLayout = new javax.swing.GroupLayout(removeCustomerBG);
+        removeCustomerBG.setLayout(removeCustomerBGLayout);
+        removeCustomerBGLayout.setHorizontalGroup(
+            removeCustomerBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(removeCustomerBGLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(removeIcon)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(removeCustomerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+        removeCustomerBGLayout.setVerticalGroup(
+            removeCustomerBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(removeCustomerBGLayout.createSequentialGroup()
+                .addGroup(removeCustomerBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(removeCustomerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(removeIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(1, 1, 1))
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(806, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(briefSearchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(59, 59, 59))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(101, 101, 101)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(addCustomerOptPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(packagesBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(listCustomerOptPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(addCustomerOptPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(packagesBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(listCustomerOptPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(removeCustomerBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(holderPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 787, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -422,6 +477,8 @@ public class customerPanel extends javax.swing.JPanel {
                         .addComponent(listCustomerOptPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(packagesBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(removeCustomerBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(13, 13, 13)
@@ -433,16 +490,16 @@ public class customerPanel extends javax.swing.JPanel {
         BG.setLayout(BGLayout);
         BGLayout.setHorizontalGroup(
             BGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BGLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BGLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         BGLayout.setVerticalGroup(
             BGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BGLayout.createSequentialGroup()
-                .addGap(85, 85, 85)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BGLayout.createSequentialGroup()
+                .addContainerGap(85, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -467,11 +524,11 @@ public class customerPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_listCutomerButtonMouseExited
 
     private void packageButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_packageButtonMouseEntered
-        packagesBG.setBackground(new java.awt.Color(44,44,44));
+        packagesBG.setBackground(new java.awt.Color(33,33,33));
     }//GEN-LAST:event_packageButtonMouseEntered
 
     private void packageButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_packageButtonMouseExited
-        packagesBG.setBackground(new java.awt.Color(33,33,33));
+        packagesBG.setBackground(new java.awt.Color(44,44,44));
     }//GEN-LAST:event_packageButtonMouseExited
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
@@ -501,6 +558,26 @@ public class customerPanel extends javax.swing.JPanel {
         repaint();
         revalidate();
     }//GEN-LAST:event_packageButtonMouseClicked
+
+    private void removeCustomerButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeCustomerButtonMouseClicked
+        tempPanel = new removeCustomer();
+        holderPanel.removeAll();
+        holderPanel.add(tempPanel);
+        repaint();
+        revalidate();
+    }//GEN-LAST:event_removeCustomerButtonMouseClicked
+
+    private void removeCustomerButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeCustomerButtonMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_removeCustomerButtonMouseEntered
+
+    private void removeCustomerButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeCustomerButtonMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_removeCustomerButtonMouseExited
+
+    private void removeCustomerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeCustomerButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_removeCustomerButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -534,5 +611,8 @@ public class customerPanel extends javax.swing.JPanel {
     private javax.swing.JPanel packagesBG;
     private javax.swing.JTextField phoneField;
     private javax.swing.JLabel phoneLabel;
+    private javax.swing.JPanel removeCustomerBG;
+    private javax.swing.JButton removeCustomerButton;
+    private javax.swing.JLabel removeIcon;
     // End of variables declaration//GEN-END:variables
 }
