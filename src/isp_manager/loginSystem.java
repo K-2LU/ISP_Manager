@@ -1,19 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package isp_manager;
 
 import java.awt.CardLayout;
 
-/**
- *
- * @author k2lu
- */
 public class loginSystem extends javax.swing.JFrame {
 
     String username;
     String password;
+    
+    boolean unameFieldClicked = false;
+    boolean passFieldClicked = false;
     
     CardLayout cards;
     
@@ -33,7 +28,7 @@ public class loginSystem extends javax.swing.JFrame {
         cardHolder = new javax.swing.JPanel();
         loginPanel4 = new javax.swing.JPanel();
         unameField = new javax.swing.JTextField();
-        PasswordField = new javax.swing.JPasswordField();
+        passwordField = new javax.swing.JPasswordField();
         loginButtonPanel = new javax.swing.JPanel();
         loginButton = new javax.swing.JButton();
         forgotPassButton = new javax.swing.JButton();
@@ -74,18 +69,33 @@ public class loginSystem extends javax.swing.JFrame {
         unameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         unameField.setText("username or ID");
         unameField.setBorder(null);
+        unameField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                unameFieldMouseClicked(evt);
+            }
+        });
         unameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 unameFieldActionPerformed(evt);
             }
         });
 
-        PasswordField.setBackground(new java.awt.Color(48, 48, 48));
-        PasswordField.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        PasswordField.setForeground(new java.awt.Color(153, 153, 153));
-        PasswordField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        PasswordField.setText("Password");
-        PasswordField.setBorder(null);
+        passwordField.setBackground(new java.awt.Color(48, 48, 48));
+        passwordField.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        passwordField.setForeground(new java.awt.Color(153, 153, 153));
+        passwordField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        passwordField.setText("Password");
+        passwordField.setBorder(null);
+        passwordField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                passwordFieldMouseClicked(evt);
+            }
+        });
+        passwordField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                passwordFieldKeyPressed(evt);
+            }
+        });
 
         loginButtonPanel.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -170,7 +180,7 @@ public class loginSystem extends javax.swing.JFrame {
                     .addGroup(loginPanel4Layout.createSequentialGroup()
                         .addGap(208, 208, 208)
                         .addGroup(loginPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(PasswordField)
+                            .addComponent(passwordField)
                             .addComponent(unameField, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE)))
                     .addGroup(loginPanel4Layout.createSequentialGroup()
                         .addGap(323, 323, 323)
@@ -194,7 +204,7 @@ public class loginSystem extends javax.swing.JFrame {
                 .addGap(151, 151, 151)
                 .addComponent(unameField, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(loginButtonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -368,17 +378,23 @@ public class loginSystem extends javax.swing.JFrame {
     }//GEN-LAST:event_submitButtonMouseClicked
 
     private void unameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unameFieldActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_unameFieldActionPerformed
 
     private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked
         // TODO add your handling code here:
         username = unameField.getText();
-        password = PasswordField.getText();
+        password = passwordField.getText();
         
         if(username.equals("admin") && password.equals("admin"))    {
             this.dispose();
             new adminPanel().setVisible(true);
+        }   else if (username.equals("customer") && password.equals("customer"))  {
+            this.dispose();
+            new customerUserPanel().setVisible(true);
+        }   else if (username.equals("staff") && password.equals("staff"))  {
+            this.dispose();
+            new staffUserPanel().setVisible(true);
         }   else    {
             loginFailedAlert.setForeground(new java.awt.Color(204, 204, 204));
         }
@@ -388,9 +404,24 @@ public class loginSystem extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_loginButtonActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void unameFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_unameFieldMouseClicked
+        if(!unameFieldClicked)  {
+            unameField.setText("");
+            unameFieldClicked = true;
+        }
+    }//GEN-LAST:event_unameFieldMouseClicked
+
+    private void passwordFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passwordFieldMouseClicked
+        if(!passFieldClicked)   {
+            passwordField.setText("");
+            passFieldClicked = true;
+        }
+    }//GEN-LAST:event_passwordFieldMouseClicked
+
+    private void passwordFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordFieldKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordFieldKeyPressed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -424,7 +455,6 @@ public class loginSystem extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPasswordField PasswordField;
     private javax.swing.JPanel bg;
     private javax.swing.JPanel cardHolder;
     private javax.swing.JButton forgotPassButton;
@@ -442,6 +472,7 @@ public class loginSystem extends javax.swing.JFrame {
     private javax.swing.JLabel nameLabel;
     private javax.swing.JTextField nameText;
     private javax.swing.JPanel newConnPanel;
+    private javax.swing.JPasswordField passwordField;
     private javax.swing.JPanel registerPanel;
     private javax.swing.JButton requestButton;
     private javax.swing.JButton submitButton;
