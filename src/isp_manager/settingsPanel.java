@@ -276,7 +276,7 @@ public class settingsPanel extends javax.swing.JPanel {
         defaultPanelLayout.setVerticalGroup(
             defaultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(defaultPanelLayout.createSequentialGroup()
-                .addGap(111, 111, 111)
+                .addGap(59, 59, 59)
                 .addComponent(profilePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(changePassPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -286,7 +286,7 @@ public class settingsPanel extends javax.swing.JPanel {
                 .addComponent(removeAdminPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(deletePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addContainerGap(179, Short.MAX_VALUE))
         );
 
         settingsBG.add(defaultPanel, "card2");
@@ -298,6 +298,9 @@ public class settingsPanel extends javax.swing.JPanel {
         backLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         backLabel.setText("Back");
         backLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backLabelMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 backLabelMouseEntered(evt);
             }
@@ -409,7 +412,14 @@ public class settingsPanel extends javax.swing.JPanel {
 
     private void changePassLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_changePassLabelMouseClicked
         backLabel.setForeground(new java.awt.Color(38,38,38));
+        backLabel.setText("Back");
         backLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/back.png")));
+        backActive = true;
+        tempPanel = new passChangeAdmin();
+        settingsBG.removeAll();
+        settingsBG.add(tempPanel);
+        repaint();
+        revalidate();
     }//GEN-LAST:event_changePassLabelMouseClicked
 
     private void profileLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profileLabelMouseEntered
@@ -438,8 +448,22 @@ public class settingsPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_backLabelMouseEntered
 
     private void backLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseExited
-        backPanel.setBackground(new java.awt.Color(44,44,44));
+        if(backActive)
+            backPanel.setBackground(new java.awt.Color(44,44,44));
     }//GEN-LAST:event_backLabelMouseExited
+
+    private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
+        if(backActive)  {
+        settingsBG.removeAll();
+        settingsBG.add(defaultPanel);
+        repaint();
+        revalidate();
+        backActive = false;
+        backPanel.setBackground(new java.awt.Color(44,44,44));
+        backLabel.setIcon(null);
+        backLabel.setText("");
+        }
+    }//GEN-LAST:event_backLabelMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
