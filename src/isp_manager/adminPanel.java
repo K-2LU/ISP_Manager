@@ -777,131 +777,126 @@ public class adminPanel extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void settingsButtonMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_settingsButtonMouseClicked
-        // TODO add your handling code here:
+    private void settingsButtonMouseClicked(java.awt.event.MouseEvent evt) {
         custPanel = new settingsPanel();
         cardHolder.removeAll();
         cardHolder.add(custPanel);
         repaint();
         revalidate();
-    }// GEN-LAST:event_settingsButtonMouseClicked
+    }
 
-    private void customerButtonMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_customerButtonMouseClicked
-        // TODO add your handling code here:
+    private void customerButtonMouseClicked(java.awt.event.MouseEvent evt) {
         custPanel = new customerPanel();
         cardHolder.removeAll();
         cardHolder.add(custPanel);
         repaint();
         revalidate();
-    }// GEN-LAST:event_customerButtonMouseClicked
+    }
 
-    private void staffButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_staffButtonActionPerformed
-        // TODO add your handling code here:
-    }// GEN-LAST:event_staffButtonActionPerformed
+    private void staffButtonActionPerformed(java.awt.event.ActionEvent evt) {
+    }
 
-    private void dashBoardButtonMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_dashBoardButtonMouseEntered
+    private void dashBoardButtonMouseEntered(java.awt.event.MouseEvent evt) {
         dashBoardBG.setBackground(new java.awt.Color(33, 33, 33));
-    }// GEN-LAST:event_dashBoardButtonMouseEntered
+    }
 
-    private void dashBoardButtonMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_dashBoardButtonMouseExited
+    private void dashBoardButtonMouseExited(java.awt.event.MouseEvent evt) {
         dashBoardBG.setBackground(new java.awt.Color(44, 44, 44));
-    }// GEN-LAST:event_dashBoardButtonMouseExited
+    }
 
-    private void homeButtonMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_homeButtonMouseEntered
+    private void homeButtonMouseEntered(java.awt.event.MouseEvent evt) {
         homeBG.setBackground(new java.awt.Color(33, 33, 33));
-    }// GEN-LAST:event_homeButtonMouseEntered
+    }
 
-    private void homeButtonMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_homeButtonMouseExited
+    private void homeButtonMouseExited(java.awt.event.MouseEvent evt) {
         homeBG.setBackground(new java.awt.Color(44, 44, 44));
-    }// GEN-LAST:event_homeButtonMouseExited
+    }
 
-    private void customerButtonMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_customerButtonMouseEntered
+    private void customerButtonMouseEntered(java.awt.event.MouseEvent evt) {
         customerBG.setBackground(new java.awt.Color(33, 33, 33));
-    }// GEN-LAST:event_customerButtonMouseEntered
+    }
 
-    private void customerButtonMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_customerButtonMouseExited
+    private void customerButtonMouseExited(java.awt.event.MouseEvent evt) {
         customerBG.setBackground(new java.awt.Color(44, 44, 44));
-    }// GEN-LAST:event_customerButtonMouseExited
+    }
 
-    private void staffButtonMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_staffButtonMouseEntered
+    private void staffButtonMouseEntered(java.awt.event.MouseEvent evt) {
         staffBG.setBackground(new java.awt.Color(33, 33, 33));
-    }// GEN-LAST:event_staffButtonMouseEntered
+    }
 
-    private void staffButtonMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_staffButtonMouseExited
+    private void staffButtonMouseExited(java.awt.event.MouseEvent evt) {
         staffBG.setBackground(new java.awt.Color(44, 44, 44));
-    }// GEN-LAST:event_staffButtonMouseExited
+    }
 
-    private void reportsButtonMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_reportsButtonMouseEntered
+    private void reportsButtonMouseEntered(java.awt.event.MouseEvent evt) {
         reportsBG.setBackground(new java.awt.Color(33, 33, 33));
-    }// GEN-LAST:event_reportsButtonMouseEntered
+    }
 
-    private void reportsButtonMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_reportsButtonMouseExited
+    private void reportsButtonMouseExited(java.awt.event.MouseEvent evt) {
         reportsBG.setBackground(new java.awt.Color(44, 44, 44));
-    }// GEN-LAST:event_reportsButtonMouseExited
+    }
 
-    private void settingsButtonMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_settingsButtonMouseEntered
+    private void settingsButtonMouseEntered(java.awt.event.MouseEvent evt) {
         settingsBG.setBackground(new java.awt.Color(33, 33, 33));
-    }// GEN-LAST:event_settingsButtonMouseEntered
+    }
 
-    private void settingsButtonMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_settingsButtonMouseExited
+    private void settingsButtonMouseExited(java.awt.event.MouseEvent evt) {
         settingsBG.setBackground(new java.awt.Color(44, 44, 44));
-    }// GEN-LAST:event_settingsButtonMouseExited
+    }
 
-    private void logOutButtonMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_logOutButtonMouseEntered
+    private void logOutButtonMouseEntered(java.awt.event.MouseEvent evt) {
         logOutBG.setBackground(new java.awt.Color(33, 33, 33));
-    }// GEN-LAST:event_logOutButtonMouseEntered
+    }
 
-    private void logOutButtonMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_logOutButtonMouseExited
+    private void logOutButtonMouseExited(java.awt.event.MouseEvent evt) {
         logOutBG.setBackground(new java.awt.Color(44, 44, 44));
-    }// GEN-LAST:event_logOutButtonMouseExited
+    }
 
-    private void dashBoardButtonMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_dashBoardButtonMouseClicked
+    private void dashBoardButtonMouseClicked(java.awt.event.MouseEvent evt) {
         cardHolder.removeAll();
         cardHolder.add(dashboardPanel);
         repaint();
         revalidate();
-    }// GEN-LAST:event_dashBoardButtonMouseClicked
+    }
 
-    private void homeButtonMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_homeButtonMouseClicked
-        // TODO add your handling code here:
+    private void homeButtonMouseClicked(java.awt.event.MouseEvent evt) {
         cardHolder.removeAll();
         cardHolder.add(HomePanel);
         repaint();
         revalidate();
-    }// GEN-LAST:event_homeButtonMouseClicked
+    }
 
-    private void staffButtonMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_staffButtonMouseClicked
+    private void staffButtonMouseClicked(java.awt.event.MouseEvent evt) {
         stffPanel = new staffPanel();
         cardHolder.removeAll();
         cardHolder.add(stffPanel);
         repaint();
         revalidate();
 
-    }// GEN-LAST:event_staffButtonMouseClicked
+    }
 
-    private void reportsButtonMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_reportsButtonMouseClicked
+    private void reportsButtonMouseClicked(java.awt.event.MouseEvent evt) {
         rprtPanel = new reportPanel();
         cardHolder.removeAll();
         cardHolder.add(rprtPanel);
         repaint();
         revalidate();
 
-    }// GEN-LAST:event_reportsButtonMouseClicked
+    }
 
-    private void supportButtonMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_supportButtonMouseClicked
+    private void supportButtonMouseClicked(java.awt.event.MouseEvent evt) {
         suppPanel = new settingsPanel();
         cardHolder.removeAll();
         cardHolder.add(suppPanel);
         repaint();
         revalidate();
 
-    }// GEN-LAST:event_supportButtonMouseClicked
+    }
 
-    private void logOutButtonMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_logOutButtonMouseClicked
-        // TODO add your handling code here:
+    private void logOutButtonMouseClicked(java.awt.event.MouseEvent evt) {
         new loginSystem().setVisible(true);
         this.dispose();
-    }// GEN-LAST:event_logOutButtonMouseClicked
+    }
 
     private void addUserTopButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_addUserTopButtonActionPerformed
     }

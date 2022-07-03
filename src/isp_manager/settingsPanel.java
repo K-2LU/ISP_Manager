@@ -99,8 +99,14 @@ public class settingsPanel extends javax.swing.JPanel {
         remAdminButton.setForeground(new java.awt.Color(204, 204, 204));
         remAdminButton.setText("Remove an admin");
         remAdminButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                remAdminButtonMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 remAdminButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                remAdminButtonMouseExited(evt);
             }
         });
 
@@ -143,8 +149,14 @@ public class settingsPanel extends javax.swing.JPanel {
         addAdminButton.setForeground(new java.awt.Color(204, 204, 204));
         addAdminButton.setText("Add new admin");
         addAdminButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addAdminButtonMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 addAdminButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                addAdminButtonMouseExited(evt);
             }
         });
 
@@ -191,6 +203,9 @@ public class settingsPanel extends javax.swing.JPanel {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 changePassLabelMouseEntered(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                changePassLabelMouseExited(evt);
+            }
         });
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/password.png"))); // NOI18N
@@ -231,8 +246,14 @@ public class settingsPanel extends javax.swing.JPanel {
         deletionPanel.setForeground(new java.awt.Color(204, 204, 204));
         deletionPanel.setText("Delete your account");
         deletionPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deletionPanelMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 deletionPanelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                deletionPanelMouseExited(evt);
             }
         });
 
@@ -380,7 +401,7 @@ public class settingsPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_deletePanelMouseExited
 
     private void deletePanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deletePanelMouseEntered
-        deletePanel.setBackground(new java.awt.Color(90,0,0));
+        deletePanel.setBackground(new java.awt.Color(38,38,38));
     }//GEN-LAST:event_deletePanelMouseEntered
 
     private void removeAdminPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeAdminPanelMouseExited
@@ -454,16 +475,75 @@ public class settingsPanel extends javax.swing.JPanel {
 
     private void backLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseClicked
         if(backActive)  {
-        settingsBG.removeAll();
-        settingsBG.add(defaultPanel);
-        repaint();
-        revalidate();
-        backActive = false;
-        backPanel.setBackground(new java.awt.Color(44,44,44));
-        backLabel.setIcon(null);
-        backLabel.setText("");
+            settingsBG.removeAll();
+            settingsBG.add(defaultPanel);
+            repaint();
+            revalidate();
+            
+            backActive = false;
+            backPanel.setBackground(new java.awt.Color(44,44,44));
+            backLabel.setIcon(null);
+            backLabel.setText("");
+            
+            profilePanel.setBackground(new java.awt.Color(44,44,44));
+            changePassPanel.setBackground(new java.awt.Color(44,44,44));
+            addAdminPanel.setBackground(new java.awt.Color(44,44,44));
+            removeAdminPanel.setBackground(new java.awt.Color(44,44,44));
+            deletePanel.setBackground(new java.awt.Color(44,44,44));
         }
     }//GEN-LAST:event_backLabelMouseClicked
+
+    private void addAdminButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addAdminButtonMouseClicked
+        backLabel.setForeground(new java.awt.Color(204,204,204));
+        backLabel.setText("Back");
+        backLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/back.png")));
+        backActive = true;
+        tempPanel = new addAdmin();
+        settingsBG.removeAll();
+        settingsBG.add(tempPanel);
+        repaint();
+        revalidate();
+    }//GEN-LAST:event_addAdminButtonMouseClicked
+
+    private void addAdminButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addAdminButtonMouseExited
+        addAdminPanel.setBackground(new java.awt.Color(44,44,44));
+    }//GEN-LAST:event_addAdminButtonMouseExited
+
+    private void remAdminButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_remAdminButtonMouseExited
+        removeAdminPanel.setBackground(new java.awt.Color(44,44,44));
+    }//GEN-LAST:event_remAdminButtonMouseExited
+
+    private void deletionPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deletionPanelMouseExited
+        deletePanel.setBackground(new java.awt.Color(44,44,44));
+    }//GEN-LAST:event_deletionPanelMouseExited
+
+    private void changePassLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_changePassLabelMouseExited
+        changePassPanel.setBackground(new java.awt.Color(44,44,44));
+    }//GEN-LAST:event_changePassLabelMouseExited
+
+    private void remAdminButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_remAdminButtonMouseClicked
+        backLabel.setForeground(new java.awt.Color(204,204,204));
+        backLabel.setText("Back");
+        backLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/back.png")));
+        backActive = true;
+        tempPanel = new removeAdmin();
+        settingsBG.removeAll();
+        settingsBG.add(tempPanel);
+        repaint();
+        revalidate();
+    }//GEN-LAST:event_remAdminButtonMouseClicked
+
+    private void deletionPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deletionPanelMouseClicked
+        backLabel.setForeground(new java.awt.Color(204,204,204));
+        backLabel.setText("Back");
+        backLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/back.png")));
+        backActive = true;
+        tempPanel = new deleteAdminAccount();
+        settingsBG.removeAll();
+        settingsBG.add(tempPanel);
+        repaint();
+        revalidate();
+    }//GEN-LAST:event_deletionPanelMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

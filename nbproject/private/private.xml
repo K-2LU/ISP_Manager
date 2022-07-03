@@ -3,14 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/Jva/ISP_Manager/src/isp_manager/packagePanel.java</file>
-            <file>file:/F:/Jva/ISP_Manager/src/isp_manager/removeCustomer.java</file>
             <file>file:/F:/Jva/ISP_Manager/src/isp_manager/adminProfile.java</file>
-            <file>file:/F:/Jva/ISP_Manager/src/isp_manager/removeStaff.java</file>
+            <file>file:/F:/Jva/ISP_Manager/src/isp_manager/addAdmin.java</file>
+            <file>file:/F:/Jva/ISP_Manager/src/isp_manager/deleteAdminAccount.java</file>
             <file>file:/F:/Jva/ISP_Manager/src/isp_manager/adminPanel.java</file>
-            <file>file:/F:/Jva/ISP_Manager/src/isp_manager/customerPanel.java</file>
             <file>file:/F:/Jva/ISP_Manager/src/isp_manager/settingsPanel.java</file>
-            <file>file:/F:/Jva/ISP_Manager/src/isp_manager/staffPanel.java</file>
+            <file>file:/F:/Jva/ISP_Manager/src/isp_manager/removeAdmin.java</file>
         </group>
     </open-files>
 </project-private>
