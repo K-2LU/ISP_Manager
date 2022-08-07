@@ -16,7 +16,8 @@ public class staffUserPanel extends javax.swing.JFrame {
         homeBG = new javax.swing.JPanel();
         homeButton = new javax.swing.JLabel();
         billBG = new javax.swing.JPanel();
-        billButton = new javax.swing.JLabel();
+        settingsBG = new javax.swing.JPanel();
+        settingsButton = new javax.swing.JLabel();
         cardBG = new javax.swing.JPanel();
         holder = new javax.swing.JPanel();
         homePanel = new javax.swing.JPanel();
@@ -38,16 +39,6 @@ public class staffUserPanel extends javax.swing.JFrame {
         customerPhoto = new javax.swing.JLabel();
         pack1 = new javax.swing.JLabel();
         text7 = new javax.swing.JLabel();
-        billPanel = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        payConfirmBG = new javax.swing.JPanel();
-        confirmPay = new javax.swing.JLabel();
-        creditTotal = new javax.swing.JLabel();
-        billTotal = new javax.swing.JLabel();
-        passwordBill = new javax.swing.JPasswordField();
         settingsPanel = new javax.swing.JPanel();
         setPassBG = new javax.swing.JPanel();
         passChange = new javax.swing.JLabel();
@@ -67,8 +58,6 @@ public class staffUserPanel extends javax.swing.JFrame {
         cancellPass = new javax.swing.JLabel();
         logOutBG = new javax.swing.JPanel();
         logOutButton = new javax.swing.JLabel();
-        settingsBG = new javax.swing.JPanel();
-        settingsButton = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -130,34 +119,50 @@ public class staffUserPanel extends javax.swing.JFrame {
 
         billBG.setBackground(new java.awt.Color(44, 44, 44));
 
-        billButton.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
-        billButton.setForeground(new java.awt.Color(204, 204, 204));
-        billButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/money.png"))); // NOI18N
-        billButton.setText("Pay Bill");
-        billButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        settingsBG.setBackground(new java.awt.Color(44, 44, 44));
+
+        settingsButton.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        settingsButton.setForeground(new java.awt.Color(204, 204, 204));
+        settingsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/setting.png"))); // NOI18N
+        settingsButton.setText("Settings");
+        settingsButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                billButtonMouseClicked(evt);
+                settingsButtonMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                billButtonMouseEntered(evt);
+                settingsButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                billButtonMouseExited(evt);
+                settingsButtonMouseExited(evt);
             }
         });
+
+        javax.swing.GroupLayout settingsBGLayout = new javax.swing.GroupLayout(settingsBG);
+        settingsBG.setLayout(settingsBGLayout);
+        settingsBGLayout.setHorizontalGroup(
+            settingsBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(settingsBGLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(settingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        settingsBGLayout.setVerticalGroup(
+            settingsBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(settingsButton, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout billBGLayout = new javax.swing.GroupLayout(billBG);
         billBG.setLayout(billBGLayout);
         billBGLayout.setHorizontalGroup(
             billBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(billBGLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(billButton, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(settingsBG, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         billBGLayout.setVerticalGroup(
             billBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(billButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+            .addGroup(billBGLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(settingsBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         cardBG.setBackground(new java.awt.Color(44, 44, 44));
@@ -215,7 +220,7 @@ public class staffUserPanel extends javax.swing.JFrame {
 
         pack.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         pack.setForeground(new java.awt.Color(204, 204, 204));
-        pack.setText("(staff rolehere)");
+        pack.setText("(staff role here)");
 
         mail.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         mail.setForeground(new java.awt.Color(204, 204, 204));
@@ -249,11 +254,11 @@ public class staffUserPanel extends javax.swing.JFrame {
 
         pack1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         pack1.setForeground(new java.awt.Color(204, 204, 204));
-        pack1.setText("(package status here)");
+        pack1.setText("(staff salary here)");
 
         text7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         text7.setForeground(new java.awt.Color(204, 204, 204));
-        text7.setText("Package :");
+        text7.setText("Salary :");
 
         javax.swing.GroupLayout homePanelLayout = new javax.swing.GroupLayout(homePanel);
         homePanel.setLayout(homePanelLayout);
@@ -344,125 +349,6 @@ public class staffUserPanel extends javax.swing.JFrame {
         );
 
         holder.add(homePanel, "card4");
-
-        billPanel.setBackground(new java.awt.Color(44, 44, 44));
-
-        jLabel2.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel2.setText("Pay Bill");
-
-        jLabel4.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel4.setText("Bill :");
-
-        jLabel9.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel9.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel9.setText("Enter Password :");
-
-        jLabel10.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel10.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel10.setText("Total credit :");
-
-        payConfirmBG.setBackground(new java.awt.Color(10, 125, 55));
-
-        confirmPay.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
-        confirmPay.setForeground(new java.awt.Color(204, 204, 204));
-        confirmPay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        confirmPay.setText("Confirm");
-        confirmPay.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                confirmPayMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                confirmPayMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                confirmPayMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout payConfirmBGLayout = new javax.swing.GroupLayout(payConfirmBG);
-        payConfirmBG.setLayout(payConfirmBGLayout);
-        payConfirmBGLayout.setHorizontalGroup(
-            payConfirmBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(confirmPay, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
-        );
-        payConfirmBGLayout.setVerticalGroup(
-            payConfirmBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(payConfirmBGLayout.createSequentialGroup()
-                .addComponent(confirmPay, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        creditTotal.setBackground(new java.awt.Color(204, 204, 204));
-        creditTotal.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        creditTotal.setForeground(new java.awt.Color(204, 204, 204));
-        creditTotal.setText("total credit here");
-
-        billTotal.setBackground(new java.awt.Color(204, 204, 204));
-        billTotal.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        billTotal.setForeground(new java.awt.Color(204, 204, 204));
-        billTotal.setText("(bill here)");
-
-        passwordBill.setBackground(new java.awt.Color(44, 44, 44));
-        passwordBill.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        passwordBill.setForeground(new java.awt.Color(204, 204, 204));
-        passwordBill.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51), 2));
-
-        javax.swing.GroupLayout billPanelLayout = new javax.swing.GroupLayout(billPanel);
-        billPanel.setLayout(billPanelLayout);
-        billPanelLayout.setHorizontalGroup(
-            billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, billPanelLayout.createSequentialGroup()
-                .addContainerGap(442, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(382, 382, 382))
-            .addGroup(billPanelLayout.createSequentialGroup()
-                .addGroup(billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(billPanelLayout.createSequentialGroup()
-                        .addGap(345, 345, 345)
-                        .addComponent(payConfirmBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(billPanelLayout.createSequentialGroup()
-                        .addGap(159, 159, 159)
-                        .addGroup(billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(99, 99, 99)
-                        .addGroup(billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(creditTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(billTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(passwordBill, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        billPanelLayout.setVerticalGroup(
-            billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(billPanelLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jLabel2)
-                .addGap(102, 102, 102)
-                .addGroup(billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(creditTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(billTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addGroup(billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                    .addComponent(passwordBill))
-                .addGap(35, 35, 35)
-                .addComponent(payConfirmBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(299, Short.MAX_VALUE))
-        );
-
-        holder.add(billPanel, "card3");
 
         settingsPanel.setBackground(new java.awt.Color(44, 44, 44));
 
@@ -747,38 +633,6 @@ public class staffUserPanel extends javax.swing.JFrame {
             .addComponent(logOutButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
         );
 
-        settingsBG.setBackground(new java.awt.Color(44, 44, 44));
-
-        settingsButton.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
-        settingsButton.setForeground(new java.awt.Color(204, 204, 204));
-        settingsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/setting.png"))); // NOI18N
-        settingsButton.setText("Settings");
-        settingsButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                settingsButtonMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                settingsButtonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                settingsButtonMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout settingsBGLayout = new javax.swing.GroupLayout(settingsBG);
-        settingsBG.setLayout(settingsBGLayout);
-        settingsBGLayout.setHorizontalGroup(
-            settingsBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(settingsBGLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(settingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        settingsBGLayout.setVerticalGroup(
-            settingsBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(settingsButton, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
-        );
-
         javax.swing.GroupLayout BG3Layout = new javax.swing.GroupLayout(BG3);
         BG3.setLayout(BG3Layout);
         BG3Layout.setHorizontalGroup(
@@ -789,8 +643,7 @@ public class staffUserPanel extends javax.swing.JFrame {
                 .addGroup(BG3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(homeBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(billBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(logOutBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(settingsBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(logOutBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(cardBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -809,8 +662,6 @@ public class staffUserPanel extends javax.swing.JFrame {
                         .addComponent(homeBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(billBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(settingsBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(logOutBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(21, 21, 21))))
@@ -847,33 +698,6 @@ public class staffUserPanel extends javax.swing.JFrame {
     private void homeButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeButtonMouseExited
         homeBG.setBackground(new java.awt.Color(44,44,44));
     }//GEN-LAST:event_homeButtonMouseExited
-
-    private void billButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_billButtonMouseClicked
-        holder.removeAll();
-        holder.add(billPanel);
-        repaint();
-        revalidate();
-    }//GEN-LAST:event_billButtonMouseClicked
-
-    private void billButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_billButtonMouseEntered
-        billBG.setBackground(new java.awt.Color(51,51,51));
-    }//GEN-LAST:event_billButtonMouseEntered
-
-    private void billButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_billButtonMouseExited
-        billBG.setBackground(new java.awt.Color(44,44,44));
-    }//GEN-LAST:event_billButtonMouseExited
-
-    private void confirmPayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmPayMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_confirmPayMouseClicked
-
-    private void confirmPayMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmPayMouseEntered
-        payConfirmBG.setBackground(new java.awt.Color(10,137,70));
-    }//GEN-LAST:event_confirmPayMouseEntered
-
-    private void confirmPayMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmPayMouseExited
-        payConfirmBG.setBackground(new java.awt.Color(10,125,55));
-    }//GEN-LAST:event_confirmPayMouseExited
 
     private void passChangeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passChangeMouseClicked
         settingsHolder.removeAll();
@@ -960,17 +784,12 @@ public class staffUserPanel extends javax.swing.JFrame {
     private javax.swing.JPanel BG2;
     private javax.swing.JPanel BG3;
     private javax.swing.JPanel billBG;
-    private javax.swing.JLabel billButton;
-    private javax.swing.JPanel billPanel;
-    private javax.swing.JLabel billTotal;
     private javax.swing.JPanel cancelPassBG;
     private javax.swing.JLabel cancellPass;
     private javax.swing.JPanel cardBG;
     private javax.swing.JLabel confirmPass;
     private javax.swing.JPanel confirmPassBG;
-    private javax.swing.JLabel confirmPay;
     private javax.swing.JLabel contNo;
-    private javax.swing.JLabel creditTotal;
     private javax.swing.JPasswordField currentPass;
     private javax.swing.JLabel customerPhoto;
     private javax.swing.JPanel defPanel;
@@ -978,17 +797,13 @@ public class staffUserPanel extends javax.swing.JFrame {
     private javax.swing.JPanel homeBG;
     private javax.swing.JLabel homeButton;
     private javax.swing.JPanel homePanel;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel logOutBG;
     private javax.swing.JLabel logOutButton;
@@ -1000,8 +815,6 @@ public class staffUserPanel extends javax.swing.JFrame {
     private javax.swing.JLabel pack1;
     private javax.swing.JLabel passChange;
     private javax.swing.JPanel passChanger;
-    private javax.swing.JPasswordField passwordBill;
-    private javax.swing.JPanel payConfirmBG;
     private javax.swing.JPanel setPassBG;
     private javax.swing.JPanel settingsBG;
     private javax.swing.JLabel settingsButton;
