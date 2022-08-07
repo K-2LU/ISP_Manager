@@ -153,6 +153,11 @@ public class adminPanel extends javax.swing.JFrame {
                 homeButtonMouseExited(evt);
             }
         });
+        homeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeButtonActionPerformed(evt);
+            }
+        });
 
         homeIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/home.png"))); // NOI18N
 
@@ -776,6 +781,10 @@ public class adminPanel extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_homeButtonActionPerformed
 
     private void settingsButtonMouseClicked(java.awt.event.MouseEvent evt) {
         custPanel = new settingsPanel();
