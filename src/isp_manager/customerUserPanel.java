@@ -18,8 +18,6 @@ public class customerUserPanel extends javax.swing.JFrame {
         homeButton = new javax.swing.JLabel();
         billBG = new javax.swing.JPanel();
         billButton = new javax.swing.JLabel();
-        planBG = new javax.swing.JPanel();
-        planButton = new javax.swing.JLabel();
         cardBG = new javax.swing.JPanel();
         holder = new javax.swing.JPanel();
         homePanel = new javax.swing.JPanel();
@@ -41,8 +39,31 @@ public class customerUserPanel extends javax.swing.JFrame {
         customerPhoto = new javax.swing.JLabel();
         billPanel = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        planPanel = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        payConfirmBG = new javax.swing.JPanel();
+        confirmPay = new javax.swing.JLabel();
+        creditTotal = new javax.swing.JLabel();
+        billTotal = new javax.swing.JLabel();
+        passwordBill = new javax.swing.JPasswordField();
+        settingsPanel = new javax.swing.JPanel();
+        setPassBG = new javax.swing.JPanel();
+        passChange = new javax.swing.JLabel();
+        settingsCardHolder = new javax.swing.JPanel();
+        settingsHolder = new javax.swing.JPanel();
+        defPanel = new javax.swing.JPanel();
+        passChanger = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        currentPass = new javax.swing.JPasswordField();
+        newPass = new javax.swing.JPasswordField();
+        newPass1 = new javax.swing.JPasswordField();
+        confirmPassBG = new javax.swing.JPanel();
+        confirmPass = new javax.swing.JLabel();
+        cancelPassBG = new javax.swing.JPanel();
+        cancellPass = new javax.swing.JLabel();
         logOutBG = new javax.swing.JPanel();
         logOutButton = new javax.swing.JLabel();
         settingsBG = new javax.swing.JPanel();
@@ -136,38 +157,6 @@ public class customerUserPanel extends javax.swing.JFrame {
         billBGLayout.setVerticalGroup(
             billBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(billButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
-        );
-
-        planBG.setBackground(new java.awt.Color(44, 44, 44));
-
-        planButton.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
-        planButton.setForeground(new java.awt.Color(204, 204, 204));
-        planButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/speedometer.png"))); // NOI18N
-        planButton.setText("Change Plan");
-        planButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                planButtonMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                planButtonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                planButtonMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout planBGLayout = new javax.swing.GroupLayout(planBG);
-        planBG.setLayout(planBGLayout);
-        planBGLayout.setHorizontalGroup(
-            planBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(planBGLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(planButton, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
-        planBGLayout.setVerticalGroup(
-            planBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(planButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
         );
 
         cardBG.setBackground(new java.awt.Color(44, 44, 44));
@@ -340,50 +329,355 @@ public class customerUserPanel extends javax.swing.JFrame {
         billPanel.setBackground(new java.awt.Color(44, 44, 44));
 
         jLabel2.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setText("Pay Bill");
+
+        jLabel4.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel4.setText("Bill :");
+
+        jLabel6.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel6.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel6.setText("Enter Password :");
+
+        jLabel7.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel7.setText("Total credit :");
+
+        payConfirmBG.setBackground(new java.awt.Color(10, 125, 55));
+
+        confirmPay.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
+        confirmPay.setForeground(new java.awt.Color(204, 204, 204));
+        confirmPay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        confirmPay.setText("Confirm");
+        confirmPay.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                confirmPayMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                confirmPayMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                confirmPayMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout payConfirmBGLayout = new javax.swing.GroupLayout(payConfirmBG);
+        payConfirmBG.setLayout(payConfirmBGLayout);
+        payConfirmBGLayout.setHorizontalGroup(
+            payConfirmBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(confirmPay, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
+        );
+        payConfirmBGLayout.setVerticalGroup(
+            payConfirmBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(payConfirmBGLayout.createSequentialGroup()
+                .addComponent(confirmPay, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        creditTotal.setBackground(new java.awt.Color(204, 204, 204));
+        creditTotal.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        creditTotal.setForeground(new java.awt.Color(204, 204, 204));
+        creditTotal.setText("total credit here");
+
+        billTotal.setBackground(new java.awt.Color(204, 204, 204));
+        billTotal.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        billTotal.setForeground(new java.awt.Color(204, 204, 204));
+        billTotal.setText("(bill here)");
+
+        passwordBill.setBackground(new java.awt.Color(44, 44, 44));
+        passwordBill.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        passwordBill.setForeground(new java.awt.Color(204, 204, 204));
+        passwordBill.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51), 2));
 
         javax.swing.GroupLayout billPanelLayout = new javax.swing.GroupLayout(billPanel);
         billPanel.setLayout(billPanelLayout);
         billPanelLayout.setHorizontalGroup(
             billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(billPanelLayout.createSequentialGroup()
-                .addGap(455, 455, 455)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, billPanelLayout.createSequentialGroup()
+                .addContainerGap(442, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(369, Short.MAX_VALUE))
+                .addGap(382, 382, 382))
+            .addGroup(billPanelLayout.createSequentialGroup()
+                .addGroup(billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(billPanelLayout.createSequentialGroup()
+                        .addGap(345, 345, 345)
+                        .addComponent(payConfirmBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(billPanelLayout.createSequentialGroup()
+                        .addGap(159, 159, 159)
+                        .addGroup(billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(99, 99, 99)
+                        .addGroup(billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(creditTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(billTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(passwordBill, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         billPanelLayout.setVerticalGroup(
             billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(billPanelLayout.createSequentialGroup()
-                .addGap(99, 99, 99)
+                .addGap(32, 32, 32)
                 .addComponent(jLabel2)
-                .addContainerGap(560, Short.MAX_VALUE))
+                .addGap(102, 102, 102)
+                .addGroup(billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(creditTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(billTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                    .addComponent(passwordBill))
+                .addGap(35, 35, 35)
+                .addComponent(payConfirmBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(299, Short.MAX_VALUE))
         );
 
         holder.add(billPanel, "card3");
 
-        planPanel.setBackground(new java.awt.Color(44, 44, 44));
+        settingsPanel.setBackground(new java.awt.Color(44, 44, 44));
 
+        setPassBG.setBackground(new java.awt.Color(44, 44, 44));
+
+        passChange.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        passChange.setForeground(new java.awt.Color(204, 204, 204));
+        passChange.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        passChange.setText("Change Password");
+        passChange.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                passChangeMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                passChangeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                passChangeMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout setPassBGLayout = new javax.swing.GroupLayout(setPassBG);
+        setPassBG.setLayout(setPassBGLayout);
+        setPassBGLayout.setHorizontalGroup(
+            setPassBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(setPassBGLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(passChange, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        setPassBGLayout.setVerticalGroup(
+            setPassBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(passChange, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+        );
+
+        settingsCardHolder.setBackground(new java.awt.Color(44, 44, 44));
+
+        settingsHolder.setBackground(new java.awt.Color(44, 44, 44));
+        settingsHolder.setLayout(new java.awt.CardLayout());
+
+        defPanel.setBackground(new java.awt.Color(44, 44, 44));
+
+        javax.swing.GroupLayout defPanelLayout = new javax.swing.GroupLayout(defPanel);
+        defPanel.setLayout(defPanelLayout);
+        defPanelLayout.setHorizontalGroup(
+            defPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 683, Short.MAX_VALUE)
+        );
+        defPanelLayout.setVerticalGroup(
+            defPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 588, Short.MAX_VALUE)
+        );
+
+        settingsHolder.add(defPanel, "card3");
+
+        passChanger.setBackground(new java.awt.Color(44, 44, 44));
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel3.setText("Change Plan");
+        jLabel3.setText("Enter your current password :");
 
-        javax.swing.GroupLayout planPanelLayout = new javax.swing.GroupLayout(planPanel);
-        planPanel.setLayout(planPanelLayout);
-        planPanelLayout.setHorizontalGroup(
-            planPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(planPanelLayout.createSequentialGroup()
-                .addGap(456, 456, 456)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(464, Short.MAX_VALUE))
+        jLabel8.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel8.setText("Enter new password :");
+
+        jLabel9.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel9.setText("Re-type :");
+
+        currentPass.setBackground(new java.awt.Color(38, 38, 38));
+        currentPass.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        currentPass.setForeground(new java.awt.Color(204, 204, 204));
+        currentPass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51), 2));
+
+        newPass.setBackground(new java.awt.Color(38, 38, 38));
+        newPass.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        newPass.setForeground(new java.awt.Color(204, 204, 204));
+        newPass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51), 2));
+
+        newPass1.setBackground(new java.awt.Color(38, 38, 38));
+        newPass1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        newPass1.setForeground(new java.awt.Color(204, 204, 204));
+        newPass1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51), 2));
+
+        confirmPassBG.setBackground(new java.awt.Color(67, 88, 210));
+
+        confirmPass.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
+        confirmPass.setForeground(new java.awt.Color(204, 204, 204));
+        confirmPass.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        confirmPass.setText("Confirm");
+        confirmPass.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                confirmPassMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                confirmPassMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                confirmPassMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout confirmPassBGLayout = new javax.swing.GroupLayout(confirmPassBG);
+        confirmPassBG.setLayout(confirmPassBGLayout);
+        confirmPassBGLayout.setHorizontalGroup(
+            confirmPassBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(confirmPassBGLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(confirmPass, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                .addContainerGap())
         );
-        planPanelLayout.setVerticalGroup(
-            planPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(planPanelLayout.createSequentialGroup()
-                .addGap(145, 145, 145)
-                .addComponent(jLabel3)
-                .addContainerGap(514, Short.MAX_VALUE))
+        confirmPassBGLayout.setVerticalGroup(
+            confirmPassBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(confirmPass, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        holder.add(planPanel, "card4");
+        cancelPassBG.setBackground(new java.awt.Color(44, 44, 44));
+        cancelPassBG.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51), 2));
+
+        cancellPass.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
+        cancellPass.setForeground(new java.awt.Color(204, 204, 204));
+        cancellPass.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cancellPass.setText("Cancel");
+        cancellPass.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cancellPassMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cancellPassMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cancellPassMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout cancelPassBGLayout = new javax.swing.GroupLayout(cancelPassBG);
+        cancelPassBG.setLayout(cancelPassBGLayout);
+        cancelPassBGLayout.setHorizontalGroup(
+            cancelPassBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cancelPassBGLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cancellPass, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        cancelPassBGLayout.setVerticalGroup(
+            cancelPassBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(cancellPass, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout passChangerLayout = new javax.swing.GroupLayout(passChanger);
+        passChanger.setLayout(passChangerLayout);
+        passChangerLayout.setHorizontalGroup(
+            passChangerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(passChangerLayout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addGroup(passChangerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(confirmPassBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(passChangerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(currentPass, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(newPass, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(newPass1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cancelPassBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(106, Short.MAX_VALUE))
+        );
+        passChangerLayout.setVerticalGroup(
+            passChangerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(passChangerLayout.createSequentialGroup()
+                .addGap(107, 107, 107)
+                .addGroup(passChangerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(currentPass, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(21, 21, 21)
+                .addGroup(passChangerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(newPass, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addGap(18, 18, 18)
+                .addGroup(passChangerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(newPass1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
+                .addGap(90, 90, 90)
+                .addGroup(passChangerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(confirmPassBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cancelPassBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(202, Short.MAX_VALUE))
+        );
+
+        settingsHolder.add(passChanger, "card2");
+
+        javax.swing.GroupLayout settingsCardHolderLayout = new javax.swing.GroupLayout(settingsCardHolder);
+        settingsCardHolder.setLayout(settingsCardHolderLayout);
+        settingsCardHolderLayout.setHorizontalGroup(
+            settingsCardHolderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, settingsCardHolderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(settingsHolder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        settingsCardHolderLayout.setVerticalGroup(
+            settingsCardHolderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, settingsCardHolderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(settingsHolder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout settingsPanelLayout = new javax.swing.GroupLayout(settingsPanel);
+        settingsPanel.setLayout(settingsPanelLayout);
+        settingsPanelLayout.setHorizontalGroup(
+            settingsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(settingsPanelLayout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(setPassBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addComponent(settingsCardHolder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(34, Short.MAX_VALUE))
+        );
+        settingsPanelLayout.setVerticalGroup(
+            settingsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(settingsPanelLayout.createSequentialGroup()
+                .addGroup(settingsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(settingsPanelLayout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addComponent(setPassBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(settingsPanelLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(settingsCardHolder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+
+        holder.add(settingsPanel, "card5");
 
         javax.swing.GroupLayout cardBGLayout = new javax.swing.GroupLayout(cardBG);
         cardBG.setLayout(cardBGLayout);
@@ -441,6 +735,9 @@ public class customerUserPanel extends javax.swing.JFrame {
         settingsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/setting.png"))); // NOI18N
         settingsButton.setText("Settings");
         settingsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                settingsButtonMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 settingsButtonMouseEntered(evt);
             }
@@ -473,7 +770,6 @@ public class customerUserPanel extends javax.swing.JFrame {
                 .addGroup(BGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(homeBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(billBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(planBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(logOutBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(settingsBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
@@ -494,9 +790,7 @@ public class customerUserPanel extends javax.swing.JFrame {
                         .addComponent(homeBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(billBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(planBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(settingsBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(logOutBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -550,14 +844,6 @@ public class customerUserPanel extends javax.swing.JFrame {
         billBG.setBackground(new java.awt.Color(44,44,44));
     }//GEN-LAST:event_billButtonMouseExited
 
-    private void planButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_planButtonMouseEntered
-        planBG.setBackground(new java.awt.Color(51,51,51));
-    }//GEN-LAST:event_planButtonMouseEntered
-
-    private void planButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_planButtonMouseExited
-        planBG.setBackground(new java.awt.Color(44,44,44));
-    }//GEN-LAST:event_planButtonMouseExited
-
     private void logOutButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseEntered
         logOutBG.setBackground(new java.awt.Color(51,51,51));
     }//GEN-LAST:event_logOutButtonMouseEntered
@@ -565,13 +851,6 @@ public class customerUserPanel extends javax.swing.JFrame {
     private void logOutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseExited
         logOutBG.setBackground(new java.awt.Color(44,44,44));
     }//GEN-LAST:event_logOutButtonMouseExited
-
-    private void planButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_planButtonMouseClicked
-        holder.removeAll();
-        holder.add(planPanel);
-        repaint();
-        revalidate();
-    }//GEN-LAST:event_planButtonMouseClicked
 
     private void logOutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseClicked
         this.dispose();
@@ -585,6 +864,67 @@ public class customerUserPanel extends javax.swing.JFrame {
     private void settingsButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseExited
         settingsBG.setBackground(new java.awt.Color(44,44,44));
     }//GEN-LAST:event_settingsButtonMouseExited
+
+    private void confirmPayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmPayMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_confirmPayMouseClicked
+
+    private void confirmPayMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmPayMouseEntered
+        payConfirmBG.setBackground(new java.awt.Color(10,137,70));
+    }//GEN-LAST:event_confirmPayMouseEntered
+
+    private void confirmPayMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmPayMouseExited
+        payConfirmBG.setBackground(new java.awt.Color(10,125,55));
+    }//GEN-LAST:event_confirmPayMouseExited
+
+    private void confirmPassMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmPassMouseEntered
+        confirmPassBG.setBackground(new java.awt.Color(29,78, 168));
+    }//GEN-LAST:event_confirmPassMouseEntered
+
+    private void cancellPassMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancellPassMouseEntered
+        cancelPassBG.setBackground(new java.awt.Color(38,38,38));
+    }//GEN-LAST:event_cancellPassMouseEntered
+
+    private void cancellPassMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancellPassMouseExited
+        cancelPassBG.setBackground(new java.awt.Color(44,44,44));
+    }//GEN-LAST:event_cancellPassMouseExited
+
+    private void cancellPassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancellPassMouseClicked
+        settingsHolder.removeAll();
+        settingsHolder.add(defPanel);
+        repaint();
+        revalidate();
+    }//GEN-LAST:event_cancellPassMouseClicked
+
+    private void confirmPassMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmPassMouseExited
+        confirmPassBG.setBackground(new java.awt.Color(67,88,210));
+    }//GEN-LAST:event_confirmPassMouseExited
+
+    private void confirmPassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmPassMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_confirmPassMouseClicked
+
+    private void passChangeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passChangeMouseEntered
+        setPassBG.setBackground(new java.awt.Color(51,51,51));
+    }//GEN-LAST:event_passChangeMouseEntered
+
+    private void passChangeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passChangeMouseClicked
+        settingsHolder.removeAll();
+        settingsHolder.add(passChanger);
+        repaint();
+        revalidate();
+    }//GEN-LAST:event_passChangeMouseClicked
+
+    private void settingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseClicked
+        holder.removeAll();
+        holder.add(settingsPanel);
+        repaint();
+        revalidate();
+    }//GEN-LAST:event_settingsButtonMouseClicked
+
+    private void passChangeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passChangeMouseExited
+        setPassBG.setBackground(new java.awt.Color(44,44,44));
+    }//GEN-LAST:event_passChangeMouseExited
 
         private void payBillButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_payBillButtonActionPerformed
                 // TODO add your handling code here:
@@ -616,27 +956,48 @@ public class customerUserPanel extends javax.swing.JFrame {
     private javax.swing.JPanel billBG;
     private javax.swing.JLabel billButton;
     private javax.swing.JPanel billPanel;
+    private javax.swing.JLabel billTotal;
+    private javax.swing.JPanel cancelPassBG;
+    private javax.swing.JLabel cancellPass;
     private javax.swing.JPanel cardBG;
+    private javax.swing.JLabel confirmPass;
+    private javax.swing.JPanel confirmPassBG;
+    private javax.swing.JLabel confirmPay;
     private javax.swing.JLabel contNo;
+    private javax.swing.JLabel creditTotal;
+    private javax.swing.JPasswordField currentPass;
     private javax.swing.JLabel customerPhoto;
+    private javax.swing.JPanel defPanel;
     private javax.swing.JPanel holder;
     private javax.swing.JPanel homeBG;
     private javax.swing.JLabel homeButton;
     private javax.swing.JPanel homePanel;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel logOutBG;
     private javax.swing.JLabel logOutButton;
     private javax.swing.JLabel mail;
     private javax.swing.JLabel name;
+    private javax.swing.JPasswordField newPass;
+    private javax.swing.JPasswordField newPass1;
     private javax.swing.JLabel pack;
-    private javax.swing.JPanel planBG;
-    private javax.swing.JLabel planButton;
-    private javax.swing.JPanel planPanel;
+    private javax.swing.JLabel passChange;
+    private javax.swing.JPanel passChanger;
+    private javax.swing.JPasswordField passwordBill;
+    private javax.swing.JPanel payConfirmBG;
+    private javax.swing.JPanel setPassBG;
     private javax.swing.JPanel settingsBG;
     private javax.swing.JLabel settingsButton;
+    private javax.swing.JPanel settingsCardHolder;
+    private javax.swing.JPanel settingsHolder;
+    private javax.swing.JPanel settingsPanel;
     private javax.swing.JLabel stat;
     private javax.swing.JLabel text;
     private javax.swing.JLabel text1;

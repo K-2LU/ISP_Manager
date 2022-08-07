@@ -49,6 +49,7 @@ public class loginSystem extends javax.swing.JFrame {
         setResizable(false);
 
         bg.setBackground(new java.awt.Color(48, 48, 48));
+        bg.setForeground(new java.awt.Color(48, 48, 48));
 
         jSplitPane1.setBackground(new java.awt.Color(204, 204, 204));
         jSplitPane1.setBorder(null);

@@ -54,14 +54,8 @@ public class adminPanel extends javax.swing.JFrame {
         dashBoardPanelBG = new javax.swing.JPanel();
         topbarPanel = new javax.swing.JPanel();
         photoHolder = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        addUserTopButton = new javax.swing.JButton();
-        searchButton = new javax.swing.JButton();
-        listCustomerTopButton = new javax.swing.JButton();
-        notificationButtonTop = new javax.swing.JButton();
-        activeUsersTopButton = new javax.swing.JButton();
+        adminNameHolder = new javax.swing.JLabel();
         userNameLabel = new javax.swing.JLabel();
-        todoButton = new javax.swing.JButton();
         cardHolder = new javax.swing.JPanel();
         dashboardPanel = new javax.swing.JPanel();
         userStatusPanel = new javax.swing.JPanel();
@@ -454,35 +448,10 @@ public class adminPanel extends javax.swing.JFrame {
 
         photoHolder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/userImage_B10_2_100x101.png"))); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel1.setText("Generic Adminstrator");
-
-        addUserTopButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/add-user-32.png"))); // NOI18N
-        addUserTopButton.setBorder(null);
-        addUserTopButton.setContentAreaFilled(false);
-        addUserTopButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addUserTopButtonActionPerformed(evt);
-            }
-        });
-
-        searchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/3844432_magnifier_search_zoom_icon.png"))); // NOI18N
-        searchButton.setBorder(null);
-        searchButton.setContentAreaFilled(false);
-
-        listCustomerTopButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/clipboard.png"))); // NOI18N
-        listCustomerTopButton.setBorder(null);
-        listCustomerTopButton.setContentAreaFilled(false);
-
-        notificationButtonTop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/notification.png"))); // NOI18N
-        notificationButtonTop.setBorder(null);
-        notificationButtonTop.setContentAreaFilled(false);
-
-        activeUsersTopButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/group.png"))); // NOI18N
-        activeUsersTopButton.setBorder(null);
-        activeUsersTopButton.setContentAreaFilled(false);
+        adminNameHolder.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+        adminNameHolder.setForeground(new java.awt.Color(204, 204, 204));
+        adminNameHolder.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        adminNameHolder.setText("Generic Adminstrator");
 
         userNameLabel.setBackground(new java.awt.Color(0, 0, 0));
         userNameLabel.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
@@ -490,35 +459,16 @@ public class adminPanel extends javax.swing.JFrame {
         userNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         userNameLabel.setText("admin.generic");
 
-        todoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/to-do-list.png"))); // NOI18N
-        todoButton.setBorder(null);
-        todoButton.setContentAreaFilled(false);
-
         javax.swing.GroupLayout topbarPanelLayout = new javax.swing.GroupLayout(topbarPanel);
         topbarPanel.setLayout(topbarPanelLayout);
         topbarPanelLayout.setHorizontalGroup(
             topbarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topbarPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(topbarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topbarPanelLayout.createSequentialGroup()
-                        .addComponent(addUserTopButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(searchButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(listCustomerTopButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(activeUsersTopButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(notificationButtonTop)
-                        .addGap(18, 18, 18)
-                        .addComponent(todoButton)
-                        .addGap(204, 204, 204))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topbarPanelLayout.createSequentialGroup()
-                        .addGroup(topbarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(userNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addGap(0, 1041, Short.MAX_VALUE)
+                .addGroup(topbarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(userNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(adminNameHolder, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(photoHolder, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -529,18 +479,10 @@ public class adminPanel extends javax.swing.JFrame {
                 .addGroup(topbarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(photoHolder, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(topbarPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(adminNameHolder)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(userNameLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                        .addGroup(topbarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(activeUsersTopButton)
-                            .addComponent(searchButton)
-                            .addComponent(addUserTopButton)
-                            .addComponent(listCustomerTopButton)
-                            .addComponent(notificationButtonTop)
-                            .addComponent(todoButton))))
-                .addContainerGap(14, Short.MAX_VALUE))
+                        .addComponent(userNameLabel)))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         cardHolder.setBackground(new java.awt.Color(44, 44, 44));
@@ -946,8 +888,7 @@ public class adminPanel extends javax.swing.JFrame {
     private javax.swing.JLabel activeCountLabel;
     private javax.swing.JLabel activeStaffTextLabel;
     private javax.swing.JLabel activeTextLabel;
-    private javax.swing.JButton activeUsersTopButton;
-    private javax.swing.JButton addUserTopButton;
+    private javax.swing.JLabel adminNameHolder;
     private javax.swing.JPanel cardHolder;
     private javax.swing.JLabel custIcon;
     private javax.swing.JPanel customerBG;
@@ -960,7 +901,6 @@ public class adminPanel extends javax.swing.JFrame {
     private javax.swing.JPanel homeBG;
     private javax.swing.JButton homeButton;
     private javax.swing.JLabel homeIcon;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -968,20 +908,17 @@ public class adminPanel extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JPanel leftPanel;
-    private javax.swing.JButton listCustomerTopButton;
     private javax.swing.JLabel logIcon;
     private javax.swing.JPanel logOutBG;
     private javax.swing.JButton logOutButton;
     private javax.swing.JLabel logo;
     private javax.swing.JPanel logoPanel;
-    private javax.swing.JButton notificationButtonTop;
     private javax.swing.JLabel onLeaveTextLabel;
     private javax.swing.JLabel onlineCountLabel;
     private javax.swing.JLabel photoHolder;
     private javax.swing.JLabel reportIcon;
     private javax.swing.JPanel reportsBG;
     private javax.swing.JButton reportsButton;
-    private javax.swing.JButton searchButton;
     private javax.swing.JPanel settingsBG;
     private javax.swing.JButton settingsButton;
     private javax.swing.JLabel settingsIcon;
@@ -990,7 +927,6 @@ public class adminPanel extends javax.swing.JFrame {
     private javax.swing.JButton staffButton;
     private javax.swing.JLabel staffIcon;
     private javax.swing.JLabel staffLeaveCount;
-    private javax.swing.JButton todoButton;
     private javax.swing.JPanel topbarPanel;
     private javax.swing.JLabel userNameLabel;
     private javax.swing.JPanel userStatusPanel;
