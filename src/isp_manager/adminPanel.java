@@ -12,12 +12,14 @@ public class adminPanel extends javax.swing.JFrame {
     javax.swing.JPanel addCustOptPanel;
 
     CardLayout cards;
-
-    public adminPanel() {
+    String who;
+    public adminPanel(String id) {
         initComponents();
-
+        
+        who = id;
         cards = (CardLayout) (cardHolder.getLayout());
     }
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
@@ -853,7 +855,6 @@ public class adminPanel extends javax.swing.JFrame {
     }
 
     public static void main(String args[]) {
-
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -877,7 +878,7 @@ public class adminPanel extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new adminPanel().setVisible(true);
+//                new adminPanel().setVisible(true);
             }
         });
     }

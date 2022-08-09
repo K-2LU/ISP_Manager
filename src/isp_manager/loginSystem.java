@@ -537,27 +537,43 @@ public class loginSystem extends javax.swing.JFrame {
                 Class.forName("org.sqlite.JDBC");
                 // Driver available
                 Connection con = DriverManager.getConnection("jdbc:sqlite:isp_manager.db");
-                // established
-                // connection
+                // established connection
                 Statement stm = con.createStatement(); // statement created
-                ResultSet rs = stm.executeQuery("select * from admin"); // Query executed
+                
                 username = unameField.getText();
                 password = passwordField.getText();
-
-                while (rs.next()) {
-                        if (username.equals(rs.getString(3)) && password.equals(rs.getString(5))) {
+                char at = username.charAt(0);
+                if (at == 'a')  {
+                    ResultSet rs = stm.executeQuery("select * from admin"); // Query executed
+                    while (rs.next()) {
+                        if(username.equals(rs.getString(3)) && !password.equals(rs.getString(5)) )
+                        {
+                            loginFailedAlert.setText("Incorrect password!");
+                            loginFailedAlert.setForeground(new java.awt.Color(204,204,204));
+                        } else if (username.equals(rs.getString(3)) && password.equals(rs.getString(5))) {
                                 this.dispose();
-                                new adminPanel().setVisible(true);
-                        } else if (username.equals("customer") && password.equals("customer")) {
+                                new adminPanel(rs.getString(1)).setVisible(true);
+                        }
+                    }
+                }
+                   if(at == 'c')   {
+                        if (username.equals("customer") && password.equals("customer")) {
                                 this.dispose();
                                 new customerUserPanel().setVisible(true);
-                        } else if (username.equals("staff") && password.equals("staff")) {
+                        } 
+                    }
+                    
+                    else if (at == 's') {
+                        if (username.equals("staff") && password.equals("staff")) {
                                 this.dispose();
                                 new staffUserPanel().setVisible(true);
-                        } else {
+                        }
+                    }
+                    
+                    else {
                                 loginFailedAlert.setForeground(new java.awt.Color(204, 204, 204));
                         }
-                }
+                
         }// GEN-LAST:event_loginButtonMouseClicked
 
         private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_loginButtonActionPerformed
