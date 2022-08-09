@@ -51,10 +51,10 @@ public class customerPanel extends javax.swing.JPanel {
         emailLabel = new javax.swing.JLabel();
         packageLabel = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        addCustClick = new javax.swing.JPanel();
+        legalDocField = new javax.swing.JTextField();
+        addCustBG = new javax.swing.JPanel();
         adderButton = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        packageBox = new javax.swing.JComboBox<>();
         removeCustomerBG = new javax.swing.JPanel();
         removeIcon = new javax.swing.JLabel();
         removeCustomerButton = new javax.swing.JButton();
@@ -100,7 +100,7 @@ public class customerPanel extends javax.swing.JPanel {
                 .addComponent(addIcon)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(addCustomerButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
         addCustomerOptPanelLayout.setVerticalGroup(
             addCustomerOptPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,6 +232,17 @@ public class customerPanel extends javax.swing.JPanel {
         nameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         nameField.setText("Enter name");
         nameField.setBorder(null);
+        nameField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nameFieldMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                nameFieldMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                nameFieldMouseExited(evt);
+            }
+        });
 
         nameLabel.setBackground(new java.awt.Color(204, 204, 204));
         nameLabel.setForeground(new java.awt.Color(204, 204, 204));
@@ -243,6 +254,17 @@ public class customerPanel extends javax.swing.JPanel {
         addressField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         addressField.setText("Enter address");
         addressField.setBorder(null);
+        addressField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addressFieldMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                addressFieldMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                addressFieldMouseExited(evt);
+            }
+        });
 
         addressLabel.setBackground(new java.awt.Color(204, 204, 204));
         addressLabel.setForeground(new java.awt.Color(204, 204, 204));
@@ -254,6 +276,17 @@ public class customerPanel extends javax.swing.JPanel {
         phoneField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         phoneField.setText("Enter phone number");
         phoneField.setBorder(null);
+        phoneField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                phoneFieldMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                phoneFieldMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                phoneFieldMouseExited(evt);
+            }
+        });
 
         phoneLabel.setBackground(new java.awt.Color(204, 204, 204));
         phoneLabel.setForeground(new java.awt.Color(204, 204, 204));
@@ -265,6 +298,17 @@ public class customerPanel extends javax.swing.JPanel {
         emailField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         emailField.setText("Enter email address");
         emailField.setBorder(null);
+        emailField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                emailFieldMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                emailFieldMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                emailFieldMouseExited(evt);
+            }
+        });
 
         emailLabel.setBackground(new java.awt.Color(204, 204, 204));
         emailLabel.setForeground(new java.awt.Color(204, 204, 204));
@@ -278,41 +322,68 @@ public class customerPanel extends javax.swing.JPanel {
         jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setText("NID/Birth Certificate No.");
 
-        jTextField6.setBackground(new java.awt.Color(48, 48, 48));
-        jTextField6.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
-        jTextField6.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField6.setText("Legal document no.");
-        jTextField6.setBorder(null);
+        legalDocField.setBackground(new java.awt.Color(48, 48, 48));
+        legalDocField.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        legalDocField.setForeground(new java.awt.Color(204, 204, 204));
+        legalDocField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        legalDocField.setText("Legal document no.");
+        legalDocField.setBorder(null);
+        legalDocField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                legalDocFieldMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                legalDocFieldMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                legalDocFieldMouseExited(evt);
+            }
+        });
 
-        addCustClick.setBackground(new java.awt.Color(10, 137, 70));
+        addCustBG.setBackground(new java.awt.Color(10, 137, 70));
 
         adderButton.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
         adderButton.setForeground(new java.awt.Color(204, 204, 204));
         adderButton.setText("Add Customer");
         adderButton.setBorder(null);
         adderButton.setContentAreaFilled(false);
+        adderButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                adderButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                adderButtonMouseExited(evt);
+            }
+        });
 
-        javax.swing.GroupLayout addCustClickLayout = new javax.swing.GroupLayout(addCustClick);
-        addCustClick.setLayout(addCustClickLayout);
-        addCustClickLayout.setHorizontalGroup(
-            addCustClickLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addCustClickLayout.createSequentialGroup()
+        javax.swing.GroupLayout addCustBGLayout = new javax.swing.GroupLayout(addCustBG);
+        addCustBG.setLayout(addCustBGLayout);
+        addCustBGLayout.setHorizontalGroup(
+            addCustBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addCustBGLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(adderButton, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        addCustClickLayout.setVerticalGroup(
-            addCustClickLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        addCustBGLayout.setVerticalGroup(
+            addCustBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(adderButton, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        jComboBox1.setBackground(new java.awt.Color(48, 48, 48));
-        jComboBox1.setForeground(new java.awt.Color(204, 204, 204));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10 mbps", "15 mbps", "20 mbps", "30 mbps" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        packageBox.setBackground(new java.awt.Color(48, 48, 48));
+        packageBox.setForeground(new java.awt.Color(204, 204, 204));
+        packageBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10 mbps", "15 mbps", "20 mbps", "30 mbps" }));
+        packageBox.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                packageBoxMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                packageBoxMouseExited(evt);
+            }
+        });
+        packageBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                packageBoxActionPerformed(evt);
             }
         });
 
@@ -321,39 +392,38 @@ public class customerPanel extends javax.swing.JPanel {
         addCustomerPanelLayout.setHorizontalGroup(
             addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addCustomerPanelLayout.createSequentialGroup()
+                .addGap(123, 123, 123)
                 .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCustomerPanelLayout.createSequentialGroup()
+                        .addComponent(packageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(114, 114, 114)
+                        .addComponent(packageBox, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                        .addGap(123, 123, 123)
-                        .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCustomerPanelLayout.createSequentialGroup()
-                                .addComponent(packageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(114, 114, 114)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                                .addComponent(emailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                                .addComponent(phoneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(phoneField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                                    .addComponent(addressLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(addressField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                                    .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(emailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                        .addGap(375, 375, 375)
-                        .addComponent(addCustClick, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(phoneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(phoneField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(addCustomerPanelLayout.createSequentialGroup()
+                            .addComponent(addressLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(addressField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(addCustomerPanelLayout.createSequentialGroup()
+                            .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(addCustomerPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(legalDocField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(54, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCustomerPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(addCustBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(221, 221, 221))
         );
         addCustomerPanelLayout.setVerticalGroup(
             addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -376,15 +446,15 @@ public class customerPanel extends javax.swing.JPanel {
                     .addComponent(emailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(legalDocField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(61, 61, 61)
                 .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(packageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 267, Short.MAX_VALUE)
-                .addComponent(addCustClick, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                    .addComponent(packageBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(99, 99, 99)
+                .addComponent(addCustBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(180, Short.MAX_VALUE))
         );
 
         holderPanel.add(addCustomerPanel, "card2");
@@ -425,8 +495,8 @@ public class customerPanel extends javax.swing.JPanel {
                 .addGap(24, 24, 24)
                 .addComponent(removeIcon)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(removeCustomerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addComponent(removeCustomerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         removeCustomerBGLayout.setVerticalGroup(
             removeCustomerBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -450,12 +520,10 @@ public class customerPanel extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(101, 101, 101)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(addCustomerOptPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(packagesBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(listCustomerOptPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(addCustomerOptPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(listCustomerOptPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(packagesBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(removeCustomerBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(holderPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 787, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -531,9 +599,9 @@ public class customerPanel extends javax.swing.JPanel {
         packagesBG.setBackground(new java.awt.Color(44,44,44));
     }//GEN-LAST:event_packageButtonMouseExited
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void packageBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_packageBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_packageBoxActionPerformed
 
     private void listCutomerButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listCutomerButtonMouseClicked
        tempPanel = new listCustomerPanel();
@@ -568,21 +636,97 @@ public class customerPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_removeCustomerButtonMouseClicked
 
     private void removeCustomerButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeCustomerButtonMouseEntered
-        // TODO add your handling code here:
+        removeCustomerBG.setBackground(new java.awt.Color(33,33,33));
     }//GEN-LAST:event_removeCustomerButtonMouseEntered
 
     private void removeCustomerButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeCustomerButtonMouseExited
-        // TODO add your handling code here:
+        removeCustomerBG.setBackground(new java.awt.Color(44,44,44));
     }//GEN-LAST:event_removeCustomerButtonMouseExited
 
     private void removeCustomerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeCustomerButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_removeCustomerButtonActionPerformed
 
+    private void nameFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nameFieldMouseClicked
+        nameField.setText("");
+    }//GEN-LAST:event_nameFieldMouseClicked
+
+    private void nameFieldMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nameFieldMouseEntered
+        nameField.setBackground(new java.awt.Color(54,54,54));
+    }//GEN-LAST:event_nameFieldMouseEntered
+
+    private void nameFieldMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nameFieldMouseExited
+        nameField.setBackground(new java.awt.Color(48,48,48));
+    }//GEN-LAST:event_nameFieldMouseExited
+
+    private void addressFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addressFieldMouseClicked
+        addressField.setText("");
+    }//GEN-LAST:event_addressFieldMouseClicked
+
+    private void addressFieldMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addressFieldMouseEntered
+        addressField.setBackground(new java.awt.Color(54,54,54));
+    }//GEN-LAST:event_addressFieldMouseEntered
+
+    private void addressFieldMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addressFieldMouseExited
+        addressField.setBackground(new java.awt.Color(48,48,48));
+    }//GEN-LAST:event_addressFieldMouseExited
+
+    private void phoneFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_phoneFieldMouseClicked
+        phoneField.setText("");
+    }//GEN-LAST:event_phoneFieldMouseClicked
+
+    private void phoneFieldMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_phoneFieldMouseEntered
+        phoneField.setBackground(new java.awt.Color(54,54,54));
+    }//GEN-LAST:event_phoneFieldMouseEntered
+
+    private void phoneFieldMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_phoneFieldMouseExited
+        phoneField.setBackground(new java.awt.Color(48,48,48));
+    }//GEN-LAST:event_phoneFieldMouseExited
+
+    private void emailFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emailFieldMouseClicked
+        emailField.setText("");
+    }//GEN-LAST:event_emailFieldMouseClicked
+
+    private void emailFieldMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emailFieldMouseEntered
+        emailField.setBackground(new java.awt.Color(54,54,54));
+    }//GEN-LAST:event_emailFieldMouseEntered
+
+    private void emailFieldMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emailFieldMouseExited
+        emailField.setBackground(new java.awt.Color(48,48,48));
+    }//GEN-LAST:event_emailFieldMouseExited
+
+    private void legalDocFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_legalDocFieldMouseClicked
+        legalDocField.setText("");
+    }//GEN-LAST:event_legalDocFieldMouseClicked
+
+    private void legalDocFieldMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_legalDocFieldMouseEntered
+        legalDocField.setBackground(new java.awt.Color(54,54,54));
+    }//GEN-LAST:event_legalDocFieldMouseEntered
+
+    private void legalDocFieldMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_legalDocFieldMouseExited
+        legalDocField.setBackground(new java.awt.Color(48,48,48));
+    }//GEN-LAST:event_legalDocFieldMouseExited
+
+    private void packageBoxMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_packageBoxMouseEntered
+        packageBox.setBackground(new java.awt.Color(54,54,54));
+    }//GEN-LAST:event_packageBoxMouseEntered
+
+    private void packageBoxMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_packageBoxMouseExited
+        packageBox.setBackground(new java.awt.Color(48,48,48));
+    }//GEN-LAST:event_packageBoxMouseExited
+
+    private void adderButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adderButtonMouseEntered
+        addCustBG.setBackground(new java.awt.Color(10,125,55));
+    }//GEN-LAST:event_adderButtonMouseEntered
+
+    private void adderButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adderButtonMouseExited
+         addCustBG.setBackground(new java.awt.Color(10,137,70));
+    }//GEN-LAST:event_adderButtonMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BG;
-    private javax.swing.JPanel addCustClick;
+    private javax.swing.JPanel addCustBG;
     private javax.swing.JButton addCustomerButton1;
     private javax.swing.JPanel addCustomerOptPanel;
     private javax.swing.JPanel addCustomerPanel;
@@ -595,17 +739,17 @@ public class customerPanel extends javax.swing.JPanel {
     private javax.swing.JLabel emailLabel;
     private javax.swing.JPanel holderPanel;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField legalDocField;
     private javax.swing.JPanel listCustomerOptPanel1;
     private javax.swing.JButton listCutomerButton;
     private javax.swing.JLabel listIcon;
     private javax.swing.JLabel listIcon1;
     private javax.swing.JTextField nameField;
     private javax.swing.JLabel nameLabel;
+    private javax.swing.JComboBox<String> packageBox;
     private javax.swing.JButton packageButton;
     private javax.swing.JLabel packageLabel;
     private javax.swing.JPanel packagesBG;

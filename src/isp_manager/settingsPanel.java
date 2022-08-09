@@ -72,17 +72,16 @@ public class settingsPanel extends javax.swing.JPanel {
                 .addGap(49, 49, 49)
                 .addComponent(jLabel6)
                 .addGap(18, 18, 18)
-                .addComponent(profileLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(284, Short.MAX_VALUE))
+                .addComponent(profileLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(132, Short.MAX_VALUE))
         );
         profilePanelLayout.setVerticalGroup(
             profilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(profilePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(profilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(profileLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
                 .addContainerGap())
+            .addComponent(profileLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         removeAdminPanel.setBackground(new java.awt.Color(44, 44, 44));
@@ -120,19 +119,16 @@ public class settingsPanel extends javax.swing.JPanel {
                 .addGap(42, 42, 42)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(remAdminButton, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(208, Short.MAX_VALUE))
+                .addComponent(remAdminButton, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(122, Short.MAX_VALUE))
         );
         removeAdminPanelLayout.setVerticalGroup(
             removeAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(removeAdminPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(removeAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(remAdminButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(removeAdminPanelLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, removeAdminPanelLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
                 .addContainerGap())
+            .addComponent(remAdminButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         addAdminPanel.setBackground(new java.awt.Color(44, 44, 44));
@@ -170,17 +166,16 @@ public class settingsPanel extends javax.swing.JPanel {
                 .addGap(39, 39, 39)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(addAdminButton, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(191, Short.MAX_VALUE))
+                .addComponent(addAdminButton, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(157, Short.MAX_VALUE))
         );
         addAdminPanelLayout.setVerticalGroup(
             addAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addAdminPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(addAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(addAdminButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE))
+                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
                 .addContainerGap())
+            .addComponent(addAdminButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         changePassPanel.setBackground(new java.awt.Color(44, 44, 44));
@@ -218,17 +213,16 @@ public class settingsPanel extends javax.swing.JPanel {
                 .addGap(42, 42, 42)
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(changePassLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(185, Short.MAX_VALUE))
+                .addComponent(changePassLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(134, Short.MAX_VALUE))
         );
         changePassPanelLayout.setVerticalGroup(
             changePassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(changePassPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(changePassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
-                    .addComponent(changePassLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
                 .addContainerGap())
+            .addComponent(changePassLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         deletePanel.setBackground(new java.awt.Color(44, 44, 44));
@@ -267,17 +261,16 @@ public class settingsPanel extends javax.swing.JPanel {
                 .addGap(48, 48, 48)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(deletionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(217, Short.MAX_VALUE))
+                .addComponent(deletionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(113, Short.MAX_VALUE))
         );
         deletePanelLayout.setVerticalGroup(
             deletePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(deletePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(deletePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(deletionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE))
+                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
                 .addContainerGap())
+            .addComponent(deletionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout defaultPanelLayout = new javax.swing.GroupLayout(defaultPanel);
@@ -445,22 +438,42 @@ public class settingsPanel extends javax.swing.JPanel {
 
     private void profileLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profileLabelMouseEntered
         profilePanel.setBackground(new java.awt.Color(38,38,38));
+        addAdminPanel.setBackground(new java.awt.Color(44,44,44));
+        changePassPanel.setBackground(new java.awt.Color(44,44,44));
+        deletePanel.setBackground(new java.awt.Color(44,44,44));
+        removeAdminPanel.setBackground(new java.awt.Color(44,44,44));
     }//GEN-LAST:event_profileLabelMouseEntered
 
     private void changePassLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_changePassLabelMouseEntered
         changePassPanel.setBackground(new java.awt.Color(38,38,38));
+        profilePanel.setBackground(new java.awt.Color(44,44,44));
+        addAdminPanel.setBackground(new java.awt.Color(44,44,44));
+        deletePanel.setBackground(new java.awt.Color(44,44,44));
+        removeAdminPanel.setBackground(new java.awt.Color(44,44,44));
     }//GEN-LAST:event_changePassLabelMouseEntered
 
     private void deletionPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deletionPanelMouseEntered
         deletePanel.setBackground(new java.awt.Color(38,38,38));
+        profilePanel.setBackground(new java.awt.Color(44,44,44));
+        addAdminPanel.setBackground(new java.awt.Color(44,44,44));
+        changePassPanel.setBackground(new java.awt.Color(44,44,44));
+        removeAdminPanel.setBackground(new java.awt.Color(44,44,44));
     }//GEN-LAST:event_deletionPanelMouseEntered
 
     private void remAdminButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_remAdminButtonMouseEntered
         removeAdminPanel.setBackground(new java.awt.Color(38,38,38));
+        profilePanel.setBackground(new java.awt.Color(44,44,44));
+        addAdminPanel.setBackground(new java.awt.Color(44,44,44));
+        changePassPanel.setBackground(new java.awt.Color(44,44,44));
+        deletePanel.setBackground(new java.awt.Color(44,44,44));
     }//GEN-LAST:event_remAdminButtonMouseEntered
 
     private void addAdminButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addAdminButtonMouseEntered
         addAdminPanel.setBackground(new java.awt.Color(38,38,38));
+        profilePanel.setBackground(new java.awt.Color(44,44,44));
+        changePassPanel.setBackground(new java.awt.Color(44,44,44));
+        deletePanel.setBackground(new java.awt.Color(44,44,44));
+        removeAdminPanel.setBackground(new java.awt.Color(44,44,44));
     }//GEN-LAST:event_addAdminButtonMouseEntered
 
     private void backLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backLabelMouseEntered
@@ -507,18 +520,34 @@ public class settingsPanel extends javax.swing.JPanel {
 
     private void addAdminButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addAdminButtonMouseExited
         addAdminPanel.setBackground(new java.awt.Color(44,44,44));
+        profilePanel.setBackground(new java.awt.Color(44,44,44));
+        changePassPanel.setBackground(new java.awt.Color(44,44,44));
+        deletePanel.setBackground(new java.awt.Color(44,44,44));
+        removeAdminPanel.setBackground(new java.awt.Color(44,44,44));
     }//GEN-LAST:event_addAdminButtonMouseExited
 
     private void remAdminButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_remAdminButtonMouseExited
+        addAdminPanel.setBackground(new java.awt.Color(44,44,44));
+        profilePanel.setBackground(new java.awt.Color(44,44,44));
+        changePassPanel.setBackground(new java.awt.Color(44,44,44));
+        deletePanel.setBackground(new java.awt.Color(44,44,44));
         removeAdminPanel.setBackground(new java.awt.Color(44,44,44));
     }//GEN-LAST:event_remAdminButtonMouseExited
 
     private void deletionPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deletionPanelMouseExited
+        addAdminPanel.setBackground(new java.awt.Color(44,44,44));
+        profilePanel.setBackground(new java.awt.Color(44,44,44));
+        changePassPanel.setBackground(new java.awt.Color(44,44,44));
         deletePanel.setBackground(new java.awt.Color(44,44,44));
+        removeAdminPanel.setBackground(new java.awt.Color(44,44,44));
     }//GEN-LAST:event_deletionPanelMouseExited
 
     private void changePassLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_changePassLabelMouseExited
+        addAdminPanel.setBackground(new java.awt.Color(44,44,44));
+        profilePanel.setBackground(new java.awt.Color(44,44,44));
         changePassPanel.setBackground(new java.awt.Color(44,44,44));
+        deletePanel.setBackground(new java.awt.Color(44,44,44));
+        removeAdminPanel.setBackground(new java.awt.Color(44,44,44));
     }//GEN-LAST:event_changePassLabelMouseExited
 
     private void remAdminButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_remAdminButtonMouseClicked
