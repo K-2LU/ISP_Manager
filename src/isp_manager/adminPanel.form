@@ -649,10 +649,14 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="photoHolder">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/isp_manager/resources/userImage_B10_2_100x101.png"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="new javax.swing.ImageIcon(getClass().getResource(&quot;/isp_manager/resources/rigan.jpg&quot;))" type="code"/>
                     </Property>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="else if (username.equals(&quot;admin.sajjad&quot;))photoHolder.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/isp_manager/resources/sajjad.jpg&quot;)));&#xa;        else if (username.equals(&quot;admin.summit&quot;))photoHolder.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/isp_manager/resources/summitsir.jpg&quot;)));&#xa;        else {photoHolder.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/isp_manager/resources/userImage_B10_2_100x101.png&quot;)));&#xa;}"/>
+                    <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="if(username.equals(&quot;admin.rigan&quot;))"/>
+                  </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="adminNameHolder">
                   <Properties>
