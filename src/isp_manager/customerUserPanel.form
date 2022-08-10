@@ -1056,7 +1056,7 @@
                                       <Color blue="26" green="26" red="26" type="rgb"/>
                                     </Property>
                                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Dialog" size="14" style="1"/>
+                                      <Font name="Dialog" size="20" style="1"/>
                                     </Property>
                                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -1076,7 +1076,7 @@
                                       <Color blue="26" green="26" red="26" type="rgb"/>
                                     </Property>
                                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Dialog" size="14" style="1"/>
+                                      <Font name="Dialog" size="20" style="1"/>
                                     </Property>
                                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -1096,7 +1096,7 @@
                                       <Color blue="26" green="26" red="26" type="rgb"/>
                                     </Property>
                                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Dialog" size="14" style="1"/>
+                                      <Font name="Dialog" size="20" style="1"/>
                                     </Property>
                                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -1109,6 +1109,9 @@
                                       </Border>
                                     </Property>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="newPass1ActionPerformed"/>
+                                  </Events>
                                 </Component>
                                 <Container class="javax.swing.JPanel" name="confirmPassBG">
                                   <Properties>
