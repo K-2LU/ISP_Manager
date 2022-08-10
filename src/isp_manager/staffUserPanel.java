@@ -1,8 +1,41 @@
 package isp_manager;
 
-public class staffUserPanel extends javax.swing.JFrame {
+import java.sql.*;
 
-    public staffUserPanel() {
+public class staffUserPanel extends javax.swing.JFrame {
+    
+    Connection con;
+    Statement stm;
+    ResultSet rs;
+    PreparedStatement st;
+    
+    String userId, username, contactNo, mailAddress, nameStaff;
+    String actStat, passwd, role;
+    int salary;
+    String who;
+    
+    public staffUserPanel(String id) throws Exception {
+        Class.forName("org.sqlite.JDBC"); // Driver available
+        con = DriverManager.getConnection("jdbc:sqlite:isp_manager.db"); // established connection
+        stm = con.createStatement(); // statement created
+        st = con.prepareStatement("update staff set password = ? where id = ?");
+        rs = stm.executeQuery("select * from staff"); // Query executed
+        
+                who = id;
+        while (rs.next()) {
+            if (who.equals(rs.getString(1))) {
+                userId = rs.getString(1);
+                nameStaff = rs.getString(2);
+                username = rs.getString(3);
+                passwd = rs.getString(4);
+                actStat = rs.getString(5);
+                salary = rs.getInt(6);
+                role = rs.getString(7);
+                mailAddress = rs.getString(8);
+                contactNo = rs.getString(9);
+                break;
+            }
+        }
         initComponents();
     }
 
@@ -56,6 +89,7 @@ public class staffUserPanel extends javax.swing.JFrame {
         confirmPass = new javax.swing.JLabel();
         cancelPassBG = new javax.swing.JPanel();
         cancellPass = new javax.swing.JLabel();
+        alertLabelPass = new javax.swing.JLabel();
         logOutBG = new javax.swing.JPanel();
         logOutButton = new javax.swing.JLabel();
 
@@ -184,7 +218,7 @@ public class staffUserPanel extends javax.swing.JFrame {
         name.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         name.setForeground(new java.awt.Color(204, 204, 204));
         name.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        name.setText("Staff Name Here");
+        name.setText(nameStaff);
 
         text3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         text3.setForeground(new java.awt.Color(204, 204, 204));
@@ -208,30 +242,33 @@ public class staffUserPanel extends javax.swing.JFrame {
 
         uID.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         uID.setForeground(new java.awt.Color(204, 204, 204));
-        uID.setText("userID here");
+        uID.setText(userId);
 
         contNo.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         contNo.setForeground(new java.awt.Color(204, 204, 204));
-        contNo.setText("01XXX XXXXXX");
+        contNo.setText(contactNo);
 
         uname.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         uname.setForeground(new java.awt.Color(204, 204, 204));
-        uname.setText("username here");
+        uname.setText(username);
 
         pack.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         pack.setForeground(new java.awt.Color(204, 204, 204));
-        pack.setText("(staff role here)");
+        pack.setText(role);
 
         mail.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         mail.setForeground(new java.awt.Color(204, 204, 204));
-        mail.setText("xxxxyyyy@mail.com");
+        mail.setText(mailAddress);
 
         jPanel1.setBackground(new java.awt.Color(0, 168, 30));
 
         stat.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         stat.setForeground(new java.awt.Color(204, 204, 204));
         stat.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        if(actStat.equals("true"))
         stat.setText("Active");
+        else if (actStat.equals("false"))
+        stat.setText("On leave");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -254,7 +291,7 @@ public class staffUserPanel extends javax.swing.JFrame {
 
         pack1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         pack1.setForeground(new java.awt.Color(204, 204, 204));
-        pack1.setText("(staff salary here)");
+        pack1.setText(Integer.toString(salary));
 
         text7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         text7.setForeground(new java.awt.Color(204, 204, 204));
@@ -498,6 +535,8 @@ public class staffUserPanel extends javax.swing.JFrame {
             .addComponent(cancellPass, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
         );
 
+        alertLabelPass.setText("jLabel1");
+
         javax.swing.GroupLayout passChangerLayout = new javax.swing.GroupLayout(passChanger);
         passChanger.setLayout(passChangerLayout);
         passChangerLayout.setHorizontalGroup(
@@ -510,17 +549,20 @@ public class staffUserPanel extends javax.swing.JFrame {
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
-                .addGroup(passChangerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(currentPass, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(newPass, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(newPass1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cancelPassBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(passChangerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(currentPass, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
+                    .addComponent(newPass, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
+                    .addComponent(newPass1, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
+                    .addComponent(cancelPassBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(alertLabelPass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(106, Short.MAX_VALUE))
         );
         passChangerLayout.setVerticalGroup(
             passChangerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(passChangerLayout.createSequentialGroup()
-                .addGap(107, 107, 107)
+                .addGap(65, 65, 65)
+                .addComponent(alertLabelPass, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(passChangerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(currentPass, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
@@ -715,7 +757,26 @@ public class staffUserPanel extends javax.swing.JFrame {
     }//GEN-LAST:event_passChangeMouseExited
 
     private void confirmPassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmPassMouseClicked
-        // TODO add your handling code here:
+        String temp = currentPass.getText();
+        String temp1 = newPass.getText();
+        String temp2 = newPass1.getText();
+
+        if (!temp.equals(passwd)) {
+            alertLabelPass.setText("Wrong password");
+            alertLabelPass.setForeground(new java.awt.Color(204, 204, 204));
+        } else if (!temp1.equals(temp2)) {
+            alertLabelPass.setText("Passwords do not match");
+            alertLabelPass.setForeground(new java.awt.Color(204, 204, 204));
+        } else {
+            try {
+             st.setString(1, temp1);
+             st.setString(2, who);
+             st.executeUpdate();
+             
+             alertLabelPass.setText("Password updated");
+             alertLabelPass.setForeground(new java.awt.Color(204,204,204));
+        }   catch (Exception e) {}
+        }
     }//GEN-LAST:event_confirmPassMouseClicked
 
     private void confirmPassMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmPassMouseEntered
@@ -773,16 +834,14 @@ public class staffUserPanel extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new staffUserPanel().setVisible(true);
+//                new staffUserPanel().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel BG;
-    private javax.swing.JPanel BG1;
-    private javax.swing.JPanel BG2;
     private javax.swing.JPanel BG3;
+    private javax.swing.JLabel alertLabelPass;
     private javax.swing.JPanel billBG;
     private javax.swing.JPanel cancelPassBG;
     private javax.swing.JLabel cancellPass;
@@ -800,9 +859,6 @@ public class staffUserPanel extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel logOutBG;
@@ -830,9 +886,6 @@ public class staffUserPanel extends javax.swing.JFrame {
     private javax.swing.JLabel text6;
     private javax.swing.JLabel text7;
     private javax.swing.JLabel text8;
-    private javax.swing.JPanel topPanel;
-    private javax.swing.JPanel topPanel1;
-    private javax.swing.JPanel topPanel2;
     private javax.swing.JPanel topPanel3;
     private javax.swing.JLabel uID;
     private javax.swing.JLabel uname;

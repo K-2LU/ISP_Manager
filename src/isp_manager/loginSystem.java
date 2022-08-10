@@ -473,9 +473,18 @@ public class loginSystem extends javax.swing.JFrame {
                 }
 
                 else if (at == 's') {
-                        if (username.equals("staff") && password.equals("staff")) {
-                                this.dispose();
-                                new staffUserPanel().setVisible(true);
+                    ResultSet rs = stm.executeQuery("select * from staff"); // Query executed
+                        while (rs.next()) {
+                                if (username.equals(rs.getString(3)) && !password.equals(rs.getString(4))) {
+                                        loginFailedAlert.setText("Incorrect password!");
+                                        loginFailedAlert.setForeground(new java.awt.Color(204, 204, 204));
+                                } else if (username.equals(rs.getString(3)) && password.equals(rs.getString(4))) {
+                                        this.dispose();
+                                        try{
+                                            new staffUserPanel(rs.getString(1)).setVisible(true);
+                                        }
+                                        catch(Exception e){}
+                                }
                         }
                 }
 

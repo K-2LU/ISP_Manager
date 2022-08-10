@@ -1,9 +1,22 @@
 package isp_manager;
 
+import java.sql.*;
+
 public class staffPanel extends javax.swing.JPanel {
     javax.swing.JPanel tempPanel;
     
-    public staffPanel() {
+    String who;
+    Connection con;
+    Statement stm;
+    ResultSet rs;
+    PreparedStatement st;
+
+    String userId, username, contactNo, mailAddress, nameStaff;
+    String actStat, passwd, role;
+    int salary;
+    
+    public staffPanel(){
+        
         initComponents();
     }
 
