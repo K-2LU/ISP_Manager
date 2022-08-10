@@ -399,7 +399,9 @@
                           <Color blue="cc" green="cc" red="cc" type="rgb"/>
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
-                        <Property name="text" type="java.lang.String" value="Customer Name Here"/>
+                        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="nameCust" type="code"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="text3">
@@ -465,7 +467,9 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="cc" green="cc" red="cc" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="userID here"/>
+                        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="userId" type="code"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="contNo">
@@ -476,7 +480,9 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="cc" green="cc" red="cc" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="01XXX XXXXXX"/>
+                        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="contactNo" type="code"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="uname">
@@ -487,7 +493,9 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="cc" green="cc" red="cc" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="username here"/>
+                        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="username" type="code"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="pack">
@@ -498,7 +506,9 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="cc" green="cc" red="cc" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="(package status here)"/>
+                        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="bandwith" type="code"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="mail">
@@ -509,7 +519,9 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="cc" green="cc" red="cc" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="xxxxyyyy@mail.com"/>
+                        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="mailAddress" type="code"/>
+                        </Property>
                       </Properties>
                     </Component>
                     <Container class="javax.swing.JPanel" name="jPanel1">
@@ -548,9 +560,14 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="cc" green="cc" red="cc" type="rgb"/>
                             </Property>
-                            <Property name="horizontalAlignment" type="int" value="0"/>
-                            <Property name="text" type="java.lang.String" value="Active"/>
+                            <Property name="horizontalAlignment" type="int" value="0" postCode="if(actStat.equals(&quot;true&quot;))"/>
+                            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="&quot;Active&quot;" type="code"/>
+                            </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="else &#xa;stat.setText(&quot;Inactive&quot;);"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -949,7 +966,7 @@
                               <Layout>
                                 <DimensionLayout dim="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Component id="confirmPassBG" min="-2" max="-2" attributes="0"/>
@@ -963,15 +980,18 @@
                                               <Component id="newPass" min="-2" pref="243" max="-2" attributes="0"/>
                                               <Component id="newPass1" min="-2" pref="243" max="-2" attributes="0"/>
                                               <Component id="cancelPassBG" min="-2" max="-2" attributes="0"/>
+                                              <Component id="alertLabelPass" min="-2" pref="293" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace pref="106" max="32767" attributes="0"/>
+                                          <EmptySpace pref="56" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                          <Component id="alertLabelPass" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="currentPass" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                                               <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1183,6 +1203,11 @@
                                     </Component>
                                   </SubComponents>
                                 </Container>
+                                <Component class="javax.swing.JLabel" name="alertLabelPass">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="jLabel1"/>
+                                  </Properties>
+                                </Component>
                               </SubComponents>
                             </Container>
                           </SubComponents>
