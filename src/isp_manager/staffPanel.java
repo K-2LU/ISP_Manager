@@ -34,13 +34,29 @@ public class staffPanel extends javax.swing.JPanel {
         emailLabel = new javax.swing.JLabel();
         packageLabel = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        addCustClick = new javax.swing.JPanel();
+        legalDocField = new javax.swing.JTextField();
+        addStaffClick = new javax.swing.JPanel();
         adderButton = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        roleBox = new javax.swing.JComboBox<>();
         packageLabel1 = new javax.swing.JLabel();
         salaryTextField = new javax.swing.JTextField();
         packageLabel2 = new javax.swing.JLabel();
+        infoPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        infoName = new javax.swing.JLabel();
+        infoUsername = new javax.swing.JLabel();
+        infoUserID = new javax.swing.JLabel();
+        infoEMail = new javax.swing.JLabel();
+        infoContact = new javax.swing.JLabel();
+        infoAddress = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
         removeStaffBG = new javax.swing.JPanel();
         remStaffIcon = new javax.swing.JLabel();
         removeStaffButton = new javax.swing.JButton();
@@ -150,6 +166,11 @@ public class staffPanel extends javax.swing.JPanel {
         jButton1.setText("Search");
         jButton1.setBorder(null);
         jButton1.setContentAreaFilled(false);
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout briefSearchPanelLayout = new javax.swing.GroupLayout(briefSearchPanel);
         briefSearchPanel.setLayout(briefSearchPanelLayout);
@@ -175,6 +196,17 @@ public class staffPanel extends javax.swing.JPanel {
         nameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         nameField.setText("Enter name");
         nameField.setBorder(null);
+        nameField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nameFieldMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                nameFieldMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                nameFieldMouseExited(evt);
+            }
+        });
 
         nameLabel.setBackground(new java.awt.Color(204, 204, 204));
         nameLabel.setForeground(new java.awt.Color(204, 204, 204));
@@ -186,6 +218,17 @@ public class staffPanel extends javax.swing.JPanel {
         addressField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         addressField.setText("Enter address");
         addressField.setBorder(null);
+        addressField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addressFieldMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                addressFieldMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                addressFieldMouseExited(evt);
+            }
+        });
 
         addressLabel.setBackground(new java.awt.Color(204, 204, 204));
         addressLabel.setForeground(new java.awt.Color(204, 204, 204));
@@ -197,6 +240,17 @@ public class staffPanel extends javax.swing.JPanel {
         phoneField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         phoneField.setText("Enter phone number");
         phoneField.setBorder(null);
+        phoneField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                phoneFieldMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                phoneFieldMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                phoneFieldMouseExited(evt);
+            }
+        });
 
         phoneLabel.setBackground(new java.awt.Color(204, 204, 204));
         phoneLabel.setForeground(new java.awt.Color(204, 204, 204));
@@ -208,6 +262,17 @@ public class staffPanel extends javax.swing.JPanel {
         emailField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         emailField.setText("Enter email address");
         emailField.setBorder(null);
+        emailField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                emailFieldMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                emailFieldMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                emailFieldMouseExited(evt);
+            }
+        });
 
         emailLabel.setBackground(new java.awt.Color(204, 204, 204));
         emailLabel.setForeground(new java.awt.Color(204, 204, 204));
@@ -221,46 +286,73 @@ public class staffPanel extends javax.swing.JPanel {
         jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setText("NID/Birth Certificate No.");
 
-        jTextField6.setBackground(new java.awt.Color(48, 48, 48));
-        jTextField6.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
-        jTextField6.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField6.setText("Legal document no.");
-        jTextField6.setBorder(null);
+        legalDocField.setBackground(new java.awt.Color(48, 48, 48));
+        legalDocField.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        legalDocField.setForeground(new java.awt.Color(204, 204, 204));
+        legalDocField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        legalDocField.setText("Legal document no.");
+        legalDocField.setBorder(null);
+        legalDocField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                legalDocFieldMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                legalDocFieldMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                legalDocFieldMouseExited(evt);
+            }
+        });
 
-        addCustClick.setBackground(new java.awt.Color(10, 137, 70));
+        addStaffClick.setBackground(new java.awt.Color(10, 137, 70));
+        addStaffClick.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                addStaffClickMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                addStaffClickMouseExited(evt);
+            }
+        });
 
         adderButton.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
         adderButton.setForeground(new java.awt.Color(204, 204, 204));
         adderButton.setText("Add Staff");
         adderButton.setBorder(null);
         adderButton.setContentAreaFilled(false);
+        adderButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                adderButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                adderButtonMouseExited(evt);
+            }
+        });
         adderButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adderButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout addCustClickLayout = new javax.swing.GroupLayout(addCustClick);
-        addCustClick.setLayout(addCustClickLayout);
-        addCustClickLayout.setHorizontalGroup(
-            addCustClickLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addCustClickLayout.createSequentialGroup()
+        javax.swing.GroupLayout addStaffClickLayout = new javax.swing.GroupLayout(addStaffClick);
+        addStaffClick.setLayout(addStaffClickLayout);
+        addStaffClickLayout.setHorizontalGroup(
+            addStaffClickLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addStaffClickLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(adderButton, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        addCustClickLayout.setVerticalGroup(
-            addCustClickLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        addStaffClickLayout.setVerticalGroup(
+            addStaffClickLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(adderButton, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        jComboBox1.setBackground(new java.awt.Color(48, 48, 48));
-        jComboBox1.setForeground(new java.awt.Color(204, 204, 204));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Manager", "Technician", "General staff" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        roleBox.setBackground(new java.awt.Color(48, 48, 48));
+        roleBox.setForeground(new java.awt.Color(204, 204, 204));
+        roleBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Manager", "Technician", "General staff" }));
+        roleBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                roleBoxActionPerformed(evt);
             }
         });
 
@@ -270,6 +362,14 @@ public class staffPanel extends javax.swing.JPanel {
 
         salaryTextField.setBackground(new java.awt.Color(38, 38, 38));
         salaryTextField.setBorder(null);
+        salaryTextField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                salaryTextFieldMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                salaryTextFieldMouseExited(evt);
+            }
+        });
         salaryTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 salaryTextFieldActionPerformed(evt);
@@ -307,7 +407,7 @@ public class staffPanel extends javax.swing.JPanel {
                     .addGroup(addCustomerPanelLayout.createSequentialGroup()
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(legalDocField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCustomerPanelLayout.createSequentialGroup()
                         .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(addCustomerPanelLayout.createSequentialGroup()
@@ -320,12 +420,12 @@ public class staffPanel extends javax.swing.JPanel {
                             .addGroup(addCustomerPanelLayout.createSequentialGroup()
                                 .addComponent(packageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(114, 114, 114)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(roleBox, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(14, 14, 14)))
                 .addContainerGap(40, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCustomerPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(addCustClick, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(addStaffClick, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(209, 209, 209))
         );
         addCustomerPanelLayout.setVerticalGroup(
@@ -349,23 +449,192 @@ public class staffPanel extends javax.swing.JPanel {
                     .addComponent(emailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(legalDocField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(61, 61, 61)
                 .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(packageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(roleBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(packageLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                     .addComponent(salaryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(packageLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
                 .addGap(92, 92, 92)
-                .addComponent(addCustClick, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(addStaffClick, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(125, 125, 125))
         );
 
         holderPanel.add(addCustomerPanel, "card2");
+
+        infoPanel.setBackground(new java.awt.Color(44, 44, 44));
+
+        jLabel1.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel1.setText("Name :");
+
+        jLabel2.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel2.setText("Username :");
+
+        jLabel3.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel3.setText("UserID :");
+
+        jLabel4.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel4.setText("Email Address :");
+
+        jLabel5.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel5.setText("Contact No. :");
+
+        jLabel6.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel6.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel6.setText("Address :");
+
+        jLabel8.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel8.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel8.setText("Active Status :");
+
+        infoName.setBackground(new java.awt.Color(204, 204, 204));
+        infoName.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        infoName.setForeground(new java.awt.Color(204, 204, 204));
+        infoName.setText("(name here)");
+
+        infoUsername.setBackground(new java.awt.Color(204, 204, 204));
+        infoUsername.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        infoUsername.setForeground(new java.awt.Color(204, 204, 204));
+        infoUsername.setText("(username here)");
+
+        infoUserID.setBackground(new java.awt.Color(204, 204, 204));
+        infoUserID.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        infoUserID.setForeground(new java.awt.Color(204, 204, 204));
+        infoUserID.setText("(userID here)");
+
+        infoEMail.setBackground(new java.awt.Color(204, 204, 204));
+        infoEMail.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        infoEMail.setForeground(new java.awt.Color(204, 204, 204));
+        infoEMail.setText("(email address here)");
+
+        infoContact.setBackground(new java.awt.Color(204, 204, 204));
+        infoContact.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        infoContact.setForeground(new java.awt.Color(204, 204, 204));
+        infoContact.setText("(contact No. here)");
+
+        infoAddress.setBackground(new java.awt.Color(204, 204, 204));
+        infoAddress.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        infoAddress.setForeground(new java.awt.Color(204, 204, 204));
+        infoAddress.setText("(address here)");
+
+        jPanel3.setBackground(new java.awt.Color(10, 137, 70));
+
+        jLabel9.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel9.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Inactive");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout infoPanelLayout = new javax.swing.GroupLayout(infoPanel);
+        infoPanel.setLayout(infoPanelLayout);
+        infoPanelLayout.setHorizontalGroup(
+            infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, infoPanelLayout.createSequentialGroup()
+                .addContainerGap(232, Short.MAX_VALUE)
+                .addGroup(infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(infoPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(infoPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(infoAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(infoPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(infoContact, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(infoPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(infoEMail, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(infoPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(infoUserID, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(infoPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(infoUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(infoPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(infoName, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(223, 223, 223))
+        );
+        infoPanelLayout.setVerticalGroup(
+            infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(infoPanelLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addGroup(infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(infoName, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(infoUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(infoUserID, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(infoEMail, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(infoContact, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(infoAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(414, Short.MAX_VALUE))
+        );
+
+        holderPanel.add(infoPanel, "card3");
 
         removeStaffBG.setBackground(new java.awt.Color(44, 44, 44));
 
@@ -457,7 +726,7 @@ public class staffPanel extends javax.swing.JPanel {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(13, 13, 13)
-                        .addComponent(holderPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 752, Short.MAX_VALUE)
+                        .addComponent(holderPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 807, Short.MAX_VALUE)
                         .addContainerGap())))
         );
 
@@ -486,7 +755,9 @@ public class staffPanel extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(BG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -522,9 +793,9 @@ public class staffPanel extends javax.swing.JPanel {
         listStaffBG.setBackground(new java.awt.Color(44,44,44));
     }//GEN-LAST:event_listStaffButtonMouseExited
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void roleBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roleBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_roleBoxActionPerformed
 
     private void addStaffButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addStaffButtonActionPerformed
         // TODO add your handling code here:
@@ -558,14 +829,105 @@ public class staffPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_removeStaffButtonActionPerformed
 
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        holderPanel.removeAll();
+        holderPanel.add(infoPanel);
+        repaint();
+        revalidate();
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void nameFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nameFieldMouseClicked
+        nameField.setText("");
+    }//GEN-LAST:event_nameFieldMouseClicked
+
+    private void nameFieldMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nameFieldMouseEntered
+        nameField.setBackground(new java.awt.Color(54,54,54));
+    }//GEN-LAST:event_nameFieldMouseEntered
+
+    private void nameFieldMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nameFieldMouseExited
+        nameField.setBackground(new java.awt.Color(48,48,48));
+    }//GEN-LAST:event_nameFieldMouseExited
+
+    private void addressFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addressFieldMouseClicked
+        addressField.setText("");
+    }//GEN-LAST:event_addressFieldMouseClicked
+
+    private void addressFieldMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addressFieldMouseEntered
+        addressField.setBackground(new java.awt.Color(54,54,54));
+    }//GEN-LAST:event_addressFieldMouseEntered
+
+    private void addressFieldMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addressFieldMouseExited
+        addressField.setBackground(new java.awt.Color(48,48,48));
+    }//GEN-LAST:event_addressFieldMouseExited
+
+    private void phoneFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_phoneFieldMouseClicked
+        phoneField.setText("");
+    }//GEN-LAST:event_phoneFieldMouseClicked
+
+    private void phoneFieldMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_phoneFieldMouseEntered
+        phoneField.setBackground(new java.awt.Color(54,54,54));
+    }//GEN-LAST:event_phoneFieldMouseEntered
+
+    private void phoneFieldMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_phoneFieldMouseExited
+        phoneField.setBackground(new java.awt.Color(48,48,48));
+    }//GEN-LAST:event_phoneFieldMouseExited
+
+    private void emailFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emailFieldMouseClicked
+        emailField.setText("");
+    }//GEN-LAST:event_emailFieldMouseClicked
+
+    private void emailFieldMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emailFieldMouseEntered
+        emailField.setBackground(new java.awt.Color(54,54,54));
+    }//GEN-LAST:event_emailFieldMouseEntered
+
+    private void emailFieldMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emailFieldMouseExited
+        emailField.setBackground(new java.awt.Color(48,48,48));
+    }//GEN-LAST:event_emailFieldMouseExited
+
+    private void legalDocFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_legalDocFieldMouseClicked
+        legalDocField.setText("");
+    }//GEN-LAST:event_legalDocFieldMouseClicked
+
+    private void legalDocFieldMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_legalDocFieldMouseEntered
+        legalDocField.setBackground(new java.awt.Color(54,54,54));
+    }//GEN-LAST:event_legalDocFieldMouseEntered
+
+    private void legalDocFieldMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_legalDocFieldMouseExited
+        legalDocField.setBackground(new java.awt.Color(48,48,48));
+    }//GEN-LAST:event_legalDocFieldMouseExited
+
+    private void salaryTextFieldMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salaryTextFieldMouseEntered
+        salaryTextField.setBackground(new java.awt.Color(54,54,54));
+    }//GEN-LAST:event_salaryTextFieldMouseEntered
+
+    private void salaryTextFieldMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salaryTextFieldMouseExited
+        salaryTextField.setBackground(new java.awt.Color(48,48,48));
+    }//GEN-LAST:event_salaryTextFieldMouseExited
+
+    private void addStaffClickMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addStaffClickMouseEntered
+        
+    }//GEN-LAST:event_addStaffClickMouseEntered
+
+    private void addStaffClickMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addStaffClickMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addStaffClickMouseExited
+
+    private void adderButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adderButtonMouseEntered
+        addStaffClick.setBackground(new java.awt.Color(10,125,55));
+    }//GEN-LAST:event_adderButtonMouseEntered
+
+    private void adderButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adderButtonMouseExited
+        addStaffClick.setBackground(new java.awt.Color(10,137,70));
+    }//GEN-LAST:event_adderButtonMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BG;
-    private javax.swing.JPanel addCustClick;
     private javax.swing.JPanel addCustomerPanel;
     private javax.swing.JLabel addIcon;
     private javax.swing.JPanel addStaffBG;
     private javax.swing.JButton addStaffButton;
+    private javax.swing.JPanel addStaffClick;
     private javax.swing.JButton adderButton;
     private javax.swing.JTextField addressField;
     private javax.swing.JLabel addressLabel;
@@ -573,12 +935,27 @@ public class staffPanel extends javax.swing.JPanel {
     private javax.swing.JTextField emailField;
     private javax.swing.JLabel emailLabel;
     private javax.swing.JPanel holderPanel;
+    private javax.swing.JLabel infoAddress;
+    private javax.swing.JLabel infoContact;
+    private javax.swing.JLabel infoEMail;
+    private javax.swing.JLabel infoName;
+    private javax.swing.JPanel infoPanel;
+    private javax.swing.JLabel infoUserID;
+    private javax.swing.JLabel infoUsername;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField legalDocField;
     private javax.swing.JLabel listIcon;
     private javax.swing.JPanel listStaffBG;
     private javax.swing.JButton listStaffButton;
@@ -592,6 +969,7 @@ public class staffPanel extends javax.swing.JPanel {
     private javax.swing.JLabel remStaffIcon;
     private javax.swing.JPanel removeStaffBG;
     private javax.swing.JButton removeStaffButton;
+    private javax.swing.JComboBox<String> roleBox;
     private javax.swing.JTextField salaryTextField;
     // End of variables declaration//GEN-END:variables
 }
