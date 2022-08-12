@@ -1,8 +1,19 @@
 package isp_manager;
 
-public class addAdmin extends javax.swing.JPanel {
+import java.awt.CardLayout;
+import java.sql.*;
 
-    public addAdmin() {
+public class addAdmin extends javax.swing.JPanel {
+        CardLayout cards;
+        Connection con;
+        Statement stm;
+        ResultSet rs;
+        PreparedStatement st;
+        String who;
+        String passwd;
+        
+    public addAdmin(String id) {
+        who = id;
         initComponents();
     }
 
@@ -30,12 +41,12 @@ public class addAdmin extends javax.swing.JPanel {
         tempPassField2 = new javax.swing.JPasswordField();
         passField1 = new javax.swing.JPasswordField();
         passField2 = new javax.swing.JPasswordField();
-        idLabel = new javax.swing.JLabel();
         savePanel = new javax.swing.JPanel();
         saveLabel = new javax.swing.JLabel();
         cancelPanel = new javax.swing.JPanel();
         cancelLabel = new javax.swing.JLabel();
         warningLabel = new javax.swing.JLabel();
+        uidField = new javax.swing.JTextField();
 
         jLabel2.setText("jLabel2");
 
@@ -129,10 +140,6 @@ public class addAdmin extends javax.swing.JPanel {
         passField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(60, 60, 60), 2));
         passField2.setPreferredSize(new java.awt.Dimension(5, 24));
 
-        idLabel.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        idLabel.setForeground(new java.awt.Color(204, 204, 204));
-        idLabel.setText("XXXX");
-
         savePanel.setBackground(new java.awt.Color(67, 88, 210));
         savePanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -173,7 +180,7 @@ public class addAdmin extends javax.swing.JPanel {
             savePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(savePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(saveLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                .addComponent(saveLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -218,12 +225,17 @@ public class addAdmin extends javax.swing.JPanel {
             cancelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cancelPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(cancelLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cancelLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         warningLabel.setForeground(new java.awt.Color(44, 44, 44));
         warningLabel.setText("warning label");
+
+        uidField.setBackground(new java.awt.Color(38, 38, 38));
+        uidField.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        uidField.setForeground(new java.awt.Color(204, 204, 204));
+        uidField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(60, 60, 60), 2));
 
         javax.swing.GroupLayout BGLayout = new javax.swing.GroupLayout(BG);
         BG.setLayout(BGLayout);
@@ -255,8 +267,8 @@ public class addAdmin extends javax.swing.JPanel {
                             .addComponent(tempPassField1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tempPassField2, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(BGLayout.createSequentialGroup()
-                                .addComponent(idLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 332, Short.MAX_VALUE)
+                                .addComponent(uidField, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 316, Short.MAX_VALUE)
                                 .addComponent(warningLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(BGLayout.createSequentialGroup()
                         .addGap(379, 379, 379)
@@ -273,8 +285,8 @@ public class addAdmin extends javax.swing.JPanel {
                 .addGap(51, 51, 51)
                 .addGroup(BGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(idLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(warningLabel))
+                    .addComponent(warningLabel)
+                    .addComponent(uidField, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(BGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -311,7 +323,7 @@ public class addAdmin extends javax.swing.JPanel {
                 .addGroup(BGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(savePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cancelPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -322,28 +334,71 @@ public class addAdmin extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(BG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(BG, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void saveLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveLabelMouseClicked
         String temp1, temp2, pass1, pass2;
+        String id, name, username, mail, contactNo;
+        
+        id = uidField.getText();
+        name = nameField.getText();
+        username = unameField.getText();
+        mail = mailField.getText();
+        contactNo = phoneField.getText();
         
         temp1 = tempPassField1.getText();
         temp2 = tempPassField2.getText();
         pass1 = passField1.getText();
         pass2 = passField2.getText();
         
+        try{
+            Class.forName("org.sqlite.JDBC"); // Driver available
+            con = DriverManager.getConnection("jdbc:sqlite:isp_manager.db");
+            rs = stm.executeQuery("select * from admin"); // Query executed
+            
+            while(rs.next())    {
+                if(who.equals(rs.getString(1))){
+                    passwd = rs.getString(5);
+                    break;
+                }
+            }
+            
+        } catch(Exception e)    {}
         if(!temp1.equals(temp2))    {
             warningLabel.setText("Temporary passwords do not match");
             warningLabel.setForeground(new java.awt.Color(204,204, 204));
         }   else if (!pass1.equals(pass2))  {
             warningLabel.setText("Your Passwords do not match");
             warningLabel.setForeground(new java.awt.Color(204,204, 204));
-        }   else {
+        }   else if(!pass1.equals(passwd))  {
+            warningLabel.setText("Incorrect password");
+            warningLabel.setForeground(new java.awt.Color(204,204, 204));
+        }   
+        else {
+            
+            try {
+                        Class.forName("org.sqlite.JDBC"); // Driver available
+        con = DriverManager.getConnection("jdbc:sqlite:isp_manager.db"); // established connection
+        stm = con.createStatement(); // statement created
+        st = con.prepareStatement("insert into admin values(?,?,?,?,?,?)");
+        
+        st.setString(1, id);
+        st.setString(2, name);
+        st.setString(3, username);
+        st.setString(4, mail);
+        st.setString(5, temp1);
+        st.setString(6, contactNo);
+        st.executeUpdate();
+        
+        st.close();
+        con.close();
+        stm.close();
+        rs.close();
+            } catch(Exception e) {}
+            
+            
             warningLabel.setText("New admin created");
             warningLabel.setForeground(new java.awt.Color(204,204, 204));
         }
@@ -397,7 +452,6 @@ public class addAdmin extends javax.swing.JPanel {
     private javax.swing.JPanel BG;
     private javax.swing.JLabel cancelLabel;
     private javax.swing.JPanel cancelPanel;
-    private javax.swing.JLabel idLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -418,6 +472,7 @@ public class addAdmin extends javax.swing.JPanel {
     private javax.swing.JPanel savePanel;
     private javax.swing.JPasswordField tempPassField1;
     private javax.swing.JPasswordField tempPassField2;
+    private javax.swing.JTextField uidField;
     private javax.swing.JTextField unameField;
     private javax.swing.JLabel warningLabel;
     // End of variables declaration//GEN-END:variables

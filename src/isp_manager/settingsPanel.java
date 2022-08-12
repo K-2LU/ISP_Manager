@@ -4,7 +4,14 @@ public class settingsPanel extends javax.swing.JPanel {
     
     javax.swing.JPanel tempPanel;
     boolean backActive = false;
-    public settingsPanel() {
+    
+    
+    String who;
+    
+    public settingsPanel(String id) {
+        
+        who = id;
+        
         initComponents();
     }
 
@@ -417,7 +424,7 @@ public class settingsPanel extends javax.swing.JPanel {
         backLabel.setForeground(new java.awt.Color(204,204,204));
         backLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/back.png")));
         backActive = true;
-        tempPanel = new adminProfile();
+        tempPanel = new adminProfile(who);
         settingsBG.removeAll();
         settingsBG.add(tempPanel);
         repaint();
@@ -429,7 +436,7 @@ public class settingsPanel extends javax.swing.JPanel {
         backLabel.setText("Back");
         backLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/back.png")));
         backActive = true;
-        tempPanel = new passChangeAdmin();
+        tempPanel = new passChangeAdmin(who);
         settingsBG.removeAll();
         settingsBG.add(tempPanel);
         repaint();
@@ -511,7 +518,7 @@ public class settingsPanel extends javax.swing.JPanel {
         backLabel.setText("Back");
         backLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/back.png")));
         backActive = true;
-        tempPanel = new addAdmin();
+        tempPanel = new addAdmin(who);
         settingsBG.removeAll();
         settingsBG.add(tempPanel);
         repaint();

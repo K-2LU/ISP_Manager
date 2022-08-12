@@ -4,16 +4,92 @@
  */
 package isp_manager;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 /**
  *
  * @author King Nothing
  */
 public class packagePanel extends javax.swing.JPanel {
+    
+    Connection con;
+    Statement stm;
+    ResultSet rs;
+    PreparedStatement st;
 
-    /**
-     * Creates new form packagePanel
-     */
+    int user10, user15, user20, user30, bandwith, nameCust;
+    int act10, act15, act20, act30;
+    String packStat, actStat;
+    
+    String u10, u15, u20, u30;
+    String a10, a15, a20, a30;
+    String r10, r15, r20, r30;
+    String totalRevenue;
+    
     public packagePanel() {
+        
+        try {
+            Class.forName("org.sqlite.JDBC"); // Driver available
+            con = DriverManager.getConnection("jdbc:sqlite:isp_manager.db"); // established connection
+            stm = con.createStatement(); // statement created
+            st = con.prepareStatement("update customer set password = ? where id = ?");
+            rs = stm.executeQuery("select * from customer"); // Query executed
+        
+        while (rs.next()) {
+                packStat = rs.getString(7);
+                actStat = rs.getString(9);
+                
+                if(packStat.equals("10 mbps")) {
+                    user10 += 1;
+                    if(actStat.equals("true"))  {
+                        act10 += 1;
+                    }
+                } else if(packStat.equals("15 mbps")) {
+                    user15 += 1;
+                    if(actStat.equals("true"))  {
+                        act15 += 1;
+                    }
+                } else if(packStat.equals("20 mbps")) {
+                    user20 += 1;
+                    if(actStat.equals("true"))  {
+                        act20 += 1;
+                    }
+                } else if(packStat.equals("30 mbps")) {
+                    user30 += 1;
+                    if(actStat.equals("true"))  {
+                        act30 += 1;
+                    }
+                }
+        }
+        
+        a10 = String.valueOf(act10);
+        a15 = String.valueOf(act15);
+        a20 = String.valueOf(act20);
+        a30 = String.valueOf(act30);
+        
+        u10 = String.valueOf(user10);
+        u15 = String.valueOf(user15);
+        u20 = String.valueOf(user20);
+        u30 = String.valueOf(user30);
+        
+        r10 = String.valueOf(act10 * 400);
+        r15 = String.valueOf(act15 * 500);
+        r20 = String.valueOf(act20 * 700);
+        r30 = String.valueOf(act30 * 1000);
+        
+        totalRevenue = String.valueOf((act10 * 400) + (act15 * 500) + (act20 * 700) + (act30 * 1000));
+        
+        con.close();
+        stm.close();
+        st.close();
+        rs.close();
+        
+        } catch (Exception e)  {}
+        
         initComponents();
     }
 
@@ -169,7 +245,7 @@ public class packagePanel extends javax.swing.JPanel {
         jLabel13.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(204, 204, 204));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("X");
+        jLabel13.setText(u10);
 
         jLabel14.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(204, 204, 204));
@@ -189,7 +265,7 @@ public class packagePanel extends javax.swing.JPanel {
         user15mbps.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         user15mbps.setForeground(new java.awt.Color(204, 204, 204));
         user15mbps.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        user15mbps.setText("X");
+        user15mbps.setText(u15);
 
         jLabel18.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(204, 204, 204));
@@ -204,7 +280,7 @@ public class packagePanel extends javax.swing.JPanel {
         user20mbps.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         user20mbps.setForeground(new java.awt.Color(204, 204, 204));
         user20mbps.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        user20mbps.setText("X");
+        user20mbps.setText(u20);
 
         jLabel21.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(204, 204, 204));
@@ -224,7 +300,7 @@ public class packagePanel extends javax.swing.JPanel {
         user30mbps.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         user30mbps.setForeground(new java.awt.Color(204, 204, 204));
         user30mbps.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        user30mbps.setText("X");
+        user30mbps.setText(u30);
 
         jLabel25.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(204, 204, 204));
@@ -345,7 +421,7 @@ public class packagePanel extends javax.swing.JPanel {
         revenue10.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         revenue10.setForeground(new java.awt.Color(204, 204, 204));
         revenue10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        revenue10.setText("X");
+        revenue10.setText(r10);
 
         jLabel32.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(204, 204, 204));
@@ -354,17 +430,17 @@ public class packagePanel extends javax.swing.JPanel {
         active10mbps.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         active10mbps.setForeground(new java.awt.Color(204, 204, 204));
         active10mbps.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        active10mbps.setText("X");
+        active10mbps.setText(a10);
 
         active15mbps.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         active15mbps.setForeground(new java.awt.Color(204, 204, 204));
         active15mbps.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        active15mbps.setText("X");
+        active15mbps.setText(a15);
 
         revenue15.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         revenue15.setForeground(new java.awt.Color(204, 204, 204));
         revenue15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        revenue15.setText("X");
+        revenue15.setText(r15);
 
         jLabel36.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(204, 204, 204));
@@ -377,12 +453,12 @@ public class packagePanel extends javax.swing.JPanel {
         active20mbps.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         active20mbps.setForeground(new java.awt.Color(204, 204, 204));
         active20mbps.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        active20mbps.setText("X");
+        active20mbps.setText(a20);
 
         revenue20.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         revenue20.setForeground(new java.awt.Color(204, 204, 204));
         revenue20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        revenue20.setText("X");
+        revenue20.setText(r20);
 
         jLabel40.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel40.setForeground(new java.awt.Color(204, 204, 204));
@@ -391,17 +467,17 @@ public class packagePanel extends javax.swing.JPanel {
         active30mbps.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         active30mbps.setForeground(new java.awt.Color(204, 204, 204));
         active30mbps.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        active30mbps.setText("X");
+        active30mbps.setText(a30);
 
         revenue30.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         revenue30.setForeground(new java.awt.Color(204, 204, 204));
         revenue30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        revenue30.setText("X");
+        revenue30.setText(r30);
 
         revenueTotal.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         revenueTotal.setForeground(new java.awt.Color(204, 204, 204));
         revenueTotal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        revenueTotal.setText("X");
+        revenueTotal.setText(totalRevenue);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -422,35 +498,37 @@ public class packagePanel extends javax.swing.JPanel {
                             .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(81, 81, 81)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(106, 106, 106)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(active20mbps, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(active10mbps, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(active15mbps, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(active30mbps, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(54, 54, 54))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel28)
+                        .addGap(26, 26, 26)))
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(active30mbps, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(active20mbps, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(active10mbps, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(active15mbps, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(54, 54, 54))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel28)
-                                .addGap(26, 26, 26)))
+                            .addComponent(revenue30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(revenue20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(revenue15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel29, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(revenue10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-                            .addComponent(revenue15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(revenue30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(143, 143, 143)
+                                .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(46, 46, 46))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(revenueTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(31, 31, 31))))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(149, 149, 149)
-                        .addComponent(revenue20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(121, 121, 121)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(revenueTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(46, Short.MAX_VALUE))
+                        .addComponent(revenue10, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -486,7 +564,7 @@ public class packagePanel extends javax.swing.JPanel {
                                 .addGap(22, 22, 22)
                                 .addComponent(revenueTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(active20mbps, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(revenue20, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
@@ -525,7 +603,7 @@ public class packagePanel extends javax.swing.JPanel {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         addCustomerPanelLayout.setVerticalGroup(
             addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

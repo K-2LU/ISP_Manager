@@ -431,10 +431,13 @@ public class loginSystem extends javax.swing.JFrame {
 
         private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_loginButtonMouseClicked
                 // TODO add your handling code here:
+                Connection con;
+                ResultSet rs;
+                
                 try {
                 Class.forName("org.sqlite.JDBC");
                 // Driver available
-                Connection con = DriverManager.getConnection("jdbc:sqlite:isp_manager.db");
+                con = DriverManager.getConnection("jdbc:sqlite:isp_manager.db");
                 // established connection
                 Statement stm = con.createStatement(); // statement created
 
@@ -442,30 +445,36 @@ public class loginSystem extends javax.swing.JFrame {
                 password = passwordField.getText();
                 char at = username.charAt(0);
                 if (at == 'a') {
-                        ResultSet rs = stm.executeQuery("select * from admin"); // Query executed
+                        rs = stm.executeQuery("select * from admin"); // Query executed
                         while (rs.next()) {
                                 if (username.equals(rs.getString(3)) && !password.equals(rs.getString(5))) {
                                         loginFailedAlert.setText("Incorrect password!");
                                         loginFailedAlert.setForeground(new java.awt.Color(204, 204, 204));
                                 } else if (username.equals(rs.getString(3)) && password.equals(rs.getString(5))) {
                                         this.dispose();
+                                        
                                         try{
                                             new adminPanel(rs.getString(1)).setVisible(true);
+                                            con.close();
+                                            rs.close();
                                         }
                                         catch(Exception e){}
                                 }
                         }
                 }
                 if (at == 'c') {
-                        ResultSet rs = stm.executeQuery("select * from customer"); // Query executed
+                       rs = stm.executeQuery("select * from customer"); // Query executed
                         while (rs.next()) {
                                 if (username.equals(rs.getString(4)) && !password.equals(rs.getString(6))) {
                                         loginFailedAlert.setText("Incorrect password!");
                                         loginFailedAlert.setForeground(new java.awt.Color(204, 204, 204));
                                 } else if (username.equals(rs.getString(4)) && password.equals(rs.getString(6))) {
                                         this.dispose();
+
                                         try{
                                             new customerUserPanel(rs.getString(1)).setVisible(true);
+                                            con.close();
+                                            rs.close();
                                         }
                                         catch(Exception e){}
                                 }
@@ -473,7 +482,7 @@ public class loginSystem extends javax.swing.JFrame {
                 }
 
                 else if (at == 's') {
-                    ResultSet rs = stm.executeQuery("select * from staff"); // Query executed
+                    rs = stm.executeQuery("select * from staff"); // Query executed
                         while (rs.next()) {
                                 if (username.equals(rs.getString(3)) && !password.equals(rs.getString(4))) {
                                         loginFailedAlert.setText("Incorrect password!");
@@ -482,6 +491,8 @@ public class loginSystem extends javax.swing.JFrame {
                                         this.dispose();
                                         try{
                                             new staffUserPanel(rs.getString(1)).setVisible(true);
+                                            con.close();
+                                            rs.close();
                                         }
                                         catch(Exception e){}
                                 }
@@ -491,7 +502,9 @@ public class loginSystem extends javax.swing.JFrame {
                 else {
                         loginFailedAlert.setForeground(new java.awt.Color(204, 204, 204));
                 }
-               } catch(Exception e) {}
+               } catch(Exception e) {
+               }     finally   {
+                }
 
         }// GEN-LAST:event_loginButtonMouseClicked
 

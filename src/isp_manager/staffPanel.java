@@ -7,16 +7,18 @@ public class staffPanel extends javax.swing.JPanel {
     
     String who;
     Connection con;
-    Statement stm;
-    ResultSet rs;
-    PreparedStatement st;
+    PreparedStatement stm;
 
     String userId, username, contactNo, mailAddress, nameStaff;
     String actStat, passwd, role;
     int salary;
     
     public staffPanel(){
-        
+//        try {
+//        Class.forName("org.sqlite.JDBC"); // Driver available
+//        con = DriverManager.getConnection("jdbc:sqlite:isp_manager.db"); // established connection
+//        stm = con.prepareStatement("insert into staff values(?, ?, ?, ?, ?, ?, ?, ?, ?)");
+//        } catch (Exception e) {}
         initComponents();
     }
 
@@ -54,6 +56,13 @@ public class staffPanel extends javax.swing.JPanel {
         packageLabel1 = new javax.swing.JLabel();
         salaryTextField = new javax.swing.JTextField();
         packageLabel2 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        userIDField = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        usernameField = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        passFIeld = new javax.swing.JPasswordField();
+        alertLabel = new javax.swing.JLabel();
         infoPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -333,6 +342,9 @@ public class staffPanel extends javax.swing.JPanel {
         adderButton.setBorder(null);
         adderButton.setContentAreaFilled(false);
         adderButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adderButtonMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 adderButtonMouseEntered(evt);
             }
@@ -374,6 +386,7 @@ public class staffPanel extends javax.swing.JPanel {
         packageLabel1.setText("BDT");
 
         salaryTextField.setBackground(new java.awt.Color(38, 38, 38));
+        salaryTextField.setForeground(new java.awt.Color(204, 204, 204));
         salaryTextField.setBorder(null);
         salaryTextField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -393,58 +406,133 @@ public class staffPanel extends javax.swing.JPanel {
         packageLabel2.setForeground(new java.awt.Color(204, 204, 204));
         packageLabel2.setText("Salary");
 
+        jLabel10.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel10.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel10.setText("Staff ID:");
+
+        userIDField.setBackground(new java.awt.Color(48, 48, 48));
+        userIDField.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        userIDField.setForeground(new java.awt.Color(204, 204, 204));
+        userIDField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        userIDField.setText("Enter ID");
+        userIDField.setBorder(null);
+        userIDField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                userIDFieldMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                userIDFieldMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                userIDFieldMouseExited(evt);
+            }
+        });
+
+        jLabel11.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel11.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel11.setText("Staff username:");
+
+        usernameField.setBackground(new java.awt.Color(48, 48, 48));
+        usernameField.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        usernameField.setForeground(new java.awt.Color(204, 204, 204));
+        usernameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        usernameField.setText("Enter Username");
+        usernameField.setBorder(null);
+        usernameField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                usernameFieldMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                usernameFieldMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                usernameFieldMouseExited(evt);
+            }
+        });
+
+        jLabel12.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel12.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel12.setText("Staff Password");
+
+        passFIeld.setBackground(new java.awt.Color(48, 48, 48));
+        passFIeld.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        passFIeld.setForeground(new java.awt.Color(204, 204, 204));
+        passFIeld.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        passFIeld.setText("Password");
+        passFIeld.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(54, 54, 54), 3, true));
+
+        alertLabel.setBackground(new java.awt.Color(204, 204, 204));
+        alertLabel.setForeground(new java.awt.Color(204, 204, 204));
+        alertLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+
         javax.swing.GroupLayout addCustomerPanelLayout = new javax.swing.GroupLayout(addCustomerPanel);
         addCustomerPanel.setLayout(addCustomerPanelLayout);
         addCustomerPanelLayout.setHorizontalGroup(
             addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                .addGap(123, 123, 123)
                 .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                        .addComponent(emailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                        .addComponent(phoneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(phoneField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                            .addComponent(addressLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(addressField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                            .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(legalDocField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCustomerPanelLayout.createSequentialGroup()
-                        .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGap(123, 123, 123)
+                        .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                                .addComponent(packageLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(salaryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(packageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(6, 6, 6))
+                                .addComponent(emailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                                .addComponent(packageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(114, 114, 114)
-                                .addComponent(roleBox, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(14, 14, 14)))
+                                .addComponent(phoneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(phoneField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(addCustomerPanelLayout.createSequentialGroup()
+                                    .addComponent(addressLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(addressField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(addCustomerPanelLayout.createSequentialGroup()
+                                    .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(alertLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(addCustomerPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(legalDocField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCustomerPanelLayout.createSequentialGroup()
+                                .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(addCustomerPanelLayout.createSequentialGroup()
+                                        .addComponent(packageLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(salaryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(packageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(6, 6, 6))
+                                    .addGroup(addCustomerPanelLayout.createSequentialGroup()
+                                        .addComponent(packageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(114, 114, 114)
+                                        .addComponent(roleBox, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(14, 14, 14))
+                            .addGroup(addCustomerPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(userIDField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(addCustomerPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(addCustomerPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(77, 77, 77)
+                                .addComponent(passFIeld, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(addCustomerPanelLayout.createSequentialGroup()
+                        .addGap(280, 280, 280)
+                        .addComponent(addStaffClick, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(40, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCustomerPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(addStaffClick, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(209, 209, 209))
         );
         addCustomerPanelLayout.setVerticalGroup(
             addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addGap(11, 11, 11)
+                .addComponent(alertLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(nameField, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                     .addComponent(nameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -468,14 +556,27 @@ public class staffPanel extends javax.swing.JPanel {
                 .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(packageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(roleBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
+                .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(salaryTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                        .addComponent(packageLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(packageLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(packageLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                    .addComponent(salaryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(packageLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
-                .addGap(92, 92, 92)
+                    .addComponent(userIDField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(passFIeld, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
                 .addComponent(addStaffClick, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(125, 125, 125))
+                .addContainerGap(162, Short.MAX_VALUE))
         );
 
         holderPanel.add(addCustomerPanel, "card2");
@@ -739,7 +840,7 @@ public class staffPanel extends javax.swing.JPanel {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(13, 13, 13)
-                        .addComponent(holderPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 807, Short.MAX_VALUE)
+                        .addComponent(holderPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
         );
 
@@ -933,6 +1034,72 @@ public class staffPanel extends javax.swing.JPanel {
         addStaffClick.setBackground(new java.awt.Color(10,137,70));
     }//GEN-LAST:event_adderButtonMouseExited
 
+    private void adderButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adderButtonMouseClicked
+//        int salary = parseInt(salaryTextField.getText());
+               try {
+        Class.forName("org.sqlite.JDBC"); // Driver available
+        con = DriverManager.getConnection("jdbc:sqlite:isp_manager.db"); // established connection
+        stm = con.prepareStatement("insert into staff values(?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        } catch (Exception e) {}
+        
+        userId = userIDField.getText();
+        nameStaff = nameField.getText();
+        contactNo = phoneField.getText();
+        mailAddress = emailField.getText();
+        String pass = passFIeld.getText();
+        username = usernameField.getText();
+        int idx = roleBox.getSelectedIndex();
+        String role;
+        
+        if(idx == 0)    role = "Manager";
+        else if (idx==1) role = "Technician";
+        else role = "General Staff";
+        
+        try{
+            stm.setString(1, userId);
+            stm.setString(2, nameStaff);
+            stm.setString(3, username);
+            stm.setString(4, pass);
+            stm.setString(5, "true");
+            stm.setInt(6, 10000);
+            stm.setString(7, role);
+            stm.setString(8, mailAddress);
+            stm.setString(9, contactNo);
+            stm.executeUpdate();
+            alertLabel.setText("Staff added");
+            stm.close();
+            con.close();
+        } catch(Exception sq)    {
+            System.out.println(sq.getMessage());
+        }
+        
+        
+    }//GEN-LAST:event_adderButtonMouseClicked
+
+    private void userIDFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userIDFieldMouseClicked
+        
+    }//GEN-LAST:event_userIDFieldMouseClicked
+
+    private void userIDFieldMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userIDFieldMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userIDFieldMouseEntered
+
+    private void userIDFieldMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userIDFieldMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userIDFieldMouseExited
+
+    private void usernameFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameFieldMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usernameFieldMouseClicked
+
+    private void usernameFieldMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameFieldMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usernameFieldMouseEntered
+
+    private void usernameFieldMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameFieldMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usernameFieldMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BG;
@@ -944,6 +1111,7 @@ public class staffPanel extends javax.swing.JPanel {
     private javax.swing.JButton adderButton;
     private javax.swing.JTextField addressField;
     private javax.swing.JLabel addressLabel;
+    private javax.swing.JLabel alertLabel;
     private javax.swing.JPanel briefSearchPanel;
     private javax.swing.JTextField emailField;
     private javax.swing.JLabel emailLabel;
@@ -957,6 +1125,9 @@ public class staffPanel extends javax.swing.JPanel {
     private javax.swing.JLabel infoUsername;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -977,6 +1148,7 @@ public class staffPanel extends javax.swing.JPanel {
     private javax.swing.JLabel packageLabel;
     private javax.swing.JLabel packageLabel1;
     private javax.swing.JLabel packageLabel2;
+    private javax.swing.JPasswordField passFIeld;
     private javax.swing.JTextField phoneField;
     private javax.swing.JLabel phoneLabel;
     private javax.swing.JLabel remStaffIcon;
@@ -984,5 +1156,7 @@ public class staffPanel extends javax.swing.JPanel {
     private javax.swing.JButton removeStaffButton;
     private javax.swing.JComboBox<String> roleBox;
     private javax.swing.JTextField salaryTextField;
+    private javax.swing.JTextField userIDField;
+    private javax.swing.JTextField usernameField;
     // End of variables declaration//GEN-END:variables
 }

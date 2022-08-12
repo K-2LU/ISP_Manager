@@ -1,9 +1,18 @@
 package isp_manager;
 
+import java.sql.*;
+
 public class passChangeAdmin extends javax.swing.JPanel {
+    String who;
+    Connection con;
+    Statement stm;
+    ResultSet rs;
+    PreparedStatement st;
     
+    String passwd;
     
-    public passChangeAdmin() {
+    public passChangeAdmin(String id) {
+        who = id;
         initComponents();
     }
 
@@ -164,16 +173,51 @@ public class passChangeAdmin extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void saveLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveLabelMouseClicked
+        
+        try {
+            Class.forName("org.sqlite.JDBC"); // Driver available
+        con = DriverManager.getConnection("jdbc:sqlite:isp_manager.db"); // established connection
+        stm = con.createStatement(); // statement created
+        st = con.prepareStatement("update admin set password = ? where id = ?");
+        rs = stm.executeQuery("select * from admin"); // Query executed
+        
+        while (rs.next()) {
+            if (who.equals(rs.getString(1))) {
+                passwd = rs.getString(5);
+                break;
+            }
+        }
+        } catch(Exception sq)   {
+        }
+        
+
         String new1 = newPass1.getText();
         String new2 = newPass2.getText();
         if(!(new1.equals(new2)))    {
             warningLabel.setText("Passwords do not match");
             warningLabel.setForeground(new java.awt.Color(192,0,0));
         }
-        else    {
-            warningLabel.setText("Password successfully updated");
+        else if (new1.equals(passwd))   {
+            warningLabel.setText("Enter a different password");
             warningLabel.setForeground(new java.awt.Color(204,204,204));
         }
+        else    {
+            try {
+             st.setString(1, new1);
+             st.setString(2, who);
+             st.executeUpdate();
+             
+            stm.close();
+            rs.close();
+            st.close();
+            con.close();
+            warningLabel.setText("Password successfully updated");
+            warningLabel.setForeground(new java.awt.Color(204,204,204));
+        
+            } catch  (Exception e)  {}
+             
+        }
+        
     }//GEN-LAST:event_saveLabelMouseClicked
 
     private void saveLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveLabelMouseEntered

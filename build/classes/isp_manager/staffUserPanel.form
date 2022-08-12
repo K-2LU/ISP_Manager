@@ -291,7 +291,7 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="288" max="-2" attributes="0"/>
@@ -330,13 +330,10 @@
                                       <Component id="name" min="-2" pref="218" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="386" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                                              <Component id="customerPhoto" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="text" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="391" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="text" min="-2" pref="135" max="-2" attributes="0"/>
+                                          <Component id="customerPhoto" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -565,6 +562,10 @@
                           <Color blue="1e" green="a8" red="0" type="rgb"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="else&#xa;jPanel1.setBackground(new java.awt.Color(197, 0, 0));"/>
+                        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="if(actStat.equals(&quot;true&quot;))"/>
+                      </AuxValues>
 
                       <Layout>
                         <DimensionLayout dim="0">

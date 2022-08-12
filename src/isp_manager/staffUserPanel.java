@@ -260,7 +260,10 @@ public class staffUserPanel extends javax.swing.JFrame {
         mail.setForeground(new java.awt.Color(204, 204, 204));
         mail.setText(mailAddress);
 
+        if(actStat.equals("true"))
         jPanel1.setBackground(new java.awt.Color(0, 168, 30));
+        else
+        jPanel1.setBackground(new java.awt.Color(197, 0, 0));
 
         stat.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         stat.setForeground(new java.awt.Color(204, 204, 204));
@@ -332,12 +335,10 @@ public class staffUserPanel extends javax.swing.JFrame {
                         .addGap(350, 350, 350)
                         .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(homePanelLayout.createSequentialGroup()
-                        .addGap(386, 386, 386)
-                        .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(homePanelLayout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(customerPhoto))
-                            .addComponent(text, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(391, 391, 391)
+                        .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(text, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(customerPhoto))))
                 .addContainerGap(399, Short.MAX_VALUE))
         );
         homePanelLayout.setVerticalGroup(
@@ -767,6 +768,9 @@ public class staffUserPanel extends javax.swing.JFrame {
         } else if (!temp1.equals(temp2)) {
             alertLabelPass.setText("Passwords do not match");
             alertLabelPass.setForeground(new java.awt.Color(204, 204, 204));
+        } else if (temp1.equals(passwd)) {
+            alertLabelPass.setText("Enter a new password");
+            alertLabelPass.setForeground(new java.awt.Color(204,204,204));
         } else {
             try {
              st.setString(1, temp1);

@@ -1,10 +1,43 @@
 package isp_manager;
 
+import java.sql.*;
+
 public class adminProfile extends javax.swing.JPanel {
 
     javax.swing.JPanel tempPanel;
-
-    public adminProfile() {
+    Connection con;
+    Statement stm;
+    ResultSet rs;
+    PreparedStatement pst;
+    String who;
+    
+    String userId, username, contactNo, mailAddress, bandwith, nameAd;
+    String actStat, passwd, creditString;
+    int credit;
+    public adminProfile(String id) {
+        who = id;
+        try {
+        Class.forName("org.sqlite.JDBC"); // Driver available
+        con = DriverManager.getConnection("jdbc:sqlite:isp_manager.db"); // established connection
+        stm = con.createStatement(); // statement created
+//        st = con.prepareStatement("update customer set password = ? where id = ?");
+        rs = stm.executeQuery("select * from admin"); // Query execute
+        
+        while (rs.next()) {
+            if (who.equals(rs.getString(1))) {
+                userId = rs.getString(1);
+                nameAd = rs.getString(2);
+                username = rs.getString(3);
+                mailAddress = rs.getString(4);
+                passwd = rs.getString(5);
+                contactNo = rs.getString(6);
+                break;
+            }
+        }
+        } catch (Exception e) {}
+        
+                who = id;
+ 
         initComponents();
     }
 
@@ -19,20 +52,17 @@ public class adminProfile extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        idLabel = new javax.swing.JLabel();
-        nameLabel = new javax.swing.JLabel();
-        unameLabel = new javax.swing.JLabel();
-        mailLabel = new javax.swing.JLabel();
-        phoneLabel = new javax.swing.JLabel();
-        statLabel = new javax.swing.JLabel();
+        idPanel = new javax.swing.JLabel();
+        namePanel = new javax.swing.JLabel();
+        usernamePanel = new javax.swing.JLabel();
+        mailPanel = new javax.swing.JLabel();
+        phonPanel = new javax.swing.JLabel();
         editPanel = new javax.swing.JPanel();
         editLabel = new javax.swing.JLabel();
         profile_edit = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -45,7 +75,7 @@ public class adminProfile extends javax.swing.JPanel {
         mailField = new javax.swing.JTextField();
         nameField = new javax.swing.JTextField();
         phoneField = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        warningLabel = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1256, 678));
 
@@ -74,33 +104,25 @@ public class adminProfile extends javax.swing.JPanel {
         jLabel5.setForeground(new java.awt.Color(204, 204, 204));
         jLabel5.setText("Phone No. :");
 
-        jLabel6.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel6.setText("Active Status :");
+        idPanel.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        idPanel.setForeground(new java.awt.Color(204, 204, 204));
+        idPanel.setText(userId);
 
-        idLabel.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        idLabel.setForeground(new java.awt.Color(204, 204, 204));
-        idLabel.setText("X");
+        namePanel.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        namePanel.setForeground(new java.awt.Color(204, 204, 204));
+        namePanel.setText(nameAd);
 
-        nameLabel.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        nameLabel.setForeground(new java.awt.Color(204, 204, 204));
-        nameLabel.setText("XXXXX YYYYYYYY ZZZZZZZZ");
+        usernamePanel.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        usernamePanel.setForeground(new java.awt.Color(204, 204, 204));
+        usernamePanel.setText(username);
 
-        unameLabel.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        unameLabel.setForeground(new java.awt.Color(204, 204, 204));
-        unameLabel.setText("xxx.yyy");
+        mailPanel.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        mailPanel.setForeground(new java.awt.Color(204, 204, 204));
+        mailPanel.setText(mailAddress);
 
-        mailLabel.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        mailLabel.setForeground(new java.awt.Color(204, 204, 204));
-        mailLabel.setText("xxxxxx@yyyyyy.zzz");
-
-        phoneLabel.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        phoneLabel.setForeground(new java.awt.Color(204, 204, 204));
-        phoneLabel.setText("01XXXXXXXXXX");
-
-        statLabel.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        statLabel.setForeground(new java.awt.Color(204, 204, 204));
-        statLabel.setText("[isActive : Active : Inactive]");
+        phonPanel.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        phonPanel.setForeground(new java.awt.Color(204, 204, 204));
+        phonPanel.setText(contactNo);
 
         editPanel.setBackground(new java.awt.Color(67, 88, 210));
         editPanel.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -159,16 +181,14 @@ public class adminProfile extends javax.swing.JPanel {
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(158, 158, 158)
                         .addGroup(profile_frontLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(statLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(phoneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(mailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(unameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(idLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(phonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mailPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(usernamePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(namePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(idPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(profile_frontLayout.createSequentialGroup()
                         .addGap(517, 517, 517)
                         .addComponent(editPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -180,28 +200,24 @@ public class adminProfile extends javax.swing.JPanel {
                 .addGap(100, 100, 100)
                 .addGroup(profile_frontLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(idLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(idPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(profile_frontLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(namePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(profile_frontLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(unameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(usernamePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(profile_frontLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(mailPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(profile_frontLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(phoneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(profile_frontLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(statLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 183, Short.MAX_VALUE)
+                    .addComponent(phonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE)
                 .addComponent(editPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(127, 127, 127))
         );
@@ -222,10 +238,6 @@ public class adminProfile extends javax.swing.JPanel {
         jLabel9.setForeground(new java.awt.Color(204, 204, 204));
         jLabel9.setText("Phone No. :");
 
-        jLabel10.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel10.setText("Active Status :");
-
         jLabel11.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(204, 204, 204));
         jLabel11.setText("Password :");
@@ -240,10 +252,10 @@ public class adminProfile extends javax.swing.JPanel {
         jLabel13.setText("(Please enter your password to confirm the changes. You'll notice the visible changes the next time you log in)");
 
         passField.setBackground(new java.awt.Color(38, 38, 38));
-        passField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(38, 38, 38), 3));
+        passField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(60, 60, 60), 3, true));
 
         passField1.setBackground(new java.awt.Color(38, 38, 38));
-        passField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(38, 38, 38), 3));
+        passField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(60, 60, 60), 3, true));
 
         confirmPanel.setBackground(new java.awt.Color(67, 88, 210));
         confirmPanel.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -349,12 +361,8 @@ public class adminProfile extends javax.swing.JPanel {
         phoneField.setForeground(new java.awt.Color(204, 204, 204));
         phoneField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(60, 60, 60), 2));
 
-        jComboBox1.setBackground(new java.awt.Color(38, 38, 38));
-        jComboBox1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(204, 204, 204));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Active", "Inactive" }));
-        jComboBox1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(60, 60, 60), 2));
-        jComboBox1.setLightWeightPopupEnabled(false);
+        warningLabel.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        warningLabel.setForeground(new java.awt.Color(204, 204, 204));
 
         javax.swing.GroupLayout profile_editLayout = new javax.swing.GroupLayout(profile_edit);
         profile_edit.setLayout(profile_editLayout);
@@ -378,14 +386,12 @@ public class adminProfile extends javax.swing.JPanel {
                                 .addGroup(profile_editLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(114, 114, 114)
                                 .addGroup(profile_editLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(phoneField, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(mailField, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(mailField, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(profile_editLayout.createSequentialGroup()
                         .addGap(317, 317, 317)
                         .addComponent(confirmPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -395,11 +401,17 @@ public class adminProfile extends javax.swing.JPanel {
                         .addGap(283, 283, 283)
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 704, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(269, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, profile_editLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(warningLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(85, 85, 85))
         );
         profile_editLayout.setVerticalGroup(
             profile_editLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, profile_editLayout.createSequentialGroup()
-                .addGap(100, 100, 100)
+                .addContainerGap()
+                .addComponent(warningLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59)
                 .addGroup(profile_editLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -411,11 +423,7 @@ public class adminProfile extends javax.swing.JPanel {
                 .addGroup(profile_editLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(phoneField, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(profile_editLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(100, 100, 100)
+                .addGap(138, 138, 138)
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(profile_editLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -502,6 +510,22 @@ public class adminProfile extends javax.swing.JPanel {
     }//GEN-LAST:event_editLabelMouseExited
 
     private void confirmLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmLabelMouseClicked
+        
+        String newName, newMail, newContact;
+        newName = nameField.getText();
+        newMail = mailField.getText();
+        newContact = phoneField.getText();
+        
+        String pass1, pass2;
+        pass1 = passField.getText();
+        pass2 = passField1.getText();
+        
+        if(!pass1.equals(passwd)){
+            warningLabel.setText("Incorrect password");
+        } else if(!pass1.equals(pass2))    {
+            warningLabel.setText("Passwords Do Not Match");
+        }
+        
         BG.removeAll();
         BG.add(profile_front);
         repaint();
@@ -524,10 +548,8 @@ public class adminProfile extends javax.swing.JPanel {
     private javax.swing.JPanel confirmPanel;
     private javax.swing.JLabel editLabel;
     private javax.swing.JPanel editPanel;
-    private javax.swing.JLabel idLabel;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel idPanel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -535,21 +557,20 @@ public class adminProfile extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField mailField;
-    private javax.swing.JLabel mailLabel;
+    private javax.swing.JLabel mailPanel;
     private javax.swing.JTextField nameField;
-    private javax.swing.JLabel nameLabel;
+    private javax.swing.JLabel namePanel;
     private javax.swing.JPasswordField passField;
     private javax.swing.JPasswordField passField1;
+    private javax.swing.JLabel phonPanel;
     private javax.swing.JTextField phoneField;
-    private javax.swing.JLabel phoneLabel;
     private javax.swing.JPanel profile_edit;
     private javax.swing.JPanel profile_front;
-    private javax.swing.JLabel statLabel;
-    private javax.swing.JLabel unameLabel;
+    private javax.swing.JLabel usernamePanel;
+    private javax.swing.JLabel warningLabel;
     // End of variables declaration//GEN-END:variables
 }
