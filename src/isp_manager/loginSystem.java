@@ -1,8 +1,8 @@
 package isp_manager;
 
-import isp_manager.*;
 import java.sql.*;
 import java.awt.CardLayout;
+import java.awt.event.*; 
 
 public class loginSystem extends javax.swing.JFrame {
 
@@ -32,7 +32,6 @@ public class loginSystem extends javax.swing.JFrame {
         passwordField = new javax.swing.JPasswordField();
         loginButtonPanel = new javax.swing.JPanel();
         loginButton = new javax.swing.JButton();
-        forgotPassButton = new javax.swing.JButton();
         newConnPanel = new javax.swing.JPanel();
         requestButton = new javax.swing.JButton();
         loginFailedAlert = new javax.swing.JLabel();
@@ -48,6 +47,7 @@ public class loginSystem extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("ISP Manager");
         setResizable(false);
 
         bg.setBackground(new java.awt.Color(44, 44, 44));
@@ -57,15 +57,21 @@ public class loginSystem extends javax.swing.JFrame {
 
         loginPanel4.setBackground(new java.awt.Color(44, 44, 44));
 
-        unameField.setBackground(new java.awt.Color(48, 48, 48));
+        unameField.setBackground(new java.awt.Color(44, 44, 44));
         unameField.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         unameField.setForeground(new java.awt.Color(153, 153, 153));
         unameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         unameField.setText("username or ID");
-        unameField.setBorder(null);
+        unameField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(48, 48, 48), 2, true));
         unameField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 unameFieldMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                unameFieldMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                unameFieldMouseExited(evt);
             }
         });
         unameField.addActionListener(new java.awt.event.ActionListener() {
@@ -74,15 +80,21 @@ public class loginSystem extends javax.swing.JFrame {
             }
         });
 
-        passwordField.setBackground(new java.awt.Color(48, 48, 48));
+        passwordField.setBackground(new java.awt.Color(44, 44, 44));
         passwordField.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         passwordField.setForeground(new java.awt.Color(153, 153, 153));
         passwordField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         passwordField.setText("Password");
-        passwordField.setBorder(null);
+        passwordField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(48, 48, 48), 2, true));
         passwordField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 passwordFieldMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                passwordFieldMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                passwordFieldMouseExited(evt);
             }
         });
         passwordField.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -134,25 +146,6 @@ public class loginSystem extends javax.swing.JFrame {
             .addComponent(loginButton, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
         );
 
-        forgotPassButton.setFont(new java.awt.Font("Liberation Sans", 0, 16)); // NOI18N
-        forgotPassButton.setForeground(new java.awt.Color(102, 102, 102));
-        forgotPassButton.setText("Forgot password?");
-        forgotPassButton.setBorder(null);
-        forgotPassButton.setContentAreaFilled(false);
-        forgotPassButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                forgotPassButtonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                forgotPassButtonMouseExited(evt);
-            }
-        });
-        forgotPassButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                forgotPassButtonActionPerformed(evt);
-            }
-        });
-
         newConnPanel.setBackground(new java.awt.Color(51, 51, 51));
         newConnPanel.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -194,6 +187,7 @@ public class loginSystem extends javax.swing.JFrame {
                 .addComponent(requestButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
+        loginFailedAlert.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         loginFailedAlert.setForeground(new java.awt.Color(44, 44, 44));
         loginFailedAlert.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         loginFailedAlert.setText("Login Failed");
@@ -207,18 +201,16 @@ public class loginSystem extends javax.swing.JFrame {
                 .addGap(0, 131, Short.MAX_VALUE)
                 .addGroup(loginPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginPanel4Layout.createSequentialGroup()
-                        .addComponent(loginFailedAlert, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginPanel4Layout.createSequentialGroup()
                         .addGroup(loginPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(passwordField)
                             .addComponent(unameField, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(95, 95, 95))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginPanel4Layout.createSequentialGroup()
-                        .addGroup(loginPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(forgotPassButton)
-                            .addComponent(loginButtonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(201, 201, 201))))
+                        .addComponent(loginButtonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(201, 201, 201))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginPanel4Layout.createSequentialGroup()
+                        .addComponent(loginFailedAlert, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginPanel4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(newConnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -228,16 +220,14 @@ public class loginSystem extends javax.swing.JFrame {
             loginPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(loginPanel4Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(loginFailedAlert)
-                .addGap(144, 144, 144)
+                .addComponent(loginFailedAlert, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(131, 131, 131)
                 .addComponent(unameField, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(loginButtonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(forgotPassButton)
-                .addGap(47, 47, 47)
+                .addGap(74, 74, 74)
                 .addComponent(newConnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(295, Short.MAX_VALUE))
         );
@@ -391,10 +381,6 @@ public class loginSystem extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void forgotPassButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgotPassButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_forgotPassButtonActionPerformed
-
     private void requestButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_requestButtonMouseEntered
         newConnPanel.setBackground(new java.awt.Color(54,54,54));
     }//GEN-LAST:event_requestButtonMouseEntered
@@ -402,6 +388,22 @@ public class loginSystem extends javax.swing.JFrame {
     private void requestButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_requestButtonMouseExited
         newConnPanel.setBackground(new java.awt.Color(51,51,51));
     }//GEN-LAST:event_requestButtonMouseExited
+
+    private void unameFieldMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_unameFieldMouseEntered
+        unameField.setBackground(new java.awt.Color(48,48,48));
+    }//GEN-LAST:event_unameFieldMouseEntered
+
+    private void unameFieldMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_unameFieldMouseExited
+        unameField.setBackground(new java.awt.Color(44,44,44));
+    }//GEN-LAST:event_unameFieldMouseExited
+
+    private void passwordFieldMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passwordFieldMouseEntered
+        passwordField.setBackground(new java.awt.Color(48,48,48));
+    }//GEN-LAST:event_passwordFieldMouseEntered
+
+    private void passwordFieldMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passwordFieldMouseExited
+        passwordField.setBackground(new java.awt.Color(44,44,44));
+    }//GEN-LAST:event_passwordFieldMouseExited
 
         private void requestButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_requestButtonActionPerformed
                 // TODO add your handling code here:
@@ -527,7 +529,83 @@ public class loginSystem extends javax.swing.JFrame {
         }// GEN-LAST:event_passwordFieldMouseClicked
 
         private void passwordFieldKeyPressed(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_passwordFieldKeyPressed
-                // TODO add your handling code here:
+                if(evt.getKeyCode()==KeyEvent.VK_ENTER)   {
+                    Connection con;
+                ResultSet rs;
+                
+                try {
+                Class.forName("org.sqlite.JDBC");
+                // Driver available
+                con = DriverManager.getConnection("jdbc:sqlite:isp_manager.db");
+                // established connection
+                Statement stm = con.createStatement(); // statement created
+
+                username = unameField.getText();
+                password = passwordField.getText();
+                char at = username.charAt(0);
+                if (at == 'a') {
+                        rs = stm.executeQuery("select * from admin"); // Query executed
+                        while (rs.next()) {
+                                if (username.equals(rs.getString(3)) && !password.equals(rs.getString(5))) {
+                                        loginFailedAlert.setText("Incorrect password!");
+                                        loginFailedAlert.setForeground(new java.awt.Color(204, 204, 204));
+                                } else if (username.equals(rs.getString(3)) && password.equals(rs.getString(5))) {
+                                        this.dispose();
+                                        
+                                        try{
+                                            new adminPanel(rs.getString(1)).setVisible(true);
+                                            con.close();
+                                            rs.close();
+                                        }
+                                        catch(Exception e){}
+                                }
+                        }
+                }
+                if (at == 'c') {
+                       rs = stm.executeQuery("select * from customer"); // Query executed
+                        while (rs.next()) {
+                                if (username.equals(rs.getString(4)) && !password.equals(rs.getString(6))) {
+                                        loginFailedAlert.setText("Incorrect password!");
+                                        loginFailedAlert.setForeground(new java.awt.Color(204, 204, 204));
+                                } else if (username.equals(rs.getString(4)) && password.equals(rs.getString(6))) {
+                                        this.dispose();
+
+                                        try{
+                                            new customerUserPanel(rs.getString(1)).setVisible(true);
+                                            con.close();
+                                            rs.close();
+                                        }
+                                        catch(Exception e){}
+                                }
+                        }
+                }
+
+                else if (at == 's') {
+                    rs = stm.executeQuery("select * from staff"); // Query executed
+                        while (rs.next()) {
+                                if (username.equals(rs.getString(3)) && !password.equals(rs.getString(4))) {
+                                        loginFailedAlert.setText("Incorrect password!");
+                                        loginFailedAlert.setForeground(new java.awt.Color(204, 204, 204));
+                                } else if (username.equals(rs.getString(3)) && password.equals(rs.getString(4))) {
+                                        this.dispose();
+                                        try{
+                                            new staffUserPanel(rs.getString(1)).setVisible(true);
+                                            con.close();
+                                            rs.close();
+                                        }
+                                        catch(Exception e){}
+                                }
+                        }
+                }
+
+                else {
+                        loginFailedAlert.setForeground(new java.awt.Color(204, 204, 204));
+                }
+               } catch(Exception e) {
+               }     finally   {
+                }
+
+                }
         }// GEN-LAST:event_passwordFieldKeyPressed
 
         private void loginButtonPanelMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_loginButtonPanelMouseEntered
@@ -546,11 +624,11 @@ public class loginSystem extends javax.swing.JFrame {
         }// GEN-LAST:event_loginButtonMouseExited
 
         private void forgotPassButtonMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_forgotPassButtonMouseEntered
-                forgotPassButton.setForeground(new java.awt.Color(120, 120, 120));
+//                forgotPassButton.setForeground(new java.awt.Color(120, 120, 120));
         }// GEN-LAST:event_forgotPassButtonMouseEntered
 
         private void forgotPassButtonMouseExited(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_forgotPassButtonMouseExited
-                forgotPassButton.setForeground(new java.awt.Color(102, 102, 102));
+//                forgotPassButton.setForeground(new java.awt.Color(102, 102, 102));
         }// GEN-LAST:event_forgotPassButtonMouseExited
 
         public static void main(String args[]) {
@@ -601,7 +679,6 @@ public class loginSystem extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
     private javax.swing.JPanel cardHolder;
-    private javax.swing.JButton forgotPassButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

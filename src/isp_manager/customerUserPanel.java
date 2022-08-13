@@ -11,7 +11,7 @@ public class customerUserPanel extends javax.swing.JFrame {
 
     String userId, username, contactNo, mailAddress, bandwith, nameCust;
     String actStat, passwd, creditString;
-    int credit;
+    int credit, bill;
 
     public customerUserPanel(String id) throws Exception {
         Class.forName("org.sqlite.JDBC"); // Driver available
@@ -89,6 +89,9 @@ public class customerUserPanel extends javax.swing.JFrame {
         creditTotal = new javax.swing.JLabel();
         billTotal = new javax.swing.JLabel();
         passwordBill = new javax.swing.JPasswordField();
+        jLabel10 = new javax.swing.JLabel();
+        packageBox = new javax.swing.JComboBox<>();
+        warningLabel = new javax.swing.JLabel();
         settingsPanel = new javax.swing.JPanel();
         setPassBG = new javax.swing.JPanel();
         passChange = new javax.swing.JLabel();
@@ -113,6 +116,7 @@ public class customerUserPanel extends javax.swing.JFrame {
         settingsButton = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("ISP Manager");
         setResizable(false);
 
         BG.setBackground(new java.awt.Color(44, 44, 44));
@@ -378,22 +382,23 @@ public class customerUserPanel extends javax.swing.JFrame {
         billPanel.setBackground(new java.awt.Color(44, 44, 44));
 
         jLabel2.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Pay Bill");
 
         jLabel4.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(204, 204, 204));
         jLabel4.setText("Bill :");
 
         jLabel6.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel6.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(204, 204, 204));
         jLabel6.setText("Enter Password :");
 
         jLabel7.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setText("Total credit :");
 
@@ -419,7 +424,7 @@ public class customerUserPanel extends javax.swing.JFrame {
         payConfirmBG.setLayout(payConfirmBGLayout);
         payConfirmBGLayout.setHorizontalGroup(
             payConfirmBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(confirmPay, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
+            .addComponent(confirmPay, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
         );
         payConfirmBGLayout.setVerticalGroup(
             payConfirmBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -429,67 +434,123 @@ public class customerUserPanel extends javax.swing.JFrame {
         );
 
         creditTotal.setBackground(new java.awt.Color(204, 204, 204));
-        creditTotal.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        creditTotal.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
         creditTotal.setForeground(new java.awt.Color(204, 204, 204));
+        creditTotal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         creditTotal.setText("" + credit);
 
         billTotal.setBackground(new java.awt.Color(204, 204, 204));
-        billTotal.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        billTotal.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
         billTotal.setForeground(new java.awt.Color(204, 204, 204));
-        billTotal.setText("(bill here)");
+        billTotal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        billTotal.setText("1000");
 
         passwordBill.setBackground(new java.awt.Color(44, 44, 44));
         passwordBill.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         passwordBill.setForeground(new java.awt.Color(204, 204, 204));
+        passwordBill.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         passwordBill.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51), 2));
+        passwordBill.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordBillActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel10.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel10.setText("Package");
+
+        packageBox.setBackground(new java.awt.Color(48, 48, 48));
+        packageBox.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        packageBox.setForeground(new java.awt.Color(204, 204, 204));
+        packageBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10 mbps", "15 mbps", "20 mbps", "30 mbps" }));
+        packageBox.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                packageBoxMouseClicked(evt);
+            }
+        });
+        packageBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                packageBoxActionPerformed(evt);
+            }
+        });
+
+        warningLabel.setBackground(new java.awt.Color(204, 204, 204));
+        warningLabel.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        warningLabel.setForeground(new java.awt.Color(204, 204, 204));
+        warningLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         javax.swing.GroupLayout billPanelLayout = new javax.swing.GroupLayout(billPanel);
         billPanel.setLayout(billPanelLayout);
         billPanelLayout.setHorizontalGroup(
             billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, billPanelLayout.createSequentialGroup()
-                .addContainerGap(442, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(382, 382, 382))
             .addGroup(billPanelLayout.createSequentialGroup()
                 .addGroup(billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(billPanelLayout.createSequentialGroup()
-                        .addGap(345, 345, 345)
+                        .addGap(344, 344, 344)
                         .addComponent(payConfirmBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(billPanelLayout.createSequentialGroup()
                         .addGap(159, 159, 159)
                         .addGroup(billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(99, 99, 99)
-                        .addGroup(billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(billPanelLayout.createSequentialGroup()
+                                .addGroup(billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, billPanelLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(packageBox, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(105, 105, 105))
+                                    .addGroup(billPanelLayout.createSequentialGroup()
+                                        .addGroup(billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(billPanelLayout.createSequentialGroup()
+                                                .addGap(91, 91, 91)
+                                                .addComponent(billTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(billPanelLayout.createSequentialGroup()
+                                                .addGap(65, 65, 65)
+                                                .addComponent(passwordBill, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(85, 85, 85))))
                             .addGroup(billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(creditTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(billTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(passwordBill, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(warningLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(billPanelLayout.createSequentialGroup()
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(99, 99, 99)
+                                    .addComponent(creditTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(billPanelLayout.createSequentialGroup()
+                        .addGap(304, 304, 304)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(361, Short.MAX_VALUE))
         );
         billPanelLayout.setVerticalGroup(
             billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(billPanelLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jLabel2)
-                .addGap(102, 102, 102)
+                .addGap(27, 27, 27)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addComponent(warningLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(creditTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(billPanelLayout.createSequentialGroup()
+                        .addGap(7, 7, 7)
+                        .addComponent(packageBox)))
+                .addGap(18, 18, 18)
                 .addGroup(billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(billTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addGroup(billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                    .addComponent(passwordBill))
-                .addGap(35, 35, 35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(billPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(passwordBill, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(91, 91, 91)
                 .addComponent(payConfirmBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(299, Short.MAX_VALUE))
+                .addContainerGap(193, Short.MAX_VALUE))
         );
 
         holder.add(billPanel, "card3");
@@ -873,6 +934,32 @@ public class customerUserPanel extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void passwordBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordBillActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordBillActionPerformed
+
+    private void packageBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_packageBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_packageBoxActionPerformed
+
+    private void packageBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_packageBoxMouseClicked
+        String selected = packageBox.getItemAt(packageBox.getSelectedIndex());
+        
+        if(selected.equals("10 mbps")) {
+            billTotal.setText("1000");
+            bill = 1000;
+        } else if(selected.equals("15 mbps")) {
+            billTotal.setText("1400");
+            bill = 1400;
+        } else if(selected.equals("20 mbps")) {
+            billTotal.setText("1800");
+            bill = 1800;
+        } else if(selected.equals("30 mbps")) {
+            billTotal.setText("2500");
+            bill = 2500;
+        } 
+    }//GEN-LAST:event_packageBoxMouseClicked
+
     private void newPass1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_newPass1ActionPerformed
         // TODO add your handling code here:
     }// GEN-LAST:event_newPass1ActionPerformed
@@ -929,7 +1016,40 @@ public class customerUserPanel extends javax.swing.JFrame {
     }// GEN-LAST:event_settingsButtonMouseExited
 
     private void confirmPayMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_confirmPayMouseClicked
-        // TODO add your handling code here:
+        
+        String currBill = packageBox.getItemAt(packageBox.getSelectedIndex());
+        String tempPass = passwordBill.getText();
+        
+        if(!tempPass.equals(passwd))   {
+            warningLabel.setText("Incorrect password");
+        } else if(credit - bill < 0)    {
+            warningLabel.setText("Insufficient balance");
+        }   else {
+            try {
+                Class.forName("org.sqlite.JDBC"); // Driver available
+                con = DriverManager.getConnection("jdbc:sqlite:isp_manager.db"); // established connection
+                stm = con.createStatement(); // statement created
+                
+                String tempPack = packageBox.getItemAt(packageBox.getSelectedIndex());
+                st = con.prepareStatement("update customer set package = ? where id = ?");
+                st.setString(1, tempPack);
+                st.setString(2, who);
+                
+                st = con.prepareStatement("update customer set credit = ? where id = ?");
+                st.setInt(1, credit-bill);
+                st.setString(2, who);
+                
+                tempPack = "" + (credit - bill);
+                
+                creditTotal.setText(tempPack);
+                
+                st.close();
+                stm.close();
+                con.close();
+            } catch(Exception e)    {
+            }
+        }
+        
     }// GEN-LAST:event_confirmPayMouseClicked
 
     private void confirmPayMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_confirmPayMouseEntered
@@ -979,6 +1099,12 @@ public class customerUserPanel extends javax.swing.JFrame {
             alertLabelPass.setForeground(new java.awt.Color(204,204,204));
         }   else {
             try {
+             Class.forName("org.sqlite.JDBC"); // Driver available
+             con = DriverManager.getConnection("jdbc:sqlite:isp_manager.db"); // established connection
+             stm = con.createStatement(); // statement created
+             st = con.prepareStatement("update customer set password = ? where id = ?");
+             rs = stm.executeQuery("select * from customer"); // Query executed
+             
              st.setString(1, temp1);
              st.setString(2, who);
              st.executeUpdate();
@@ -986,7 +1112,10 @@ public class customerUserPanel extends javax.swing.JFrame {
              alertLabelPass.setText("Password updated");
              alertLabelPass.setForeground(new java.awt.Color(204,204,204));
              passwd = temp1;
+             
+             rs.close();
              st.close();
+             stm.close();
              con.close();
         }   catch (Exception e) {}
         }
@@ -1061,6 +1190,7 @@ public class customerUserPanel extends javax.swing.JFrame {
     private javax.swing.JPanel homeBG;
     private javax.swing.JLabel homeButton;
     private javax.swing.JPanel homePanel;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1077,6 +1207,7 @@ public class customerUserPanel extends javax.swing.JFrame {
     private javax.swing.JPasswordField newPass;
     private javax.swing.JPasswordField newPass1;
     private javax.swing.JLabel pack;
+    private javax.swing.JComboBox<String> packageBox;
     private javax.swing.JLabel passChange;
     private javax.swing.JPanel passChanger;
     private javax.swing.JPasswordField passwordBill;
@@ -1098,5 +1229,6 @@ public class customerUserPanel extends javax.swing.JFrame {
     private javax.swing.JPanel topPanel;
     private javax.swing.JLabel uID;
     private javax.swing.JLabel uname;
+    private javax.swing.JLabel warningLabel;
     // End of variables declaration//GEN-END:variables
 }

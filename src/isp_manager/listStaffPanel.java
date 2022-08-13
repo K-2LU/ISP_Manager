@@ -1,80 +1,86 @@
 package isp_manager;
 
+import java.sql.*;
+import javax.swing.table.DefaultTableModel;
+
 public class listStaffPanel extends javax.swing.JPanel {
 
-    public listStaffPanel() {
-        initComponents();
-    }
+        String uid, name, username, packStat, actStat, mail;
+        int credit = 5000;
 
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+        Connection con;
+        Statement stm;
+        ResultSet rs;
 
-        jPanel1 = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        public listStaffPanel() {
 
-        jPanel1.setBackground(new java.awt.Color(44, 44, 44));
+                initComponents();
+        }
 
-        jScrollPane3.setBackground(new java.awt.Color(44, 44, 44));
+        @SuppressWarnings("unchecked")
+        // <editor-fold defaultstate="collapsed" desc="Generated
+        // Code">//GEN-BEGIN:initComponents
+        private void initComponents() {
 
-        jTable3.setBackground(new java.awt.Color(44, 44, 44));
-        jTable3.setForeground(new java.awt.Color(204, 204, 204));
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][] {
-                        { null, null, null, null, null, null },
-                        { null, null, null, null, null, null },
-                        { null, null, null, null, null, null },
-                        { null, null, null, null, null, null },
-                        { null, null, null, null, null, null },
-                        { null, null, null, null, null, null }
-                },
-                new String[] {
-                        "ID", "Name", "Role", "Email", "Salary", "Active Status"
-                }));
-        jTable3.setGridColor(new java.awt.Color(51, 51, 51));
-        jTable3.setSelectionBackground(new java.awt.Color(51, 51, 51));
-        jTable3.setSelectionForeground(new java.awt.Color(51, 51, 51));
-        jScrollPane3.setViewportView(jTable3);
+                jScrollPane3 = new javax.swing.JScrollPane();
+                DefaultTableModel model = new DefaultTableModel();
+                table = new javax.swing.JTable(model);
+                model.addColumn("ID");
+                model.addColumn("Name");
+                model.addColumn("Username");
+                model.addColumn("Package");
+                model.addColumn("Email");
+                model.addColumn("Active Status");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 787, Short.MAX_VALUE));
-        jPanel1Layout.setVerticalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, 678, Short.MAX_VALUE));
+                setBackground(new java.awt.Color(44, 44, 44));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 787, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))));
-        layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 678, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))));
-    }// </editor-fold>//GEN-END:initComponents
+                try {
+                        Class.forName("org.sqlite.JDBC"); // Driver available
+                        con = DriverManager.getConnection("jdbc:sqlite:isp_manager.db"); // established connection
+                        stm = con.createStatement();
+                        rs = stm.executeQuery("select * from staff"); // Query executed
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable3;
-    // End of variables declaration//GEN-END:variables
+                        while (rs.next()) {
+                                uid = rs.getString(1);
+                                name = rs.getString(2);
+                                username = rs.getString(3);
+                                packStat = rs.getString(7);
+                                mail = rs.getString(8);
+                                actStat = rs.getString(5);
+
+                                model.addRow(new Object[] { uid, name, username, packStat, mail, actStat });
+                        }
+                        stm.close();
+                        rs.close();
+                        con.close();
+                } catch (Exception e) {
+                }
+
+                jScrollPane3.setBackground(new java.awt.Color(44, 44, 44));
+                jScrollPane3.setBorder(null);
+
+                table.setBackground(new java.awt.Color(44, 44, 44));
+                table.setForeground(new java.awt.Color(204, 204, 204));
+                table.setGridColor(new java.awt.Color(51, 51, 51));
+                table.setSelectionBackground(new java.awt.Color(51, 51, 51));
+                table.setSelectionForeground(new java.awt.Color(51, 51, 51));
+                jScrollPane3.setViewportView(table);
+
+                javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+                this.setLayout(layout);
+                layout.setHorizontalGroup(
+                                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 787,
+                                                                Short.MAX_VALUE));
+                layout.setVerticalGroup(
+                                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE, 678,
+                                                                Short.MAX_VALUE));
+        }// </editor-fold>//GEN-END:initComponents
+
+        // Variables declaration - do not modify//GEN-BEGIN:variables
+        private javax.swing.JScrollPane jScrollPane3;
+        private javax.swing.JTable table;
+        // End of variables declaration//GEN-END:variables
 }

@@ -1,8 +1,40 @@
 package isp_manager;
 
-public class deleteAdminAccount extends javax.swing.JPanel {
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
-    public deleteAdminAccount() {
+public class deleteAdminAccount extends javax.swing.JPanel {
+    
+    javax.swing.JPanel tempPanel;
+    Connection con;
+    Statement stm;
+    ResultSet rs;
+    PreparedStatement st;
+    String who, passwd;
+    
+    public deleteAdminAccount(String id) {
+        who = id;
+        
+        try {
+            Class.forName("org.sqlite.JDBC"); // Driver available
+            con = DriverManager.getConnection("jdbc:sqlite:isp_manager.db"); // established connection
+            stm = con.createStatement(); // statement created
+            rs = stm.executeQuery("select * from admin"); // Query execute
+        
+            while (rs.next()) {
+                if (who.equals(rs.getString(1))) {
+                    passwd = rs.getString(5);
+                    break;
+                }
+            }
+            stm.close();
+            rs.close();
+            con.close();
+        } catch (Exception e) {}
+        
         initComponents();
     }
 
@@ -28,32 +60,34 @@ public class deleteAdminAccount extends javax.swing.JPanel {
         BG.setBackground(new java.awt.Color(44, 44, 44));
         BG.setPreferredSize(new java.awt.Dimension(1256, 678));
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setText("Enter your username :");
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setText("Enter your password :");
 
-        jLabel3.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setText("Re-enter password to confirm :");
 
         unameField.setBackground(new java.awt.Color(38, 38, 38));
-        unameField.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        unameField.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         unameField.setForeground(new java.awt.Color(204, 204, 204));
         unameField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(60, 60, 60), 2));
 
         passField1.setBackground(new java.awt.Color(38, 38, 38));
-        passField1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        passField1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         passField1.setForeground(new java.awt.Color(204, 204, 204));
+        passField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         passField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(60, 60, 60), 2));
         passField1.setPreferredSize(new java.awt.Dimension(5, 24));
 
         passField2.setBackground(new java.awt.Color(38, 38, 38));
-        passField2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        passField2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         passField2.setForeground(new java.awt.Color(204, 204, 204));
+        passField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         passField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(60, 60, 60), 2));
         passField2.setPreferredSize(new java.awt.Dimension(5, 24));
 
@@ -104,6 +138,7 @@ public class deleteAdminAccount extends javax.swing.JPanel {
         );
 
         warningLabel.setForeground(new java.awt.Color(44, 44, 44));
+        warningLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         warningLabel.setText("warning label");
 
         javax.swing.GroupLayout BGLayout = new javax.swing.GroupLayout(BG);
@@ -112,6 +147,12 @@ public class deleteAdminAccount extends javax.swing.JPanel {
             BGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BGLayout.createSequentialGroup()
                 .addGroup(BGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BGLayout.createSequentialGroup()
+                        .addGap(387, 387, 387)
+                        .addComponent(savePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(BGLayout.createSequentialGroup()
+                        .addGap(144, 144, 144)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 711, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(BGLayout.createSequentialGroup()
                         .addGap(219, 219, 219)
                         .addGroup(BGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -123,25 +164,19 @@ public class deleteAdminAccount extends javax.swing.JPanel {
                         .addGroup(BGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(unameField, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(passField1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(passField2, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(BGLayout.createSequentialGroup()
-                        .addGap(387, 387, 387)
-                        .addComponent(savePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(BGLayout.createSequentialGroup()
-                        .addGap(144, 144, 144)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 711, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(passField2, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(356, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BGLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(warningLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+                .addComponent(warningLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         BGLayout.setVerticalGroup(
             BGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BGLayout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addComponent(warningLabel)
-                .addGap(18, 18, 18)
+                .addGap(72, 72, 72)
+                .addComponent(warningLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(BGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(unameField, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -187,8 +222,23 @@ public class deleteAdminAccount extends javax.swing.JPanel {
             warningLabel.setText("Your Passwords do not match");
             warningLabel.setForeground(new java.awt.Color(204,204, 204));
         }   else {
-            warningLabel.setText("Account deleted. Please log out to finish the process");
-            warningLabel.setForeground(new java.awt.Color(204,204, 204));
+            
+            try {
+                con = DriverManager.getConnection("jdbc:sqlite:isp_manager.db"); // established connection
+                st = con.prepareStatement("delete from admin where username = ?");
+            
+                st.setString(1, uname);
+                st.executeUpdate();
+            
+                st.close();
+                con.close();
+                
+                warningLabel.setText("Account deleted. Please log out to finish the process");
+                warningLabel.setForeground(new java.awt.Color(204,204, 204));
+            } catch (Exception e)  {
+                System.out.println(e.getMessage());
+            }
+            
         }
     }//GEN-LAST:event_saveLabelMouseClicked
 

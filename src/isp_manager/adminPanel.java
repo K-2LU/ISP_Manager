@@ -23,6 +23,12 @@ public class adminPanel extends javax.swing.JFrame {
 
         String userId, username, contactNo, mailAddress, passwd;
         String name;
+        
+        int totalStaffInt, onLeaveStaffInt;
+        int totalCustomerInt, inactiveCustomerInt;
+        
+        String tStaff, tLeave, tStaffActive;
+        String tCustomer, tInactive, tCustomerActive;
 
         public adminPanel(String id) throws Exception {
                 Class.forName("org.sqlite.JDBC"); // Driver available
@@ -42,6 +48,31 @@ public class adminPanel extends javax.swing.JFrame {
                                 break;
                         }
                 }
+                
+                rs = stm.executeQuery("select * from staff");
+                while(rs.next())    {
+                    totalStaffInt += 1;
+                    String tempStat = rs.getString(5);
+                    if(tempStat.equals("false"))
+                        onLeaveStaffInt += 1;
+                }
+                
+                rs = stm.executeQuery("select * from customer");
+                while(rs.next())    {
+                    totalCustomerInt += 1;
+                    String tempStat = rs.getString(5);
+                    if(tempStat.equals("false"))
+                        inactiveCustomerInt += 1;
+                }
+                
+                tStaff = "" + totalStaffInt;
+                tLeave = "" + onLeaveStaffInt;
+                tStaffActive = "" + (totalStaffInt - onLeaveStaffInt);
+                
+                tCustomer = "" + totalCustomerInt;
+                tInactive = "" + inactiveCustomerInt;
+                tCustomerActive = "" + (totalCustomerInt - inactiveCustomerInt);
+                
                 rs.close();
                 con.close();
                 initComponents();
@@ -119,6 +150,7 @@ public class adminPanel extends javax.swing.JFrame {
         settingsLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("ISP Manager");
         setResizable(false);
 
         jSplitPane1.setBackground(new java.awt.Color(0, 0, 0));
@@ -131,7 +163,7 @@ public class adminPanel extends javax.swing.JFrame {
         logoPanel.setBackground(new java.awt.Color(204, 204, 204));
         logoPanel.setLayout(new java.awt.GridLayout(1, 0));
 
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/logo_1_80.png"))); // NOI18N
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/ISPManager_86.png"))); // NOI18N
 
         dashBoardBG.setBackground(new java.awt.Color(44, 44, 44));
 
@@ -448,7 +480,7 @@ public class adminPanel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(logoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(logo)
+                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(homeBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(customerBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -536,7 +568,7 @@ public class adminPanel extends javax.swing.JFrame {
         dashboardPanel.setBackground(new java.awt.Color(44, 44, 44));
 
         jLabel1.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel1.setText("Total Staff ");
@@ -549,34 +581,34 @@ public class adminPanel extends javax.swing.JFrame {
         jSeparator1.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel3.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel3.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel3.setText("On Leave");
 
         jLabel4.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel4.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(204, 204, 204));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel4.setText("Active");
 
         totalStaff.setBackground(new java.awt.Color(204, 204, 204));
-        totalStaff.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        totalStaff.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         totalStaff.setForeground(new java.awt.Color(204, 204, 204));
         totalStaff.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        totalStaff.setText("X");
+        totalStaff.setText(tStaff);
 
         activeStaff.setBackground(new java.awt.Color(204, 204, 204));
-        activeStaff.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        activeStaff.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         activeStaff.setForeground(new java.awt.Color(204, 204, 204));
         activeStaff.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        activeStaff.setText("X");
+        activeStaff.setText(tStaffActive);
 
         leaveStaff.setBackground(new java.awt.Color(204, 204, 204));
-        leaveStaff.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        leaveStaff.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         leaveStaff.setForeground(new java.awt.Color(204, 204, 204));
         leaveStaff.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        leaveStaff.setText("X");
+        leaveStaff.setText(tLeave);
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(204, 204, 204));
@@ -586,40 +618,40 @@ public class adminPanel extends javax.swing.JFrame {
         jSeparator2.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel7.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel7.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel7.setText("Total Customer");
 
         jLabel8.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel8.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(204, 204, 204));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel8.setText("Inactive");
 
         jLabel9.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel9.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(204, 204, 204));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel9.setText("Active");
 
         totalCustomer.setBackground(new java.awt.Color(204, 204, 204));
-        totalCustomer.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        totalCustomer.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         totalCustomer.setForeground(new java.awt.Color(204, 204, 204));
         totalCustomer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        totalCustomer.setText("X");
+        totalCustomer.setText(tCustomer);
 
         inactiveCust.setBackground(new java.awt.Color(204, 204, 204));
-        inactiveCust.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        inactiveCust.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         inactiveCust.setForeground(new java.awt.Color(204, 204, 204));
         inactiveCust.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        inactiveCust.setText("X");
+        inactiveCust.setText(tInactive);
 
         activeCust.setBackground(new java.awt.Color(204, 204, 204));
-        activeCust.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        activeCust.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         activeCust.setForeground(new java.awt.Color(204, 204, 204));
         activeCust.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        activeCust.setText("X");
+        activeCust.setText(tCustomerActive);
 
         javax.swing.GroupLayout dashboardPanelLayout = new javax.swing.GroupLayout(dashboardPanel);
         dashboardPanel.setLayout(dashboardPanelLayout);
@@ -663,7 +695,7 @@ public class adminPanel extends javax.swing.JFrame {
                             .addComponent(totalCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(inactiveCust, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(activeCust, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(103, Short.MAX_VALUE))))
+                        .addContainerGap(115, Short.MAX_VALUE))))
         );
         dashboardPanelLayout.setVerticalGroup(
             dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -912,7 +944,7 @@ public class adminPanel extends javax.swing.JFrame {
                         .addComponent(customerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(staffPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 68, Short.MAX_VALUE)))
+                        .addGap(0, 78, Short.MAX_VALUE)))
                 .addGap(157, 157, 157))
         );
         HomePanelLayout.setVerticalGroup(
@@ -1012,7 +1044,7 @@ public class adminPanel extends javax.swing.JFrame {
 
     private void staffLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_staffLabelMouseClicked
             try {
-                custPanel = new staffPanel();
+                custPanel = new staffPanel(who);
                 cardHolder.removeAll();
                 cardHolder.add(custPanel);
                 repaint();
@@ -1152,7 +1184,7 @@ public class adminPanel extends javax.swing.JFrame {
         }
 
         private void staffButtonMouseClicked(java.awt.event.MouseEvent evt) {
-                stffPanel = new staffPanel();
+                stffPanel = new staffPanel(who);
                 cardHolder.removeAll();
                 cardHolder.add(stffPanel);
                 repaint();

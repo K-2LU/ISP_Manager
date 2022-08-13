@@ -34,6 +34,9 @@ public class adminProfile extends javax.swing.JPanel {
                 break;
             }
         }
+                        stm.close();
+                rs.close();
+                con.close();
         } catch (Exception e) {}
         
                 who = id;
@@ -84,43 +87,43 @@ public class adminProfile extends javax.swing.JPanel {
 
         profile_front.setBackground(new java.awt.Color(44, 44, 44));
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setText("ID :");
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setText("Name :");
 
-        jLabel3.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setText("Username :");
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(204, 204, 204));
         jLabel4.setText("Email Address :");
 
-        jLabel5.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 204, 204));
         jLabel5.setText("Phone No. :");
 
-        idPanel.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        idPanel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         idPanel.setForeground(new java.awt.Color(204, 204, 204));
         idPanel.setText(userId);
 
-        namePanel.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        namePanel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         namePanel.setForeground(new java.awt.Color(204, 204, 204));
         namePanel.setText(nameAd);
 
-        usernamePanel.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        usernamePanel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         usernamePanel.setForeground(new java.awt.Color(204, 204, 204));
         usernamePanel.setText(username);
 
-        mailPanel.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        mailPanel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         mailPanel.setForeground(new java.awt.Color(204, 204, 204));
         mailPanel.setText(mailAddress);
 
-        phonPanel.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        phonPanel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         phonPanel.setForeground(new java.awt.Color(204, 204, 204));
         phonPanel.setText(contactNo);
 
@@ -172,54 +175,56 @@ public class adminProfile extends javax.swing.JPanel {
         profile_front.setLayout(profile_frontLayout);
         profile_frontLayout.setHorizontalGroup(
             profile_frontLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(profile_frontLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, profile_frontLayout.createSequentialGroup()
+                .addContainerGap(400, Short.MAX_VALUE)
                 .addGroup(profile_frontLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(profile_frontLayout.createSequentialGroup()
-                        .addGap(219, 219, 219)
-                        .addGroup(profile_frontLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(158, 158, 158)
-                        .addGroup(profile_frontLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(phonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(mailPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(usernamePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(namePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(idPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(profile_frontLayout.createSequentialGroup()
-                        .addGap(517, 517, 517)
-                        .addComponent(editPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(378, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(61, 61, 61)
+                .addGroup(profile_frontLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, profile_frontLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(usernamePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(mailPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(namePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(idPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(phonPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(278, 278, 278))
+            .addGroup(profile_frontLayout.createSequentialGroup()
+                .addGap(475, 475, 475)
+                .addComponent(editPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         profile_frontLayout.setVerticalGroup(
             profile_frontLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(profile_frontLayout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addGroup(profile_frontLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(idPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(profile_frontLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(namePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(profile_frontLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(usernamePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(profile_frontLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mailPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(profile_frontLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(phonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE)
+                .addGap(57, 57, 57)
+                .addGroup(profile_frontLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, profile_frontLayout.createSequentialGroup()
+                        .addComponent(idPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(namePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(usernamePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(mailPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(phonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, profile_frontLayout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(43, 43, 43)
                 .addComponent(editPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(127, 127, 127))
+                .addContainerGap(274, Short.MAX_VALUE))
         );
 
         BG.add(profile_front, "card2");
@@ -252,9 +257,15 @@ public class adminProfile extends javax.swing.JPanel {
         jLabel13.setText("(Please enter your password to confirm the changes. You'll notice the visible changes the next time you log in)");
 
         passField.setBackground(new java.awt.Color(38, 38, 38));
+        passField.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        passField.setForeground(new java.awt.Color(204, 204, 204));
+        passField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         passField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(60, 60, 60), 3, true));
 
         passField1.setBackground(new java.awt.Color(38, 38, 38));
+        passField1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        passField1.setForeground(new java.awt.Color(204, 204, 204));
+        passField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         passField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(60, 60, 60), 3, true));
 
         confirmPanel.setBackground(new java.awt.Color(67, 88, 210));
@@ -295,10 +306,7 @@ public class adminProfile extends javax.swing.JPanel {
         );
         confirmPanelLayout.setVerticalGroup(
             confirmPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(confirmPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(confirmLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(confirmLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         cancelPanel.setBackground(new java.awt.Color(44, 44, 44));
@@ -342,7 +350,7 @@ public class adminProfile extends javax.swing.JPanel {
             cancelPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cancelPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(cancelLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cancelLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -368,6 +376,10 @@ public class adminProfile extends javax.swing.JPanel {
         profile_edit.setLayout(profile_editLayout);
         profile_editLayout.setHorizontalGroup(
             profile_editLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, profile_editLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(warningLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(85, 85, 85))
             .addGroup(profile_editLayout.createSequentialGroup()
                 .addGroup(profile_editLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(profile_editLayout.createSequentialGroup()
@@ -398,13 +410,9 @@ public class adminProfile extends javax.swing.JPanel {
                         .addGap(39, 39, 39)
                         .addComponent(cancelPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(profile_editLayout.createSequentialGroup()
-                        .addGap(283, 283, 283)
+                        .addGap(242, 242, 242)
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 704, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(269, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, profile_editLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(warningLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(85, 85, 85))
+                .addContainerGap(310, Short.MAX_VALUE))
         );
         profile_editLayout.setVerticalGroup(
             profile_editLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -433,7 +441,7 @@ public class adminProfile extends javax.swing.JPanel {
                 .addGroup(profile_editLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(passField1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(profile_editLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(cancelPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(confirmPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -524,12 +532,46 @@ public class adminProfile extends javax.swing.JPanel {
             warningLabel.setText("Incorrect password");
         } else if(!pass1.equals(pass2))    {
             warningLabel.setText("Passwords Do Not Match");
+        }   else    {
+            try {
+                Class.forName("org.sqlite.JDBC"); // Driver available
+                con = DriverManager.getConnection("jdbc:sqlite:isp_manager.db"); // established connection
+
+                Statement stt = con.createStatement();
+                PreparedStatement state = con.prepareStatement("update admin set name = ? where id = ?");
+                ResultSet rs = stt.executeQuery("select * from admin"); // Query executed
+                
+                String tname = nameField.getText();
+                String mail = mailField.getText();
+                String phone = phoneField.getText();
+                
+                state = con.prepareStatement("update admin set phone = ? where id = ?");
+                state.setString(1, phone);
+                state.setString(2, who);
+                state.executeUpdate();
+                
+                state = con.prepareStatement("update admin set email = ? where id = ?");
+                state.setString(1, mail);
+                state.setString(2, who);
+                state.executeUpdate();
+                
+                namePanel.setText(tname);
+                mailPanel.setText(mail);
+                phonPanel.setText(phone);
+                
+                BG.removeAll();
+                BG.add(profile_front);
+                repaint();
+                revalidate();
+                
+                state.close();
+                rs.close();
+                stt.close();
+                con.close();
+            } catch(Exception e)   {
+                System.out.println(e.getMessage());
+            }
         }
-        
-        BG.removeAll();
-        BG.add(profile_front);
-        repaint();
-        revalidate();
     }//GEN-LAST:event_confirmLabelMouseClicked
 
     private void cancelLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelLabelMouseClicked

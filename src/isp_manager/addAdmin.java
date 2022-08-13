@@ -13,7 +13,31 @@ public class addAdmin extends javax.swing.JPanel {
         String passwd;
         
     public addAdmin(String id) {
-        who = id;
+        who = id;        
+        try{
+            Class.forName("org.sqlite.JDBC"); // Driver available
+            
+            con = DriverManager.getConnection("jdbc:sqlite:isp_manager.db");
+            stm = con.createStatement(); // statement created
+            rs = stm.executeQuery("select * from admin"); // Query executed
+            
+            
+            
+        while (rs.next()) {
+            if (who.equals(rs.getString(1))) {
+                passwd = rs.getString(5);
+                break;
+            }
+
+        }        
+        rs.close();
+        stm.close();
+        con.close();
+
+            
+        } catch(Exception e)    {
+            System.out.println(e.getMessage());
+        }
         initComponents();
     }
 
@@ -178,10 +202,7 @@ public class addAdmin extends javax.swing.JPanel {
         );
         savePanelLayout.setVerticalGroup(
             savePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(savePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(saveLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(saveLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         cancelPanel.setBackground(new java.awt.Color(44, 44, 44));
@@ -353,19 +374,8 @@ public class addAdmin extends javax.swing.JPanel {
         pass1 = passField1.getText();
         pass2 = passField2.getText();
         
-        try{
-            Class.forName("org.sqlite.JDBC"); // Driver available
-            con = DriverManager.getConnection("jdbc:sqlite:isp_manager.db");
-            rs = stm.executeQuery("select * from admin"); // Query executed
-            
-            while(rs.next())    {
-                if(who.equals(rs.getString(1))){
-                    passwd = rs.getString(5);
-                    break;
-                }
-            }
-            
-        } catch(Exception e)    {}
+
+        
         if(!temp1.equals(temp2))    {
             warningLabel.setText("Temporary passwords do not match");
             warningLabel.setForeground(new java.awt.Color(204,204, 204));
@@ -373,7 +383,7 @@ public class addAdmin extends javax.swing.JPanel {
             warningLabel.setText("Your Passwords do not match");
             warningLabel.setForeground(new java.awt.Color(204,204, 204));
         }   else if(!pass1.equals(passwd))  {
-            warningLabel.setText("Incorrect password");
+            warningLabel.setText("Incorrect password: " + passwd + who);
             warningLabel.setForeground(new java.awt.Color(204,204, 204));
         }   
         else {
@@ -395,12 +405,13 @@ public class addAdmin extends javax.swing.JPanel {
         st.close();
         con.close();
         stm.close();
-        rs.close();
-            } catch(Exception e) {}
-            
-            
+        rs.close();            
             warningLabel.setText("New admin created");
             warningLabel.setForeground(new java.awt.Color(204,204, 204));
+            } catch(Exception e) {
+                System.out.println(e.getMessage());
+            }
+
         }
     }//GEN-LAST:event_saveLabelMouseClicked
 

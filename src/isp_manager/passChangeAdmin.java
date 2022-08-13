@@ -187,6 +187,10 @@ public class passChangeAdmin extends javax.swing.JPanel {
                 break;
             }
         }
+        rs.close();
+        st.close();
+        stm.close();
+        con.close();
         } catch(Exception sq)   {
         }
         
@@ -203,6 +207,12 @@ public class passChangeAdmin extends javax.swing.JPanel {
         }
         else    {
             try {
+                            Class.forName("org.sqlite.JDBC"); // Driver available
+        con = DriverManager.getConnection("jdbc:sqlite:isp_manager.db"); // established connection
+        stm = con.createStatement(); // statement created
+        st = con.prepareStatement("update admin set password = ? where id = ?");
+        rs = stm.executeQuery("select * from admin"); // Query executed
+                
              st.setString(1, new1);
              st.setString(2, who);
              st.executeUpdate();
@@ -211,6 +221,7 @@ public class passChangeAdmin extends javax.swing.JPanel {
             rs.close();
             st.close();
             con.close();
+            
             warningLabel.setText("Password successfully updated");
             warningLabel.setForeground(new java.awt.Color(204,204,204));
         

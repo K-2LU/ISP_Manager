@@ -65,11 +65,9 @@
                   <EmptySpace min="184" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="warningLabel" pref="239" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="passField1" pref="239" max="32767" attributes="0"/>
-                          <Component id="passField" max="32767" attributes="0"/>
-                          <Component id="usernameField" pref="239" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="passField1" pref="239" max="32767" attributes="0"/>
+                      <Component id="passField" max="32767" attributes="0"/>
+                      <Component id="usernameField" pref="239" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
               </Group>
@@ -190,11 +188,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="removeButton" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="removeButton" alignment="1" pref="48" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -240,11 +234,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="blockButton" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="blockButton" alignment="1" pref="48" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>

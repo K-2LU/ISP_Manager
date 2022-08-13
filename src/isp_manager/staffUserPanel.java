@@ -36,6 +36,13 @@ public class staffUserPanel extends javax.swing.JFrame {
                 break;
             }
         }
+        
+        stm.close();
+        st.close();
+        rs.close();
+        con.close();
+        
+        
         initComponents();
     }
 
@@ -94,6 +101,7 @@ public class staffUserPanel extends javax.swing.JFrame {
         logOutButton = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("ISP Maanager");
         setResizable(false);
 
         BG3.setBackground(new java.awt.Color(44, 44, 44));
@@ -773,12 +781,23 @@ public class staffUserPanel extends javax.swing.JFrame {
             alertLabelPass.setForeground(new java.awt.Color(204,204,204));
         } else {
             try {
+             Class.forName("org.sqlite.JDBC"); // Driver available
+             con = DriverManager.getConnection("jdbc:sqlite:isp_manager.db"); // established connection
+             stm = con.createStatement(); // statement created
+             st = con.prepareStatement("update staff set password = ? where id = ?");
+             rs = stm.executeQuery("select * from staff"); // Query executed
+             
              st.setString(1, temp1);
              st.setString(2, who);
              st.executeUpdate();
              
              alertLabelPass.setText("Password updated");
              alertLabelPass.setForeground(new java.awt.Color(204,204,204));
+             
+             stm.close();
+             st.close();
+             rs.close();
+             con.close();
         }   catch (Exception e) {}
         }
     }//GEN-LAST:event_confirmPassMouseClicked
