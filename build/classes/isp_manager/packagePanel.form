@@ -618,29 +618,22 @@
                               </Group>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="revenue30" alignment="0" max="32767" attributes="0"/>
+                              <Component id="revenue20" alignment="0" max="32767" attributes="0"/>
+                              <Component id="revenue15" alignment="1" max="32767" attributes="0"/>
+                              <Component id="jLabel29" alignment="1" max="32767" attributes="0"/>
+                              <Component id="revenue10" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="revenue30" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="revenue20" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="revenue15" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="jLabel29" alignment="1" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
-                                          <Component id="jLabel30" min="-2" pref="56" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="revenueTotal" min="-2" pref="103" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                                  <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
+                                  <Component id="jLabel30" min="-2" pref="56" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="revenue10" min="-2" pref="80" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="revenueTotal" min="-2" pref="103" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>

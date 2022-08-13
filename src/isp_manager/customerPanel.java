@@ -1462,43 +1462,53 @@ public class customerPanel extends javax.swing.JPanel {
         ResultSet rs = stt.executeQuery("select * from customer"); // Query executed
 
         state.setString(1, anid);
-        state.setString(2, uid);
+        state.setString(2, tuid);
+        state.executeUpdate();
         
         state = con.prepareStatement("update customer set name = ? where id = ?");
         state.setString(1, aname);
-        state.setString(2, uid);
+        state.setString(2, tuid);
+        state.executeUpdate();
         
         state = con.prepareStatement("update customer set address = ? where id = ?");
         state.setString(1, aAddress);
-        state.setString(2, uid);
+        state.setString(2, tuid);
+        state.executeUpdate();
         
         state = con.prepareStatement("update customer set email = ? where id = ?");
         state.setString(1, amail);
-        state.setString(2, uid);
+        state.setString(2, tuid);
+        state.executeUpdate();
         
         state = con.prepareStatement("update customer set contact = ? where id = ?");
         state.setString(1, acontact);
-        state.setString(2, uid);
+        state.setString(2, tuid);
+        state.executeUpdate();
         
         state = con.prepareStatement("update customer set username = ? where id = ?");
         state.setString(1, auname);
-        state.setString(2, uid);
+        state.setString(2, tuid);
+        state.executeUpdate();
         
         state = con.prepareStatement("update customer set password = ? where id = ?");
         state.setString(1, apass);
-        state.setString(2, uid);
+        state.setString(2, tuid);
+        state.executeUpdate();
         
         state = con.prepareStatement("update customer set credit = ? where id = ?");
         state.setInt(1, credit);
-        state.setString(2, uid);
+        state.setString(2, tuid);
+        state.executeUpdate();
         
         state = con.prepareStatement("update customer set active = ? where id = ?");
         state.setString(1, result);
-        state.setString(2, uid);
+        state.setString(2, tuid);
+        state.executeUpdate();
         
         state = con.prepareStatement("update customer set package = ? where id = ?");
         state.setString(1, aPackStat);
-        state.setString(2, uid);
+        state.setString(2, tuid);
+        state.executeUpdate();
         
         state.close();
         rs.close();
@@ -1830,16 +1840,9 @@ public class customerPanel extends javax.swing.JPanel {
                     System.out.println(e.getMessage());
                 }
 
-
         }// GEN-LAST:event_searchButtonMouseClicked
 
         private void adderButtonMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_adderButtonMouseClicked
-                try {
-                        Class.forName("org.sqlite.JDBC"); // Driver available
-                        con = DriverManager.getConnection("jdbc:sqlite:isp_manager.db"); // established connection
-                        stm = con.prepareStatement("insert into customer values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                } catch (Exception e) {
-                }
 
                 name = nameField.getText();
                 address = addressField.getText();
@@ -1865,7 +1868,9 @@ public class customerPanel extends javax.swing.JPanel {
                 credit = 5000;
 
                 try {
-
+                        Class.forName("org.sqlite.JDBC"); // Driver available
+                        con = DriverManager.getConnection("jdbc:sqlite:isp_manager.db"); // established connection
+                        stm = con.prepareStatement("insert into customer values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
                         stm.setString(1, uid);
                         stm.setString(2, nid);
                         stm.setString(3, name);
