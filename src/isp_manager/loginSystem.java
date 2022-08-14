@@ -3,6 +3,7 @@ package isp_manager;
 import java.sql.*;
 import java.awt.CardLayout;
 import java.awt.event.*; 
+import java.awt.*;
 
 public class loginSystem extends javax.swing.JFrame {
 
@@ -15,9 +16,9 @@ public class loginSystem extends javax.swing.JFrame {
         CardLayout cards;
 
         public loginSystem() {
-                initComponents();
-
-                cards = (CardLayout) (cardHolder.getLayout());
+            initComponents();
+            
+            cards = (CardLayout) (cardHolder.getLayout());
         }
 
         @SuppressWarnings("unchecked")

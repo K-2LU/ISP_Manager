@@ -252,7 +252,7 @@
             <Container class="javax.swing.JPanel" name="briefSearchPanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="21" green="21" red="21" type="rgb"/>
+                  <Color blue="26" green="26" red="26" type="rgb"/>
                 </Property>
               </Properties>
 
@@ -288,6 +288,8 @@
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="searchButtonMouseClicked"/>
+                    <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="searchButtonMouseEntered"/>
+                    <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="searchButtonMouseExited"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -321,25 +323,23 @@
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <Component id="packageLabel" min="-2" pref="199" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
-                                                  <Component id="roleBox" min="-2" pref="297" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <Group type="103" groupAlignment="1" attributes="0">
-                                                      <Component id="UIDLabel" min="-2" pref="199" max="-2" attributes="0"/>
-                                                      <Group type="102" attributes="0">
-                                                          <Component id="packageLabel2" min="-2" pref="60" max="-2" attributes="0"/>
-                                                          <EmptySpace max="32767" attributes="0"/>
-                                                          <Component id="salaryTextField" min="-2" pref="254" max="-2" attributes="0"/>
-                                                          <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                                          <Component id="packageLabel1" min="-2" pref="37" max="-2" attributes="0"/>
-                                                      </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="packageLabel" min="-2" pref="199" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
+                                              <Component id="roleBox" min="-2" pref="297" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="UIDLabel" min="-2" pref="199" max="-2" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="packageLabel2" min="-2" pref="60" max="-2" attributes="0"/>
+                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Component id="salaryTextField" min="-2" pref="254" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                                                      <Component id="packageLabel1" min="-2" pref="37" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                               </Group>
+                                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
@@ -362,9 +362,11 @@
                                                       <Group type="102" alignment="1" attributes="0">
                                                           <Component id="nameLabel" min="-2" pref="199" max="-2" attributes="0"/>
                                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                          <Component id="nameField" min="-2" pref="393" max="-2" attributes="0"/>
+                                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                              <Component id="alertLabel" alignment="1" max="32767" attributes="0"/>
+                                                              <Component id="nameField" alignment="1" pref="393" max="32767" attributes="0"/>
+                                                          </Group>
                                                       </Group>
-                                                      <Component id="alertLabel" alignment="1" min="-2" pref="309" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="jLabel7" min="-2" pref="199" max="-2" attributes="0"/>

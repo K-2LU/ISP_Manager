@@ -52,57 +52,56 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
+                  <EmptySpace min="0" pref="274" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel4" min="-2" pref="227" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="509" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" pref="217" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="0" pref="305" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel3" min="-2" pref="126" max="-2" attributes="0"/>
-                                  <Component id="jLabel4" min="-2" pref="118" max="-2" attributes="0"/>
-                                  <Component id="jLabel5" min="-2" pref="118" max="-2" attributes="0"/>
-                                  <Component id="jLabel6" min="-2" pref="118" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="jLabel9" min="-2" pref="154" max="-2" attributes="0"/>
-                                      <Component id="jLabel8" min="-2" pref="135" max="-2" attributes="0"/>
-                                      <Component id="jLabel10" alignment="1" min="-2" pref="227" max="-2" attributes="0"/>
-                                      <Component id="jLabel11" alignment="1" min="-2" pref="227" max="-2" attributes="0"/>
-                                      <Component id="jLabel7" alignment="1" min="-2" pref="118" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="nameField" min="-2" pref="391" max="-2" attributes="0"/>
-                              <Component id="unameField" min="-2" pref="391" max="-2" attributes="0"/>
-                              <Component id="mailField" min="-2" pref="391" max="-2" attributes="0"/>
-                              <Component id="phoneField" min="-2" pref="391" max="-2" attributes="0"/>
-                              <Component id="passField1" min="-2" pref="247" max="-2" attributes="0"/>
-                              <Component id="passField2" min="-2" pref="247" max="-2" attributes="0"/>
-                              <Component id="tempPassField1" min="-2" pref="247" max="-2" attributes="0"/>
-                              <Component id="tempPassField2" min="-2" pref="247" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jLabel3" min="-2" pref="235" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                              </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="uidField" min="-2" pref="142" max="-2" attributes="0"/>
-                                  <EmptySpace min="249" pref="249" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="savePanel" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel5" alignment="0" min="-2" pref="227" max="-2" attributes="0"/>
+                                          <Component id="jLabel6" min="-2" pref="227" max="-2" attributes="0"/>
+                                          <Component id="jLabel7" min="-2" pref="227" max="-2" attributes="0"/>
+                                          <Component id="jLabel8" min="-2" pref="227" max="-2" attributes="0"/>
+                                          <Component id="jLabel9" min="-2" pref="227" max="-2" attributes="0"/>
+                                          <Component id="jLabel10" min="-2" pref="227" max="-2" attributes="0"/>
+                                          <Component id="jLabel11" min="-2" pref="227" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="warningLabel" min="-2" pref="265" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="uidField" min="-2" pref="142" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="nameField" min="-2" pref="391" max="-2" attributes="0"/>
+                                      <Component id="unameField" min="-2" pref="391" max="-2" attributes="0"/>
+                                      <Component id="mailField" min="-2" pref="391" max="-2" attributes="0"/>
+                                      <Component id="phoneField" min="-2" pref="391" max="-2" attributes="0"/>
+                                      <Component id="passField1" min="-2" pref="247" max="-2" attributes="0"/>
+                                      <Component id="passField2" min="-2" pref="247" max="-2" attributes="0"/>
+                                      <Component id="tempPassField1" min="-2" pref="247" max="-2" attributes="0"/>
+                                      <Component id="tempPassField2" min="-2" pref="247" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="warningLabel" min="-2" pref="265" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="cancelPanel" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
               </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="328" max="-2" attributes="0"/>
-                  <Component id="savePanel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="cancelPanel" min="-2" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="445" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="217" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -110,15 +109,15 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="37" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
                           <Component id="warningLabel" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" pref="37" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="uidField" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="jLabel3" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
@@ -196,7 +195,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
-            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="text" type="java.lang.String" value="ID :"/>
           </Properties>
         </Component>
@@ -208,7 +207,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
-            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="text" type="java.lang.String" value="Name :"/>
           </Properties>
         </Component>
@@ -220,7 +219,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
-            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="text" type="java.lang.String" value="Username :"/>
           </Properties>
         </Component>
@@ -232,7 +231,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
-            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="text" type="java.lang.String" value="Email Address :"/>
           </Properties>
         </Component>
@@ -244,7 +243,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
-            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="text" type="java.lang.String" value="Phone No. :"/>
           </Properties>
         </Component>
@@ -256,7 +255,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
-            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="text" type="java.lang.String" value="Temp. Password :"/>
           </Properties>
         </Component>
@@ -268,7 +267,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
-            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="text" type="java.lang.String" value="Re-enter Password :"/>
           </Properties>
         </Component>
@@ -280,7 +279,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
-            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="text" type="java.lang.String" value="Enter your password to confirm :"/>
           </Properties>
         </Component>
@@ -292,7 +291,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
-            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="text" type="java.lang.String" value="Re-enter :"/>
           </Properties>
         </Component>

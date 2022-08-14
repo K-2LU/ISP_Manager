@@ -252,7 +252,7 @@ public class staffPanel extends javax.swing.JPanel {
                 .addGap(1, 1, 1))
         );
 
-        briefSearchPanel.setBackground(new java.awt.Color(33, 33, 33));
+        briefSearchPanel.setBackground(new java.awt.Color(38, 38, 38));
 
         searchButton.setBackground(new java.awt.Color(55, 55, 55));
         searchButton.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
@@ -263,6 +263,12 @@ public class staffPanel extends javax.swing.JPanel {
         searchButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 searchButtonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                searchButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                searchButtonMouseExited(evt);
             }
         });
 
@@ -556,21 +562,20 @@ public class staffPanel extends javax.swing.JPanel {
                     .addGroup(addCustomerPanelLayout.createSequentialGroup()
                         .addGap(123, 123, 123)
                         .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                                    .addComponent(packageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(114, 114, 114)
-                                    .addComponent(roleBox, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                                    .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(UIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(addCustomerPanelLayout.createSequentialGroup()
-                                            .addComponent(packageLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(salaryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(2, 2, 2)
-                                            .addComponent(packageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGap(6, 6, 6)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCustomerPanelLayout.createSequentialGroup()
+                                .addComponent(packageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(114, 114, 114)
+                                .addComponent(roleBox, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCustomerPanelLayout.createSequentialGroup()
+                                .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(UIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(addCustomerPanelLayout.createSequentialGroup()
+                                        .addComponent(packageLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(salaryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(2, 2, 2)
+                                        .addComponent(packageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(6, 6, 6))
                             .addGroup(addCustomerPanelLayout.createSequentialGroup()
                                 .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(addCustomerPanelLayout.createSequentialGroup()
@@ -589,8 +594,9 @@ public class staffPanel extends javax.swing.JPanel {
                                         .addGroup(addCustomerPanelLayout.createSequentialGroup()
                                             .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(alertLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(alertLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(nameField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE))))
                                     .addGroup(addCustomerPanelLayout.createSequentialGroup()
                                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1490,8 +1496,7 @@ public class staffPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_removeStaffButtonActionPerformed
 
     private void searchButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchButtonMouseClicked
-        
-            String info = searchField.getText();
+                        String info = searchField.getText();
             String userInf;
             try {
                         Class.forName("org.sqlite.JDBC"); // Driver available
@@ -1499,11 +1504,14 @@ public class staffPanel extends javax.swing.JPanel {
                         // established connection
                         Statement st = con.createStatement();
                         ResultSet rs = st.executeQuery("select * from staff"); // Query executed
-
+                        boolean resultFound = false;
                         
                         while (rs.next()) {
                             userInf = rs.getString(3);
                             if(userInf.equals(info))    {
+                                resultFound = true;
+                                alertLabel.setText("");
+                                
                                 int crd;
                                 tuid = rs.getString(1);
                                 tname = rs.getString(2);
@@ -1540,13 +1548,16 @@ public class staffPanel extends javax.swing.JPanel {
                             }
                                 
                         }
+                        if(resultFound == false)    {
+                            alertLabel.setText("No user found");
+                        }
                         con.close();
                         st.close();
                         rs.close();
 
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
-                }  
+                }
     }//GEN-LAST:event_searchButtonMouseClicked
 
     private void nameFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nameFieldMouseClicked
@@ -2001,11 +2012,14 @@ public class staffPanel extends javax.swing.JPanel {
                         // established connection
                         Statement st = con.createStatement();
                         ResultSet rs = st.executeQuery("select * from staff"); // Query executed
-
+                        boolean resultFound = false;
                         
                         while (rs.next()) {
                             userInf = rs.getString(3);
                             if(userInf.equals(info))    {
+                                resultFound = true;
+                                alertLabel.setText("");
+                                
                                 int crd;
                                 tuid = rs.getString(1);
                                 tname = rs.getString(2);
@@ -2042,6 +2056,9 @@ public class staffPanel extends javax.swing.JPanel {
                             }
                                 
                         }
+                        if(resultFound == false)    {
+                            alertLabel.setText("No user found");
+                        }
                         con.close();
                         st.close();
                         rs.close();
@@ -2051,6 +2068,14 @@ public class staffPanel extends javax.swing.JPanel {
                 }
         }
     }//GEN-LAST:event_searchFieldKeyPressed
+
+    private void searchButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchButtonMouseEntered
+        briefSearchPanel.setBackground(new java.awt.Color(41,41,41));
+    }//GEN-LAST:event_searchButtonMouseEntered
+
+    private void searchButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchButtonMouseExited
+        briefSearchPanel.setBackground(new java.awt.Color(38,38,38));
+    }//GEN-LAST:event_searchButtonMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
