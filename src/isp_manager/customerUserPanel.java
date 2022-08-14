@@ -123,7 +123,8 @@ public class customerUserPanel extends javax.swing.JFrame {
 
         topPanel.setBackground(new java.awt.Color(44, 44, 44));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/logo_10.png"))); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/ISPManager_86px.png"))); // NOI18N
 
         javax.swing.GroupLayout topPanelLayout = new javax.swing.GroupLayout(topPanel);
         topPanel.setLayout(topPanelLayout);
@@ -131,7 +132,7 @@ public class customerUserPanel extends javax.swing.JFrame {
             topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(topPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         topPanelLayout.setVerticalGroup(
@@ -1034,10 +1035,13 @@ public class customerUserPanel extends javax.swing.JFrame {
                 st = con.prepareStatement("update customer set package = ? where id = ?");
                 st.setString(1, tempPack);
                 st.setString(2, who);
+                st.executeUpdate();
+                pack.setText(tempPack);
                 
                 st = con.prepareStatement("update customer set credit = ? where id = ?");
                 st.setInt(1, credit-bill);
                 st.setString(2, who);
+                st.executeUpdate();
                 
                 tempPack = "" + (credit - bill);
                 
@@ -1046,6 +1050,7 @@ public class customerUserPanel extends javax.swing.JFrame {
                 st.close();
                 stm.close();
                 con.close();
+                
             } catch(Exception e)    {
             }
         }

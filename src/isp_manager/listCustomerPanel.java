@@ -32,6 +32,7 @@ public class listCustomerPanel extends javax.swing.JPanel {
         model.addColumn("Email");
         model.addColumn("Active Status");
 
+        jScrollPane3.setBackground(new java.awt.Color(44, 44, 44));
         setBackground(new java.awt.Color(44, 44, 44));
 
         try {
@@ -53,6 +54,15 @@ public class listCustomerPanel extends javax.swing.JPanel {
             stm.close();
             rs.close();
             con.close();
+            for (int i = 0; i < 30; i++) {
+                uid = "";
+                name = "";
+                username = "";
+                packStat = "";
+                mail = "";
+                actStat = "";
+                model.addRow(new Object[] { uid, name, username, packStat, mail, actStat });
+            }
         } catch (Exception e) {
         }
 

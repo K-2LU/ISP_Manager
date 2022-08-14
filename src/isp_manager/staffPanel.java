@@ -1,5 +1,6 @@
 package isp_manager;
 
+import java.awt.event.KeyEvent;
 import java.sql.*;
 
 public class staffPanel extends javax.swing.JPanel {
@@ -1324,6 +1325,11 @@ public class staffPanel extends javax.swing.JPanel {
                 searchFieldMouseClicked(evt);
             }
         });
+        searchField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                searchFieldKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -1984,6 +1990,67 @@ public class staffPanel extends javax.swing.JPanel {
     private void editCreditFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editCreditFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_editCreditFieldActionPerformed
+
+    private void searchFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchFieldKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER)   {
+                        String info = searchField.getText();
+            String userInf;
+            try {
+                        Class.forName("org.sqlite.JDBC"); // Driver available
+                        con = DriverManager.getConnection("jdbc:sqlite:isp_manager.db");
+                        // established connection
+                        Statement st = con.createStatement();
+                        ResultSet rs = st.executeQuery("select * from staff"); // Query executed
+
+                        
+                        while (rs.next()) {
+                            userInf = rs.getString(3);
+                            if(userInf.equals(info))    {
+                                int crd;
+                                tuid = rs.getString(1);
+                                tname = rs.getString(2);
+                                tusername = rs.getString(3);
+                                tpass = rs.getString(4);
+                                tactStat = rs.getString(5);
+                                crd = rs.getInt(6);
+                                tpackStat = rs.getString(7);
+                                tmail = rs.getString(8);
+                                tcontactNo = rs.getString(9);
+                                
+//                                System.out.println(tuid + tnid);
+                                infoName.setText(tname);
+                                infoUsername.setText(tusername);
+                                infoUserID.setText(tuid);
+                                infoEMail.setText(tmail);
+                                infoContact.setText(tcontactNo);
+                                infoPack.setText(tpackStat);
+                                tcredit = "" + crd;
+                                infoCredit.setText("" + crd);
+                                if(tactStat.equals("true")){
+                                    infoActStat.setText("Active");
+                                    infoIndicator.setBackground(new java.awt.Color(10,137,70));
+                                }
+                                else {
+                                    infoActStat.setText("Inactive");
+                                    infoIndicator.setBackground(new java.awt.Color(197,0,0));
+                                    }
+                                holderPanel.removeAll();
+                                holderPanel.add(infoPanel);
+                                repaint();
+                                revalidate();
+                                break;
+                            }
+                                
+                        }
+                        con.close();
+                        st.close();
+                        rs.close();
+
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+        }
+    }//GEN-LAST:event_searchFieldKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

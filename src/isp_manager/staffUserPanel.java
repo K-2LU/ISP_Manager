@@ -108,7 +108,8 @@ public class staffUserPanel extends javax.swing.JFrame {
 
         topPanel3.setBackground(new java.awt.Color(44, 44, 44));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/logo_10.png"))); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/isp_manager/resources/ISPManager_86px.png"))); // NOI18N
 
         javax.swing.GroupLayout topPanel3Layout = new javax.swing.GroupLayout(topPanel3);
         topPanel3.setLayout(topPanel3Layout);
@@ -116,7 +117,7 @@ public class staffUserPanel extends javax.swing.JFrame {
             topPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(topPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         topPanel3Layout.setVerticalGroup(

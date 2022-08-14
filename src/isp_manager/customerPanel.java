@@ -1,6 +1,7 @@
 package isp_manager;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.sql.*;
 
 public class customerPanel extends javax.swing.JPanel {
@@ -299,7 +300,7 @@ public class customerPanel extends javax.swing.JPanel {
                 .addGap(1, 1, 1))
         );
 
-        searchField.setBackground(new java.awt.Color(33, 33, 33));
+        searchField.setBackground(new java.awt.Color(38, 38, 38));
         searchField.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         searchField.setForeground(new java.awt.Color(204, 204, 204));
         searchField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -309,11 +310,22 @@ public class customerPanel extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 searchFieldMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                searchFieldMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                searchFieldMouseExited(evt);
+            }
+        });
+        searchField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                searchFieldKeyPressed(evt);
+            }
         });
 
-        briefSearchPanel.setBackground(new java.awt.Color(33, 33, 33));
+        briefSearchPanel.setBackground(new java.awt.Color(38, 38, 38));
 
-        searchButton.setBackground(new java.awt.Color(55, 55, 55));
+        searchButton.setBackground(new java.awt.Color(38, 38, 38));
         searchButton.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         searchButton.setForeground(new java.awt.Color(204, 204, 204));
         searchButton.setText("Search");
@@ -322,6 +334,12 @@ public class customerPanel extends javax.swing.JPanel {
         searchButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 searchButtonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                searchButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                searchButtonMouseExited(evt);
             }
         });
 
@@ -616,14 +634,14 @@ public class customerPanel extends javax.swing.JPanel {
                                             .addComponent(phoneField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(emailField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(legalDocField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(0, 0, Short.MAX_VALUE))))
+                                        .addGap(0, 17, Short.MAX_VALUE))))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addCustomerPanelLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(passField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(UIDLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(58, 58, 58)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         addCustomerPanelLayout.setVerticalGroup(
             addCustomerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -909,7 +927,7 @@ public class customerPanel extends javax.swing.JPanel {
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addComponent(editInfoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(225, Short.MAX_VALUE))
+                .addContainerGap(226, Short.MAX_VALUE))
         );
 
         holderPanel.add(infoPanel, "card3");
@@ -1305,7 +1323,7 @@ public class customerPanel extends javax.swing.JPanel {
                 .addGroup(editCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(cancelEditPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(addCustBG10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
 
         holderPanel.add(editCustomer, "card2");
@@ -1695,6 +1713,87 @@ public class customerPanel extends javax.swing.JPanel {
         revalidate();
     }//GEN-LAST:event_cancelEditMouseClicked
 
+    private void searchFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchFieldKeyPressed
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+            String info = searchField.getText();
+            String userInf;
+            try {
+                        Class.forName("org.sqlite.JDBC"); // Driver available
+                        con = DriverManager.getConnection("jdbc:sqlite:isp_manager.db");
+                        // established connection
+                        Statement st = con.createStatement();
+                        ResultSet rs = st.executeQuery("select * from customer"); // Query executed
+
+                        
+                        while (rs.next()) {
+                            userInf = rs.getString(4);
+                            if(userInf.equals(info))    {
+                                int crd;
+                                tuid = rs.getString(1);
+                                tnid = rs.getString(2);
+                                tname = rs.getString(3);
+                                tusername = rs.getString(4);
+                                taddress = rs.getString(5);
+                                tpass = rs.getString(6);
+                                tpackStat = rs.getString(7);
+                                crd = rs.getInt(8);
+                                tactStat = rs.getString(9);
+                                tcontactNo = rs.getString(10);
+                                tmail = rs.getString(11);
+                                
+//                                System.out.println(tuid + tnid);
+                                infoName.setText(tname);
+                                infoUsername.setText(tusername);
+                                infoUserID.setText(tuid);
+                                infoEMail.setText(tmail);
+                                infoAddress.setText(taddress);
+                                infoContact.setText(tcontactNo);
+                                infoPack.setText(tpackStat);
+                                tcredit = "" + crd;
+                                infoCredit.setText("" + crd);
+                                if(tactStat.equals("true")){
+                                    infoActStat.setText("Active");
+                                    infoIndicator.setBackground(new java.awt.Color(10,137,70));
+                                }
+                                else {
+                                    infoActStat.setText("Inactive");
+                                    infoIndicator.setBackground(new java.awt.Color(197,0,0));
+                                    }
+                                holderPanel.removeAll();
+                                holderPanel.add(infoPanel);
+                                repaint();
+                                revalidate();
+                                break;
+                            }
+                                
+                        }
+                        con.close();
+                        st.close();
+                        rs.close();
+
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+
+        }
+    }//GEN-LAST:event_searchFieldKeyPressed
+
+    private void searchFieldMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchFieldMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchFieldMouseEntered
+
+    private void searchFieldMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchFieldMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchFieldMouseExited
+
+    private void searchButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchButtonMouseEntered
+        briefSearchPanel.setBackground(new java.awt.Color(41,41,41));
+    }//GEN-LAST:event_searchButtonMouseEntered
+
+    private void searchButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchButtonMouseExited
+        briefSearchPanel.setBackground(new java.awt.Color(38,38,38));
+    }//GEN-LAST:event_searchButtonMouseExited
+
         private void addCustomerButton1MouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_addCustomerButton1MouseEntered
                 addCustomerOptPanel.setBackground(new java.awt.Color(33, 33, 33));
         }// GEN-LAST:event_addCustomerButton1MouseEntered
@@ -1734,6 +1833,15 @@ public class customerPanel extends javax.swing.JPanel {
 
         private void addCustomerButton1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_addCustomerButton1MouseClicked
                 // TODO add your handling code here:
+                editNameField.setText("Enter name");
+                editAddressField.setText("Enter address");
+                editPhoneField.setText("Enter phone number");
+                editEmailField.setText("Enter email address");
+                editNidFIeld.setText("Legal document no.");
+                editUnameFIeld.setText("Enter username");
+                passField1.setText("");
+                editCreditField.setText("Enter Credit");
+                
                 holderPanel.removeAll();
                 holderPanel.add(addCustomerPanel);
                 repaint();

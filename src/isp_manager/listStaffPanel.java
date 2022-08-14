@@ -53,6 +53,9 @@ public class listStaffPanel extends javax.swing.JPanel {
                         stm.close();
                         rs.close();
                         con.close();
+                        for (int i = 0; i < 40; i++) {
+                                model.addRow(new Object[] { "", "", "", "", "", "" });
+                        }
                 } catch (Exception e) {
                 }
 
